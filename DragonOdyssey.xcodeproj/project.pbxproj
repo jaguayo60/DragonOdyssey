@@ -13,9 +13,18 @@
 		B1A41DDE252D2A6900E57C7E /* DragonOdyssey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DDC252D2A6900E57C7E /* DragonOdyssey.xcdatamodeld */; };
 		B1A41DE0252D2A6A00E57C7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1A41DDF252D2A6A00E57C7E /* Assets.xcassets */; };
 		B1A41DE3252D2A6A00E57C7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A41DE1252D2A6A00E57C7E /* LaunchScreen.storyboard */; };
+		B1A41DEF252D3A5300E57C7E /* FuncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DEE252D3A5300E57C7E /* FuncService.swift */; };
+		B1A41DF1252D3ACF00E57C7E /* SharedDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DF0252D3ACF00E57C7E /* SharedDataExtensions.swift */; };
+		B1A41DF5252D42A900E57C7E /* CustomUIButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DF4252D428000E57C7E /* CustomUIButtons.swift */; };
+		B1A41DF6252D42A900E57C7E /* CustomUIViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DF3252D428000E57C7E /* CustomUIViews.swift */; };
+		B1A41DF8252D42C700E57C7E /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DF7252D42C700E57C7E /* UIExtensions.swift */; };
+		F924C87B4A07D6355805A583 /* Pods_DragonOdyssey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DragonOdyssey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		517647D07101D942767962B8 /* Pods-DragonOdyssey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragonOdyssey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DragonOdyssey/Pods-DragonOdyssey.debug.xcconfig"; sourceTree = "<group>"; };
+		7B89A901CF65B87E142144BB /* Pods-DragonOdyssey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragonOdyssey.release.xcconfig"; path = "Pods/Target Support Files/Pods-DragonOdyssey/Pods-DragonOdyssey.release.xcconfig"; sourceTree = "<group>"; };
 		B1A41DD0252D2A6900E57C7E /* DragonOdyssey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragonOdyssey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A41DD3252D2A6900E57C7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1A41DD7252D2A6900E57C7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +33,11 @@
 		B1A41DDF252D2A6A00E57C7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1A41DE2252D2A6A00E57C7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1A41DE4252D2A6A00E57C7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1A41DEE252D3A5300E57C7E /* FuncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncService.swift; sourceTree = "<group>"; };
+		B1A41DF0252D3ACF00E57C7E /* SharedDataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDataExtensions.swift; sourceTree = "<group>"; };
+		B1A41DF3252D428000E57C7E /* CustomUIViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIViews.swift; sourceTree = "<group>"; };
+		B1A41DF4252D428000E57C7E /* CustomUIButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButtons.swift; sourceTree = "<group>"; };
+		B1A41DF7252D42C700E57C7E /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +45,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F924C87B4A07D6355805A583 /* Pods_DragonOdyssey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56536E40765FB349A117CB13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				517647D07101D942767962B8 /* Pods-DragonOdyssey.debug.xcconfig */,
+				7B89A901CF65B87E142144BB /* Pods-DragonOdyssey.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B1A41DC7252D2A6900E57C7E = {
 			isa = PBXGroup;
 			children = (
 				B1A41DD2252D2A6900E57C7E /* DragonOdyssey */,
 				B1A41DD1252D2A6900E57C7E /* Products */,
+				56536E40765FB349A117CB13 /* Pods */,
+				CC4D385ADFD0B47B3AC53E3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +82,60 @@
 		B1A41DD2252D2A6900E57C7E /* DragonOdyssey */ = {
 			isa = PBXGroup;
 			children = (
+				B1A41DEC252D3A2E00E57C7E /* Global */,
 				B1A41DD3252D2A6900E57C7E /* AppDelegate.swift */,
 				B1A41DD7252D2A6900E57C7E /* ViewController.swift */,
 				B1A41DD9252D2A6900E57C7E /* Main.storyboard */,
+				B1A41DEB252D39FE00E57C7E /* Supporting Files */,
+			);
+			path = DragonOdyssey;
+			sourceTree = "<group>";
+		};
+		B1A41DEB252D39FE00E57C7E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				B1A41DDF252D2A6A00E57C7E /* Assets.xcassets */,
 				B1A41DE1252D2A6A00E57C7E /* LaunchScreen.storyboard */,
 				B1A41DE4252D2A6A00E57C7E /* Info.plist */,
 				B1A41DDC252D2A6900E57C7E /* DragonOdyssey.xcdatamodeld */,
 			);
-			path = DragonOdyssey;
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B1A41DEC252D3A2E00E57C7E /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				B1A41DF2252D426400E57C7E /* UI */,
+				B1A41DED252D3A3200E57C7E /* Services */,
+				B1A41DF0252D3ACF00E57C7E /* SharedDataExtensions.swift */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
+		B1A41DED252D3A3200E57C7E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B1A41DEE252D3A5300E57C7E /* FuncService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		B1A41DF2252D426400E57C7E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B1A41DF7252D42C700E57C7E /* UIExtensions.swift */,
+				B1A41DF4252D428000E57C7E /* CustomUIButtons.swift */,
+				B1A41DF3252D428000E57C7E /* CustomUIViews.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		CC4D385ADFD0B47B3AC53E3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +145,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1A41DE7252D2A6A00E57C7E /* Build configuration list for PBXNativeTarget "DragonOdyssey" */;
 			buildPhases = (
+				32AFA903C45BD9D6D52F3CFD /* [CP] Check Pods Manifest.lock */,
 				B1A41DCC252D2A6900E57C7E /* Sources */,
 				B1A41DCD252D2A6900E57C7E /* Frameworks */,
 				B1A41DCE252D2A6900E57C7E /* Resources */,
+				32F310F6CA6830F7BB8A2DC7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,13 +206,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		32AFA903C45BD9D6D52F3CFD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DragonOdyssey-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32F310F6CA6830F7BB8A2DC7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DragonOdyssey/Pods-DragonOdyssey-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DragonOdyssey/Pods-DragonOdyssey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B1A41DCC252D2A6900E57C7E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B1A41DD8252D2A6900E57C7E /* ViewController.swift in Sources */,
+				B1A41DF1252D3ACF00E57C7E /* SharedDataExtensions.swift in Sources */,
+				B1A41DF5252D42A900E57C7E /* CustomUIButtons.swift in Sources */,
+				B1A41DF8252D42C700E57C7E /* UIExtensions.swift in Sources */,
+				B1A41DEF252D3A5300E57C7E /* FuncService.swift in Sources */,
 				B1A41DDE252D2A6900E57C7E /* DragonOdyssey.xcdatamodeld in Sources */,
+				B1A41DF6252D42A900E57C7E /* CustomUIViews.swift in Sources */,
 				B1A41DD4252D2A6900E57C7E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +403,7 @@
 		};
 		B1A41DE8252D2A6A00E57C7E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 517647D07101D942767962B8 /* Pods-DragonOdyssey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +425,7 @@
 		};
 		B1A41DE9252D2A6A00E57C7E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B89A901CF65B87E142144BB /* Pods-DragonOdyssey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
