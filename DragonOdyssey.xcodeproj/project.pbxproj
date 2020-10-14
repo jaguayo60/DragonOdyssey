@@ -7,6 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B13916D3253768EB00A2CFA2 /* EntryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916D2253768EB00A2CFA2 /* EntryService.swift */; };
+		B13916D62537692000A2CFA2 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916D42537692000A2CFA2 /* MenuVC.swift */; };
+		B13916D72537692000A2CFA2 /* MenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13916D52537692000A2CFA2 /* MenuVC.xib */; };
+		B13916DC25376A1900A2CFA2 /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916DA25376A1900A2CFA2 /* FeedbackVC.swift */; };
+		B13916DD25376A1900A2CFA2 /* FeedbackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13916DB25376A1900A2CFA2 /* FeedbackVC.xib */; };
+		B13916E025376B4E00A2CFA2 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916DE25376B4E00A2CFA2 /* HomeVC.swift */; };
+		B13916E125376B4E00A2CFA2 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13916DF25376B4E00A2CFA2 /* HomeVC.xib */; };
+		B13916E525376B7400A2CFA2 /* StatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916E325376B7400A2CFA2 /* StatsVC.swift */; };
+		B13916E625376B7400A2CFA2 /* StatsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13916E425376B7400A2CFA2 /* StatsVC.xib */; };
+		B13916E825376E6200A2CFA2 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916E725376E6200A2CFA2 /* CoreDataService.swift */; };
+		B13916EA25376EE600A2CFA2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916E925376EE600A2CFA2 /* CoreDataManager.swift */; };
+		B13916F025376F7A00A2CFA2 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916EC25376F7A00A2CFA2 /* User+CoreDataClass.swift */; };
+		B13916F125376F7A00A2CFA2 /* Creature+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916ED25376F7A00A2CFA2 /* Creature+CoreDataProperties.swift */; };
+		B13916F225376F7A00A2CFA2 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916EE25376F7A00A2CFA2 /* User+CoreDataProperties.swift */; };
+		B13916F325376F7A00A2CFA2 /* Creature+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916EF25376F7A00A2CFA2 /* Creature+CoreDataClass.swift */; };
+		B13916F62537707B00A2CFA2 /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916F52537707B00A2CFA2 /* HapticFeedbackManager.swift */; };
+		B13916F8253770DA00A2CFA2 /* GlobalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916F7253770DA00A2CFA2 /* GlobalService.swift */; };
+		B13916FA2537710300A2CFA2 /* FunctionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916F92537710300A2CFA2 /* FunctionService.swift */; };
+		B13916FC2537714000A2CFA2 /* DebugService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916FB2537714000A2CFA2 /* DebugService.swift */; };
+		B13916FE253771AD00A2CFA2 /* TimingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916FD253771AD00A2CFA2 /* TimingManager.swift */; };
+		B13917012537814100A2CFA2 /* GLProgressV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13917002537814100A2CFA2 /* GLProgressV.swift */; };
+		B1391703253783C300A2CFA2 /* GLProgressV.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1391702253783C300A2CFA2 /* GLProgressV.xib */; };
 		B1A41DD4252D2A6900E57C7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DD3252D2A6900E57C7E /* AppDelegate.swift */; };
 		B1A41DD8252D2A6900E57C7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DD7252D2A6900E57C7E /* ViewController.swift */; };
 		B1A41DDB252D2A6900E57C7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A41DD9252D2A6900E57C7E /* Main.storyboard */; };
@@ -18,6 +40,8 @@
 		B1A41DF5252D42A900E57C7E /* CustomUIButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DF4252D428000E57C7E /* CustomUIButtons.swift */; };
 		B1A41DF6252D42A900E57C7E /* CustomUIViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DF3252D428000E57C7E /* CustomUIViews.swift */; };
 		B1A41DF8252D42C700E57C7E /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DF7252D42C700E57C7E /* UIExtensions.swift */; };
+		B1A41DFB252E2CB000E57C7E /* GLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DFA252E2CAD00E57C7E /* GLVC.swift */; };
+		B1A41DFD252E2CE100E57C7E /* UIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DFC252E2CE100E57C7E /* UIService.swift */; };
 		F924C87B4A07D6355805A583 /* Pods_DragonOdyssey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +49,28 @@
 		407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DragonOdyssey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		517647D07101D942767962B8 /* Pods-DragonOdyssey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragonOdyssey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DragonOdyssey/Pods-DragonOdyssey.debug.xcconfig"; sourceTree = "<group>"; };
 		7B89A901CF65B87E142144BB /* Pods-DragonOdyssey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragonOdyssey.release.xcconfig"; path = "Pods/Target Support Files/Pods-DragonOdyssey/Pods-DragonOdyssey.release.xcconfig"; sourceTree = "<group>"; };
+		B13916D2253768EB00A2CFA2 /* EntryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryService.swift; sourceTree = "<group>"; };
+		B13916D42537692000A2CFA2 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		B13916D52537692000A2CFA2 /* MenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuVC.xib; sourceTree = "<group>"; };
+		B13916DA25376A1900A2CFA2 /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
+		B13916DB25376A1900A2CFA2 /* FeedbackVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackVC.xib; sourceTree = "<group>"; };
+		B13916DE25376B4E00A2CFA2 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		B13916DF25376B4E00A2CFA2 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		B13916E325376B7400A2CFA2 /* StatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsVC.swift; sourceTree = "<group>"; };
+		B13916E425376B7400A2CFA2 /* StatsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsVC.xib; sourceTree = "<group>"; };
+		B13916E725376E6200A2CFA2 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		B13916E925376EE600A2CFA2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B13916EC25376F7A00A2CFA2 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B13916ED25376F7A00A2CFA2 /* Creature+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Creature+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B13916EE25376F7A00A2CFA2 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B13916EF25376F7A00A2CFA2 /* Creature+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Creature+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B13916F52537707B00A2CFA2 /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
+		B13916F7253770DA00A2CFA2 /* GlobalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalService.swift; sourceTree = "<group>"; };
+		B13916F92537710300A2CFA2 /* FunctionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionService.swift; sourceTree = "<group>"; };
+		B13916FB2537714000A2CFA2 /* DebugService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugService.swift; sourceTree = "<group>"; };
+		B13916FD253771AD00A2CFA2 /* TimingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingManager.swift; sourceTree = "<group>"; };
+		B13917002537814100A2CFA2 /* GLProgressV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLProgressV.swift; sourceTree = "<group>"; };
+		B1391702253783C300A2CFA2 /* GLProgressV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLProgressV.xib; sourceTree = "<group>"; };
 		B1A41DD0252D2A6900E57C7E /* DragonOdyssey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragonOdyssey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A41DD3252D2A6900E57C7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1A41DD7252D2A6900E57C7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +84,8 @@
 		B1A41DF3252D428000E57C7E /* CustomUIViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIViews.swift; sourceTree = "<group>"; };
 		B1A41DF4252D428000E57C7E /* CustomUIButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButtons.swift; sourceTree = "<group>"; };
 		B1A41DF7252D42C700E57C7E /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		B1A41DFA252E2CAD00E57C7E /* GLVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLVC.swift; sourceTree = "<group>"; };
+		B1A41DFC252E2CE100E57C7E /* UIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +109,73 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B13916D12537648600A2CFA2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B13916EB25376F6400A2CFA2 /* Managed Classes */,
+				B1A41DDC252D2A6900E57C7E /* DragonOdyssey.xcdatamodeld */,
+				B13916E725376E6200A2CFA2 /* CoreDataService.swift */,
+				B13916E925376EE600A2CFA2 /* CoreDataManager.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		B13916D8253769F800A2CFA2 /* FeedbackVC */ = {
+			isa = PBXGroup;
+			children = (
+				B13916DA25376A1900A2CFA2 /* FeedbackVC.swift */,
+				B13916DB25376A1900A2CFA2 /* FeedbackVC.xib */,
+			);
+			name = FeedbackVC;
+			sourceTree = "<group>";
+		};
+		B13916D9253769FF00A2CFA2 /* HomeVC */ = {
+			isa = PBXGroup;
+			children = (
+				B13916DE25376B4E00A2CFA2 /* HomeVC.swift */,
+				B13916DF25376B4E00A2CFA2 /* HomeVC.xib */,
+			);
+			name = HomeVC;
+			sourceTree = "<group>";
+		};
+		B13916E225376B5800A2CFA2 /* StatsVC */ = {
+			isa = PBXGroup;
+			children = (
+				B13916E325376B7400A2CFA2 /* StatsVC.swift */,
+				B13916E425376B7400A2CFA2 /* StatsVC.xib */,
+			);
+			name = StatsVC;
+			sourceTree = "<group>";
+		};
+		B13916EB25376F6400A2CFA2 /* Managed Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B13916EF25376F7A00A2CFA2 /* Creature+CoreDataClass.swift */,
+				B13916ED25376F7A00A2CFA2 /* Creature+CoreDataProperties.swift */,
+				B13916EC25376F7A00A2CFA2 /* User+CoreDataClass.swift */,
+				B13916EE25376F7A00A2CFA2 /* User+CoreDataProperties.swift */,
+			);
+			name = "Managed Classes";
+			sourceTree = "<group>";
+		};
+		B13916F42537706400A2CFA2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B13916F52537707B00A2CFA2 /* HapticFeedbackManager.swift */,
+				B13916FD253771AD00A2CFA2 /* TimingManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		B13916FF2537811400A2CFA2 /* Agnostic */ = {
+			isa = PBXGroup;
+			children = (
+				B13917002537814100A2CFA2 /* GLProgressV.swift */,
+				B1391702253783C300A2CFA2 /* GLProgressV.xib */,
+			);
+			name = Agnostic;
+			sourceTree = "<group>";
+		};
 		B1A41DC7252D2A6900E57C7E = {
 			isa = PBXGroup;
 			children = (
@@ -82,10 +197,12 @@
 		B1A41DD2252D2A6900E57C7E /* DragonOdyssey */ = {
 			isa = PBXGroup;
 			children = (
+				B13916FF2537811400A2CFA2 /* Agnostic */,
+				B1A41DF9252E2C9600E57C7E /* ViewControllers */,
 				B1A41DEC252D3A2E00E57C7E /* Global */,
+				B13916D12537648600A2CFA2 /* CoreData */,
 				B1A41DD3252D2A6900E57C7E /* AppDelegate.swift */,
 				B1A41DD7252D2A6900E57C7E /* ViewController.swift */,
-				B1A41DD9252D2A6900E57C7E /* Main.storyboard */,
 				B1A41DEB252D39FE00E57C7E /* Supporting Files */,
 			);
 			path = DragonOdyssey;
@@ -95,9 +212,9 @@
 			isa = PBXGroup;
 			children = (
 				B1A41DDF252D2A6A00E57C7E /* Assets.xcassets */,
-				B1A41DE1252D2A6A00E57C7E /* LaunchScreen.storyboard */,
 				B1A41DE4252D2A6A00E57C7E /* Info.plist */,
-				B1A41DDC252D2A6900E57C7E /* DragonOdyssey.xcdatamodeld */,
+				B1A41DD9252D2A6900E57C7E /* Main.storyboard */,
+				B1A41DE1252D2A6A00E57C7E /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -105,8 +222,9 @@
 		B1A41DEC252D3A2E00E57C7E /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				B1A41DF2252D426400E57C7E /* UI */,
+				B13916F42537706400A2CFA2 /* Managers */,
 				B1A41DED252D3A3200E57C7E /* Services */,
+				B1A41DF2252D426400E57C7E /* UI */,
 				B1A41DF0252D3ACF00E57C7E /* SharedDataExtensions.swift */,
 			);
 			name = Global;
@@ -115,7 +233,12 @@
 		B1A41DED252D3A3200E57C7E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B1A41DFC252E2CE100E57C7E /* UIService.swift */,
 				B1A41DEE252D3A5300E57C7E /* FuncService.swift */,
+				B13916D2253768EB00A2CFA2 /* EntryService.swift */,
+				B13916F7253770DA00A2CFA2 /* GlobalService.swift */,
+				B13916F92537710300A2CFA2 /* FunctionService.swift */,
+				B13916FB2537714000A2CFA2 /* DebugService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -128,6 +251,19 @@
 				B1A41DF3252D428000E57C7E /* CustomUIViews.swift */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		B1A41DF9252E2C9600E57C7E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B13916E225376B5800A2CFA2 /* StatsVC */,
+				B13916D9253769FF00A2CFA2 /* HomeVC */,
+				B13916D8253769F800A2CFA2 /* FeedbackVC */,
+				B1A41DFA252E2CAD00E57C7E /* GLVC.swift */,
+				B13916D42537692000A2CFA2 /* MenuVC.swift */,
+				B13916D52537692000A2CFA2 /* MenuVC.xib */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		CC4D385ADFD0B47B3AC53E3E /* Frameworks */ = {
@@ -199,7 +335,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1A41DE3252D2A6A00E57C7E /* LaunchScreen.storyboard in Resources */,
+				B13916E125376B4E00A2CFA2 /* HomeVC.xib in Resources */,
+				B13916D72537692000A2CFA2 /* MenuVC.xib in Resources */,
+				B13916E625376B7400A2CFA2 /* StatsVC.xib in Resources */,
+				B13916DD25376A1900A2CFA2 /* FeedbackVC.xib in Resources */,
 				B1A41DE0252D2A6A00E57C7E /* Assets.xcassets in Resources */,
+				B1391703253783C300A2CFA2 /* GLProgressV.xib in Resources */,
 				B1A41DDB252D2A6900E57C7E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,13 +396,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1A41DD8252D2A6900E57C7E /* ViewController.swift in Sources */,
+				B13916F325376F7A00A2CFA2 /* Creature+CoreDataClass.swift in Sources */,
+				B13916E025376B4E00A2CFA2 /* HomeVC.swift in Sources */,
 				B1A41DF1252D3ACF00E57C7E /* SharedDataExtensions.swift in Sources */,
+				B13916F8253770DA00A2CFA2 /* GlobalService.swift in Sources */,
+				B13916FC2537714000A2CFA2 /* DebugService.swift in Sources */,
 				B1A41DF5252D42A900E57C7E /* CustomUIButtons.swift in Sources */,
+				B13916F125376F7A00A2CFA2 /* Creature+CoreDataProperties.swift in Sources */,
+				B13916FA2537710300A2CFA2 /* FunctionService.swift in Sources */,
+				B13916EA25376EE600A2CFA2 /* CoreDataManager.swift in Sources */,
+				B13916F62537707B00A2CFA2 /* HapticFeedbackManager.swift in Sources */,
+				B13916FE253771AD00A2CFA2 /* TimingManager.swift in Sources */,
+				B13916E825376E6200A2CFA2 /* CoreDataService.swift in Sources */,
 				B1A41DF8252D42C700E57C7E /* UIExtensions.swift in Sources */,
+				B13916DC25376A1900A2CFA2 /* FeedbackVC.swift in Sources */,
+				B13916D3253768EB00A2CFA2 /* EntryService.swift in Sources */,
+				B13916D62537692000A2CFA2 /* MenuVC.swift in Sources */,
+				B1A41DFB252E2CB000E57C7E /* GLVC.swift in Sources */,
 				B1A41DEF252D3A5300E57C7E /* FuncService.swift in Sources */,
 				B1A41DDE252D2A6900E57C7E /* DragonOdyssey.xcdatamodeld in Sources */,
+				B13916E525376B7400A2CFA2 /* StatsVC.swift in Sources */,
+				B13916F025376F7A00A2CFA2 /* User+CoreDataClass.swift in Sources */,
+				B1A41DFD252E2CE100E57C7E /* UIService.swift in Sources */,
 				B1A41DF6252D42A900E57C7E /* CustomUIViews.swift in Sources */,
+				B13916F225376F7A00A2CFA2 /* User+CoreDataProperties.swift in Sources */,
 				B1A41DD4252D2A6900E57C7E /* AppDelegate.swift in Sources */,
+				B13917012537814100A2CFA2 /* GLProgressV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,9 +566,10 @@
 			baseConfigurationReference = 517647D07101D942767962B8 /* Pods-DragonOdyssey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 600;
-				DEVELOPMENT_TEAM = E27JV5K9AQ;
+				DEVELOPMENT_TEAM = 82J5T7H4P4;
 				INFOPLIST_FILE = DragonOdyssey/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -416,8 +577,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wiredbetterment.DragonOdyssey;
+				PRODUCT_BUNDLE_IDENTIFIER = com.justinaguayo.DragonOdyssey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -428,9 +590,10 @@
 			baseConfigurationReference = 7B89A901CF65B87E142144BB /* Pods-DragonOdyssey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 600;
-				DEVELOPMENT_TEAM = E27JV5K9AQ;
+				DEVELOPMENT_TEAM = 82J5T7H4P4;
 				INFOPLIST_FILE = DragonOdyssey/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -438,8 +601,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wiredbetterment.DragonOdyssey;
+				PRODUCT_BUNDLE_IDENTIFIER = com.justinaguayo.DragonOdyssey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

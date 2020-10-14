@@ -1,19 +1,16 @@
 //
-//  ViewController.swift
+//  FeedbackVC.swift
 //  DragonOdyssey
 //
-//  Created by Jared on 10/6/20.
+//  Created by Jared on 10/14/20.
 //  Copyright © 2020 Wired Betterment. All rights reserved.
 //
-
-// Google Ads App ID: ca-app-pub-8609620657499671~5857585936
-// Google Ads Ad Unit ID: ca-app-pub-8609620657499671/4694114860
 
 import UIKit
 import GoogleMobileAds
 import MessageUI
 
-class ViewController: GLVC {
+class FeedbackVC: GLVC {
     
     // MARK: - IBOutlets
     
@@ -87,7 +84,11 @@ class ViewController: GLVC {
     }
     
     // MARK: - IBActions
-
+    
+    @IBAction func close(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func submit(_ sender: Any) {
         guard let formText = ideaTextV.text else {
             FuncService.showBasicAlert(title: "Whoops", message: "You need to input and idea before you can submit it.", btnTitle: "Okay", action: nil, controller: self)
@@ -97,7 +98,7 @@ class ViewController: GLVC {
     }
 }
 
-extension ViewController: MFMailComposeViewControllerDelegate {
+extension FeedbackVC: MFMailComposeViewControllerDelegate {
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         if let error = error { print(error) }
         
@@ -116,7 +117,7 @@ extension ViewController: MFMailComposeViewControllerDelegate {
     }
 }
 
-extension ViewController: GADBannerViewDelegate {
+extension FeedbackVC: GADBannerViewDelegate {
     
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
     }
