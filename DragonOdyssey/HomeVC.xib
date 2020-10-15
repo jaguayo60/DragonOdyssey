@@ -119,7 +119,7 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <view contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="TLh-vu-1sa" userLabel="Flexible Space">
+                                        <view contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="TLh-vu-1sa">
                                             <rect key="frame" x="0.0" y="132" width="354" height="476"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="dragon" translatesAutoresizingMaskIntoConstraints="NO" id="OUg-79-67A">
