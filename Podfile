@@ -7,6 +7,7 @@ inhibit_all_warnings!
 def included_pods
 
 pod 'Google-Mobile-Ads-SDK'
+pod 'MKRingProgressView'
 
 end
 

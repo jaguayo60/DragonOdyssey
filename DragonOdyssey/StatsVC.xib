@@ -15,6 +15,8 @@
                 <outlet property="dailyAgilityValueL" destination="ml0-Nd-6oT" id="DaE-hR-qqJ"/>
                 <outlet property="dailyStrengthValueL" destination="Z7C-kO-Zs7" id="ZW9-rO-yC7"/>
                 <outlet property="dailyTokensValueL" destination="OfH-QR-gca" id="ai8-de-YYk"/>
+                <outlet property="groupContainerView" destination="kYU-qE-Qnf" id="osm-p4-Ib5"/>
+                <outlet property="progressGroup" destination="h4D-Am-zON" id="7Xw-Qr-n7Y"/>
                 <outlet property="strengthProgressV" destination="V5g-Ed-BNw" id="6jY-iY-eLT"/>
                 <outlet property="strengthValueL" destination="BbH-pb-r0t" id="qua-9b-hbn"/>
                 <outlet property="view" destination="bnM-xb-tWI" id="D8a-Px-AvX"/>
@@ -138,12 +140,71 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gK-Ye-7In">
                                                             <rect key="frame" x="157" y="0.0" width="157" height="210"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYU-qE-Qnf" customClass="RoundedCornersV" customModule="DragonOdyssey" customModuleProvider="target">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYU-qE-Qnf">
                                                                     <rect key="frame" x="0.0" y="26.5" width="157" height="157"/>
-                                                                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.10131278539999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <subviews>
+                                                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4D-Am-zON" customClass="RingProgressGroupView" customModule="DragonOdyssey" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="157" height="157"/>
+                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" secondItem="h4D-Am-zON" secondAttribute="height" multiplier="1:1" id="mOU-c3-cyo"/>
+                                                                            </constraints>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="color" keyPath="ring1StartColor">
+                                                                                    <color key="value" red="0.88235294119999996" green="0.0" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                                <userDefinedRuntimeAttribute type="color" keyPath="ring1EndColor">
+                                                                                    <color key="value" red="1" green="0.1960784314" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="ringWidth">
+                                                                                    <real key="value" value="20"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                                <userDefinedRuntimeAttribute type="number" keyPath="ringSpacing">
+                                                                                    <real key="value" value="2"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                                <userDefinedRuntimeAttribute type="color" keyPath="ring2StartColor">
+                                                                                    <color key="value" red="0.2156862745" green="0.86274509799999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                                <userDefinedRuntimeAttribute type="color" keyPath="ring2EndColor">
+                                                                                    <color key="value" red="0.71764705880000002" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                                <userDefinedRuntimeAttribute type="color" keyPath="ring3StartColor">
+                                                                                    <color key="value" red="0.0" green="0.72941176470000002" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                                <userDefinedRuntimeAttribute type="color" keyPath="ring3EndColor">
+                                                                                    <color key="value" red="0.0" green="0.98039215690000003" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </view>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
+                                                                        <constraint firstAttribute="bottom" secondItem="h4D-Am-zON" secondAttribute="bottom" id="8BO-2B-Ulw"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="h4D-Am-zON" secondAttribute="trailing" id="CH0-F7-P8K"/>
+                                                                        <constraint firstItem="h4D-Am-zON" firstAttribute="leading" secondItem="kYU-qE-Qnf" secondAttribute="leading" id="OkO-TQ-ZGR"/>
+                                                                        <constraint firstItem="h4D-Am-zON" firstAttribute="top" secondItem="kYU-qE-Qnf" secondAttribute="top" id="hlj-kQ-pAv"/>
                                                                         <constraint firstAttribute="width" secondItem="kYU-qE-Qnf" secondAttribute="height" multiplier="1:1" id="pOd-T2-BZ8"/>
                                                                     </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                                            <color key="value" red="0.20751284249999999" green="1" blue="0.25678476560000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                                            <color key="value" red="1" green="0.37784985360000001" blue="0.38821902270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundRingColor">
+                                                                            <color key="value" red="0.60175038039999995" green="0.25328196349999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="ringWidth">
+                                                                            <real key="value" value="10"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                                                            <real key="value" value="0.5"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </view>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

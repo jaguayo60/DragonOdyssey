@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B112E1E1253F9F710039E59B /* MKRingProgressGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112E1E0253F9DD20039E59B /* MKRingProgressGroupView.swift */; };
 		B13916D3253768EB00A2CFA2 /* EntryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916D2253768EB00A2CFA2 /* EntryService.swift */; };
 		B13916D62537692000A2CFA2 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916D42537692000A2CFA2 /* MenuVC.swift */; };
 		B13916D72537692000A2CFA2 /* MenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13916D52537692000A2CFA2 /* MenuVC.xib */; };
@@ -49,6 +50,7 @@
 		407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DragonOdyssey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		517647D07101D942767962B8 /* Pods-DragonOdyssey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragonOdyssey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DragonOdyssey/Pods-DragonOdyssey.debug.xcconfig"; sourceTree = "<group>"; };
 		7B89A901CF65B87E142144BB /* Pods-DragonOdyssey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragonOdyssey.release.xcconfig"; path = "Pods/Target Support Files/Pods-DragonOdyssey/Pods-DragonOdyssey.release.xcconfig"; sourceTree = "<group>"; };
+		B112E1E0253F9DD20039E59B /* MKRingProgressGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKRingProgressGroupView.swift; sourceTree = "<group>"; };
 		B13916D2253768EB00A2CFA2 /* EntryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryService.swift; sourceTree = "<group>"; };
 		B13916D42537692000A2CFA2 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		B13916D52537692000A2CFA2 /* MenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuVC.xib; sourceTree = "<group>"; };
@@ -107,6 +109,22 @@
 				7B89A901CF65B87E142144BB /* Pods-DragonOdyssey.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B112E1DE253F9DAE0039E59B /* 3rd Party Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B112E1DF253F9DC50039E59B /* MKRingProgressView */,
+			);
+			name = "3rd Party Frameworks";
+			sourceTree = "<group>";
+		};
+		B112E1DF253F9DC50039E59B /* MKRingProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				B112E1E0253F9DD20039E59B /* MKRingProgressGroupView.swift */,
+			);
+			name = MKRingProgressView;
 			sourceTree = "<group>";
 		};
 		B13916D12537648600A2CFA2 /* CoreData */ = {
@@ -203,6 +221,7 @@
 				B13916D12537648600A2CFA2 /* CoreData */,
 				B1A41DD3252D2A6900E57C7E /* AppDelegate.swift */,
 				B1A41DD7252D2A6900E57C7E /* ViewController.swift */,
+				B112E1DE253F9DAE0039E59B /* 3rd Party Frameworks */,
 				B1A41DEB252D39FE00E57C7E /* Supporting Files */,
 			);
 			path = DragonOdyssey;
@@ -374,12 +393,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DragonOdyssey/Pods-DragonOdyssey-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MKRingProgressView/MKRingProgressView.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MKRingProgressView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -412,6 +433,7 @@
 				B13916DC25376A1900A2CFA2 /* FeedbackVC.swift in Sources */,
 				B13916D3253768EB00A2CFA2 /* EntryService.swift in Sources */,
 				B13916D62537692000A2CFA2 /* MenuVC.swift in Sources */,
+				B112E1E1253F9F710039E59B /* MKRingProgressGroupView.swift in Sources */,
 				B1A41DFB252E2CB000E57C7E /* GLVC.swift in Sources */,
 				B1A41DEF252D3A5300E57C7E /* FuncService.swift in Sources */,
 				B1A41DDE252D2A6900E57C7E /* DragonOdyssey.xcdatamodeld in Sources */,
@@ -576,7 +598,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinaguayo.DragonOdyssey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -600,7 +622,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinaguayo.DragonOdyssey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

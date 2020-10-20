@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MKRingProgressView
 
 class StatsVC: GLVC {
 
@@ -15,6 +16,9 @@ class StatsVC: GLVC {
     @IBOutlet weak var dailyAgilityValueL: UILabel!
     @IBOutlet weak var dailyStrengthValueL: UILabel!
     @IBOutlet weak var dailyTokensValueL: UILabel!
+    
+    @IBOutlet weak var groupContainerView: UIView!
+    @IBOutlet weak var progressGroup: RingProgressGroupView!
     
     @IBOutlet weak var agilityProgressV: GLProgressV!
     @IBOutlet weak var agilityValueL: UILabel!
@@ -74,6 +78,15 @@ class StatsVC: GLVC {
     func drawAnimatedUI(animated: Bool = true) {
         agilityProgressV.setProgressTo(percent: 0.25, animated: true)
         strengthProgressV.setProgressTo(percent: 0.15, animated: true)
+        updateMainGroupProgress()
+    }
+    
+    private func updateMainGroupProgress() {
+        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
+            self.progressGroup.ring1.progress = 0.3
+            self.progressGroup.ring2.progress = 0.4
+            self.progressGroup.ring3.progress = 0.5
+        }, completion: nil)
     }
     
     // MARK: - Data Responding

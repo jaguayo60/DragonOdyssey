@@ -26,6 +26,7 @@ PODS:
   - "GoogleUtilities/NSData+zlib (6.7.2)"
   - GoogleUtilities/Reachability (6.7.2):
     - GoogleUtilities/Logger
+  - MKRingProgressView (2.2.3)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
     - nanopb/encode (= 1.30906.0)
@@ -35,6 +36,7 @@ PODS:
 
 DEPENDENCIES:
   - Google-Mobile-Ads-SDK
+  - MKRingProgressView
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -42,6 +44,7 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleUserMessagingPlatform
     - GoogleUtilities
+    - MKRingProgressView
     - nanopb
     - PromisesObjC
 
@@ -50,9 +53,10 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
   GoogleUserMessagingPlatform: c85530d930ba509583aa5a6d50a10aca22cf8502
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
+  MKRingProgressView: 404b3157e7a533ab8668d29ec20042c35d12ca1d
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
 
-PODFILE CHECKSUM: 6ee65b87c305c82ae5c797f357ae1e21b3bd4559
+PODFILE CHECKSUM: 709202b3471b0eb0d36ee90714088d9b28fcd1e3
 
 COCOAPODS: 1.5.0
