@@ -32,6 +32,22 @@ class StatsVC: GLVC {
         return true
     }
     
+    var dailyAgility = 0
+    var dailyAgilityMax = 1000
+    var dailyAgilityPercent: Double {
+        return Double(dailyAgility) / Double(dailyAgilityMax)
+    }
+    var dailyStrength = 0
+    var dailyStrengthMax = 30
+    var dailyStrengthPercent: Double {
+        return Double(dailyStrength) / Double(dailyStrengthMax)
+    }
+    var dailyTokens = 0
+    var dailyTokensMax = 10
+    var dailyTokensPercent: Double {
+        return Double(dailyTokens) / Double(dailyTokensMax)
+    }
+    
     // MARK: - Class functions
     
     override func viewDidLoad() {
@@ -39,6 +55,8 @@ class StatsVC: GLVC {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.coreDataManagerControllerDidChangeContent), name: NSNotification.Name(rawValue: "CoreDataManager_controllerDidChangeContent"), object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(self.outsideDataSynced), name: NSNotification.Name(rawValue: <#notificationName#>), object: nil)
+        
+        dailyAgility = 208 ; dailyStrength = 1 ; dailyTokens = 6
         
         drawInitialUI()
         drawStaticUI()
@@ -68,6 +86,9 @@ class StatsVC: GLVC {
     }
     
     func drawStaticUI() {
+        dailyAgilityValueL.text = "\(dailyAgility)/\(dailyAgilityMax)"
+        dailyStrengthValueL.text = "\(dailyStrength)/\(dailyStrengthMax)"
+        dailyTokensValueL.text = "\(dailyTokens)"
         agilityValueL.text = "25/100"
         strengthValueL.text = "15/100"
     }
@@ -78,15 +99,17 @@ class StatsVC: GLVC {
     func drawAnimatedUI(animated: Bool = true) {
         agilityProgressV.setProgressTo(percent: 0.25, animated: true)
         strengthProgressV.setProgressTo(percent: 0.15, animated: true)
-        updateMainGroupProgress()
+        updateActivityRings()
     }
     
-    private func updateMainGroupProgress() {
-        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
-            self.progressGroup.ring1.progress = 0.3
-            self.progressGroup.ring2.progress = 0.4
-            self.progressGroup.ring3.progress = 0.5
-        }, completion: nil)
+    private func updateActivityRings(animated: Bool = true) {
+        if animated == true {
+            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: [], animations: {
+                self.progressGroup.ring1.progress = self.dailyAgilityPercent
+                self.progressGroup.ring2.progress = self.dailyStrengthPercent
+                self.progressGroup.ring3.progress = self.dailyTokensPercent
+            }, completion: nil)
+        }
     }
     
     // MARK: - Data Responding
