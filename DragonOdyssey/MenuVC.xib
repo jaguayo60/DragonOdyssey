@@ -22,7 +22,7 @@
                     <rect key="frame" x="20" y="64" width="374" height="778"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDD-SF-xIv">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="582"/>
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="548"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <state key="normal" title="Screen 3 - Submit An Idea"/>
                             <connections>
@@ -30,7 +30,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5G-dU-JF6">
-                            <rect key="frame" x="0.0" y="582" width="374" height="34"/>
+                            <rect key="frame" x="0.0" y="548" width="374" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <state key="normal" title="Screen 2 - Home"/>
                             <connections>
@@ -38,11 +38,19 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ea-6r-DgR">
-                            <rect key="frame" x="0.0" y="616" width="374" height="34"/>
+                            <rect key="frame" x="0.0" y="582" width="374" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <state key="normal" title="Screen 7"/>
                             <connections>
                                 <action selector="screen7:" destination="-1" eventType="touchUpInside" id="P0g-VC-H0z"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7It-3Y-wMW">
+                            <rect key="frame" x="0.0" y="616" width="374" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="Grant Apple Health Permissions"/>
+                            <connections>
+                                <action selector="grantAppleHealthPermissions:" destination="-1" eventType="touchUpInside" id="oGc-P1-DRC"/>
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AOd-kG-c11">

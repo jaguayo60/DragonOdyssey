@@ -30,6 +30,7 @@
 		B13916FE253771AD00A2CFA2 /* TimingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916FD253771AD00A2CFA2 /* TimingManager.swift */; };
 		B13917012537814100A2CFA2 /* GLProgressV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13917002537814100A2CFA2 /* GLProgressV.swift */; };
 		B1391703253783C300A2CFA2 /* GLProgressV.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1391702253783C300A2CFA2 /* GLProgressV.xib */; };
+		B14AA4B02540BBDD00D630A7 /* HealthKitServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AA4AF2540BBDD00D630A7 /* HealthKitServiceManager.swift */; };
 		B1A41DD4252D2A6900E57C7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DD3252D2A6900E57C7E /* AppDelegate.swift */; };
 		B1A41DD8252D2A6900E57C7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DD7252D2A6900E57C7E /* ViewController.swift */; };
 		B1A41DDB252D2A6900E57C7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A41DD9252D2A6900E57C7E /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		B1A41DF8252D42C700E57C7E /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DF7252D42C700E57C7E /* UIExtensions.swift */; };
 		B1A41DFB252E2CB000E57C7E /* GLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DFA252E2CAD00E57C7E /* GLVC.swift */; };
 		B1A41DFD252E2CE100E57C7E /* UIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DFC252E2CE100E57C7E /* UIService.swift */; };
+		B1B0DE6E2540CCB300713E0C /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B0DE6D2540CCB300713E0C /* HealthKit.framework */; };
 		F924C87B4A07D6355805A583 /* Pods_DragonOdyssey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,7 @@
 		B13916FD253771AD00A2CFA2 /* TimingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingManager.swift; sourceTree = "<group>"; };
 		B13917002537814100A2CFA2 /* GLProgressV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLProgressV.swift; sourceTree = "<group>"; };
 		B1391702253783C300A2CFA2 /* GLProgressV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLProgressV.xib; sourceTree = "<group>"; };
+		B14AA4AF2540BBDD00D630A7 /* HealthKitServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitServiceManager.swift; sourceTree = "<group>"; };
 		B1A41DD0252D2A6900E57C7E /* DragonOdyssey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragonOdyssey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A41DD3252D2A6900E57C7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1A41DD7252D2A6900E57C7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +91,8 @@
 		B1A41DF7252D42C700E57C7E /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		B1A41DFA252E2CAD00E57C7E /* GLVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLVC.swift; sourceTree = "<group>"; };
 		B1A41DFC252E2CE100E57C7E /* UIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIService.swift; sourceTree = "<group>"; };
+		B1B0DE6C2540CCB200713E0C /* DragonOdyssey.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DragonOdyssey.entitlements; sourceTree = "<group>"; };
+		B1B0DE6D2540CCB300713E0C /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F924C87B4A07D6355805A583 /* Pods_DragonOdyssey.framework in Frameworks */,
+				B1B0DE6E2540CCB300713E0C /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +187,7 @@
 			children = (
 				B13916F52537707B00A2CFA2 /* HapticFeedbackManager.swift */,
 				B13916FD253771AD00A2CFA2 /* TimingManager.swift */,
+				B14AA4AF2540BBDD00D630A7 /* HealthKitServiceManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -215,6 +222,7 @@
 		B1A41DD2252D2A6900E57C7E /* DragonOdyssey */ = {
 			isa = PBXGroup;
 			children = (
+				B1B0DE6C2540CCB200713E0C /* DragonOdyssey.entitlements */,
 				B13916FF2537811400A2CFA2 /* Agnostic */,
 				B1A41DF9252E2C9600E57C7E /* ViewControllers */,
 				B1A41DEC252D3A2E00E57C7E /* Global */,
@@ -288,6 +296,7 @@
 		CC4D385ADFD0B47B3AC53E3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B1B0DE6D2540CCB300713E0C /* HealthKit.framework */,
 				407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */,
 			);
 			name = Frameworks;
@@ -427,6 +436,7 @@
 				B13916FA2537710300A2CFA2 /* FunctionService.swift in Sources */,
 				B13916EA25376EE600A2CFA2 /* CoreDataManager.swift in Sources */,
 				B13916F62537707B00A2CFA2 /* HapticFeedbackManager.swift in Sources */,
+				B14AA4B02540BBDD00D630A7 /* HealthKitServiceManager.swift in Sources */,
 				B13916FE253771AD00A2CFA2 /* TimingManager.swift in Sources */,
 				B13916E825376E6200A2CFA2 /* CoreDataService.swift in Sources */,
 				B1A41DF8252D42C700E57C7E /* UIExtensions.swift in Sources */,
@@ -588,6 +598,7 @@
 			baseConfigurationReference = 517647D07101D942767962B8 /* Pods-DragonOdyssey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DragonOdyssey/DragonOdyssey.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 600;
@@ -612,6 +623,7 @@
 			baseConfigurationReference = 7B89A901CF65B87E142144BB /* Pods-DragonOdyssey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DragonOdyssey/DragonOdyssey.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 600;

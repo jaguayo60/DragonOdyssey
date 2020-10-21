@@ -28,7 +28,6 @@ class MenuVC: GLVC {
     // MARK: - UI
     
     func drawVC() {
-        
     }
     
     // MARK: - IBActions
@@ -46,5 +45,18 @@ class MenuVC: GLVC {
     @IBAction func screen7(_ sender: Any) {
         let vc = StatsVC()
         present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func grantAppleHealthPermissions(_ sender: Any) {
+        HealthKitServiceManager.shared.requestReadAccess()
+        
+//        switch HealthKitServiceManager.shared.appleHealthAuthorizationStatus {
+//        case .notDetermined:
+//            HealthKitServiceManager.shared.requestReadAccess()
+//        case .sharingDenied:break
+//        case .sharingAuthorized:break
+//        default:
+//        FunctionService.open(urlString: "x-apple-health://")
+//        }
     }
 }
