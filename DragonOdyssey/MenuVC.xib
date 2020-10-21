@@ -40,7 +40,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ea-6r-DgR">
                             <rect key="frame" x="0.0" y="582" width="374" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <state key="normal" title="Screen 7"/>
+                            <state key="normal" title="Screen 7 - Stats"/>
                             <connections>
                                 <action selector="screen7:" destination="-1" eventType="touchUpInside" id="P0g-VC-H0z"/>
                             </connections>

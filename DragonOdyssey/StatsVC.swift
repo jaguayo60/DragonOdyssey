@@ -32,18 +32,18 @@ class StatsVC: GLVC {
         return true
     }
     
-    var dailyAgility = 0
-    var dailyAgilityMax = 1000
+    var dailyAgility: Double = 0
+    var dailyAgilityMax: Double = 1000
     var dailyAgilityPercent: Double {
         return Double(dailyAgility) / Double(dailyAgilityMax)
     }
-    var dailyStrength = 0
-    var dailyStrengthMax = 30
+    var dailyStrength: Double = 0
+    var dailyStrengthMax: Double = 30
     var dailyStrengthPercent: Double {
         return Double(dailyStrength) / Double(dailyStrengthMax)
     }
-    var dailyTokens = 0
-    var dailyTokensMax = 10
+    var dailyTokens: Double = 0
+    var dailyTokensMax: Double = 10
     var dailyTokensPercent: Double {
         return Double(dailyTokens) / Double(dailyTokensMax)
     }
@@ -86,9 +86,9 @@ class StatsVC: GLVC {
     }
     
     func drawStaticUI() {
-        dailyAgilityValueL.text = "\(dailyAgility)/\(dailyAgilityMax)"
-        dailyStrengthValueL.text = "\(dailyStrength)/\(dailyStrengthMax)"
-        dailyTokensValueL.text = "\(dailyTokens)"
+        dailyAgilityValueL.text = "\(Int(dailyAgility))/\(Int(dailyAgilityMax))"
+        dailyStrengthValueL.text = "\(Int(dailyStrength))/\(Int(dailyStrengthMax))"
+        dailyTokensValueL.text = "\(Int(dailyTokens))"
         agilityValueL.text = "25/100"
         strengthValueL.text = "15/100"
     }
@@ -99,7 +99,29 @@ class StatsVC: GLVC {
     func drawAnimatedUI(animated: Bool = true) {
         agilityProgressV.setProgressTo(percent: 0.25, animated: true)
         strengthProgressV.setProgressTo(percent: 0.15, animated: true)
-        updateActivityRings()
+//        updateActivityRings()
+        HealthKitServiceManager.shared.queryActivitySummariesBetween(startDate: Date(), endDate: Date()) { (summariesOrNil) in
+            if let summaries = summariesOrNil {
+                for summary in summaries {
+                    
+//                    self.todayActiveEnergy = activity.quantity.doubleValueForUnit(HKUnit.kilocalorieUnit())
+//                    summary.activeEnergyBurned.unit
+                    self.dailyAgility = summary.activeEnergyBurned.doubleValue(for: .kilocalorie())
+                    self.dailyStrength = summary.appleExerciseTime.doubleValue(for: .minute())
+                    self.dailyTokens = summary.appleStandHours.doubleValue(for: .count())
+                    
+                    DispatchQueue.main.async {
+                        self.updateActivityRings()
+                        self.drawStaticUI()
+                    }
+                    
+                    print(summary)
+                    print("Active Energy Burned: \(self.dailyAgility)")
+                    print("Exercise Time: \(self.dailyStrength)")
+                    print("Stand Hours: \(self.dailyTokens)")
+                }
+            }
+        }
     }
     
     private func updateActivityRings(animated: Bool = true) {

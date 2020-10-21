@@ -26,38 +26,40 @@ class HealthKitServiceManager: NSObject {
     
     // MARK: - Querying
     
-    func queryActivitySummary() {
-        let predicate = activitySummaryPredicate()
+    func queryActivitySummariesBetween(startDate: Date, endDate: Date, completion: @escaping ([HKActivitySummary]?) -> Void) {
+        let predicate = activitySummaryPredicateFor(startDate: startDate, endDate: endDate)
         let query = HKActivitySummaryQuery(predicate: predicate) { (query, summariesOrNil, errorOrNil) -> Void in
             
             guard let summaries = summariesOrNil else {
                 // Handle any errors here.
+                completion(nil)
                 return
             }
             
-            for summary in summaries {
-                print(summary)
-                // Process each summary here.
-            }
+//            for summary in summaries {
+//                // Process each summary here.
+//            }
             
             // The results come back on an anonymous background queue.
             // Dispatch to the main queue before modifying the UI.
             
-            DispatchQueue.main.async {
-                // Update the UI here.
-            }
+//            DispatchQueue.main.async {
+//                // Update the UI here.
+//            }
+            
+            completion (summaries)
         }
         
         healthStore?.execute(query)
     }
     
-    private func activitySummaryPredicate() -> NSPredicate {
+    private func activitySummaryPredicateFor(startDate: Date, endDate: Date) -> NSPredicate {
         let calendar = NSCalendar.current
-        let endDate = Date()
-        
-        guard let startDate = calendar.date(byAdding: .day, value: -7, to: endDate) else {
-            fatalError("*** Unable to create the start date ***")
-        }
+//        let endDate = Date()
+//
+//        guard let startDate = calendar.date(byAdding: .day, value: -7, to: endDate) else {
+//            fatalError("*** Unable to create the start date ***")
+//        }
         
         let units: Set<Calendar.Component> = [.day, .month, .year, .era]
         
