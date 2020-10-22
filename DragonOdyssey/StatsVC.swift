@@ -56,8 +56,6 @@ class StatsVC: GLVC {
         NotificationCenter.default.addObserver(self, selector: #selector(self.coreDataManagerControllerDidChangeContent), name: NSNotification.Name(rawValue: "CoreDataManager_controllerDidChangeContent"), object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(self.outsideDataSynced), name: NSNotification.Name(rawValue: <#notificationName#>), object: nil)
         
-        dailyAgility = 208 ; dailyStrength = 1 ; dailyTokens = 6
-        
         drawInitialUI()
         drawStaticUI()
     }
@@ -99,29 +97,7 @@ class StatsVC: GLVC {
     func drawAnimatedUI(animated: Bool = true) {
         agilityProgressV.setProgressTo(percent: 0.25, animated: true)
         strengthProgressV.setProgressTo(percent: 0.15, animated: true)
-//        updateActivityRings()
-        HealthKitServiceManager.shared.queryActivitySummariesBetween(startDate: Date(), endDate: Date()) { (summariesOrNil) in
-            if let summaries = summariesOrNil {
-                for summary in summaries {
-                    
-//                    self.todayActiveEnergy = activity.quantity.doubleValueForUnit(HKUnit.kilocalorieUnit())
-//                    summary.activeEnergyBurned.unit
-                    self.dailyAgility = summary.activeEnergyBurned.doubleValue(for: .kilocalorie())
-                    self.dailyStrength = summary.appleExerciseTime.doubleValue(for: .minute())
-                    self.dailyTokens = summary.appleStandHours.doubleValue(for: .count())
-                    
-                    DispatchQueue.main.async {
-                        self.updateActivityRings()
-                        self.drawStaticUI()
-                    }
-                    
-                    print(summary)
-                    print("Active Energy Burned: \(self.dailyAgility)")
-                    print("Exercise Time: \(self.dailyStrength)")
-                    print("Stand Hours: \(self.dailyTokens)")
-                }
-            }
-        }
+        fetchActivitySummaryAndUpdateUI()
     }
     
     private func updateActivityRings(animated: Bool = true) {
@@ -131,6 +107,22 @@ class StatsVC: GLVC {
                 self.progressGroup.ring2.progress = self.dailyStrengthPercent
                 self.progressGroup.ring3.progress = self.dailyTokensPercent
             }, completion: nil)
+        }
+    }
+    
+    // MARK: - Activity Summary
+    
+    private func fetchActivitySummaryAndUpdateUI() {
+        HealthKitServiceManager.shared.fetchActivitySummariesBetween(startDate: Date(), endDate: Date()) { (summariesOrNil) in
+            guard let summary = summariesOrNil?.first else { return }
+            self.dailyAgility = summary.caloriesBurned
+            self.dailyStrength = summary.workoutMinutes
+            self.dailyTokens = summary.standingHours
+            
+            DispatchQueue.main.async {
+                self.updateActivityRings()
+                self.drawStaticUI()
+            }
         }
     }
     

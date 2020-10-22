@@ -40,6 +40,10 @@ class DebugService: NSObject
     static let logMigrationActions = false
     static let logFirebaseActions = false
     
+    //❤️ HealthKit
+    static let logBasicHealthKitAction = true
+    static let logDetailedHealthKitAction = true
+    
     //📦 Core Data
     static let logBasicCoreDataActions = true
     static let logDetailedCoreDataActions = true

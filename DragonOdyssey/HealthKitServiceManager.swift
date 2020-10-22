@@ -9,6 +9,25 @@
 import UIKit
 import HealthKit
 
+class ActivitySummary: NSObject {
+    
+    // MARK: - Instance variables
+    
+    let date: Date
+    let caloriesBurned: Double
+    let workoutMinutes: Double
+    let standingHours: Double
+    
+    // MARK: - Class functions
+    
+    init(date: Date, caloriesBurned: Double, workoutMinutes: Double, standingHours: Double) {
+        self.date = date
+        self.caloriesBurned = caloriesBurned
+        self.workoutMinutes = workoutMinutes
+        self.standingHours = standingHours
+    }
+}
+
 class HealthKitServiceManager: NSObject {
     
     // MARK: - Instance variables
@@ -26,7 +45,7 @@ class HealthKitServiceManager: NSObject {
     
     // MARK: - Querying
     
-    func queryActivitySummariesBetween(startDate: Date, endDate: Date, completion: @escaping ([HKActivitySummary]?) -> Void) {
+    func fetchActivitySummariesBetween(startDate: Date, endDate: Date, completion: @escaping ([ActivitySummary]?) -> Void) {
         let predicate = activitySummaryPredicateFor(startDate: startDate, endDate: endDate)
         let query = HKActivitySummaryQuery(predicate: predicate) { (query, summariesOrNil, errorOrNil) -> Void in
             
@@ -36,18 +55,17 @@ class HealthKitServiceManager: NSObject {
                 return
             }
             
-//            for summary in summaries {
-//                // Process each summary here.
-//            }
+            if DebugService.logDetailedHealthKitAction == true {
+                for summary in summaries {
+                    print("❤️ \(summary)")
+                }
+            }
             
-            // The results come back on an anonymous background queue.
-            // Dispatch to the main queue before modifying the UI.
+            if DebugService.logBasicHealthKitAction == true { print("❤️ Fetched \(summaries.count) activity summaries") }
             
-//            DispatchQueue.main.async {
-//                // Update the UI here.
-//            }
-            
-            completion (summaries)
+            DispatchQueue.main.async {
+                completion (self.activitySummariesFor(hkActivitySummaries: summaries))
+            }
         }
         
         healthStore?.execute(query)
@@ -121,5 +139,21 @@ class HealthKitServiceManager: NSObject {
         
         let status = healthStore?.authorizationStatus(for: type)
         return status
+    }
+    
+    // MARK: - Activity Summary
+    
+    private func activitySummariesFor(hkActivitySummaries: [HKActivitySummary]) -> [ActivitySummary]? {
+        var activitySummaries = [ActivitySummary]()
+        
+        for hkActivitySummary in hkActivitySummaries {
+            guard let date = hkActivitySummary.dateComponents(for: Calendar.current).date else { continue }
+            let caloriesBurned = hkActivitySummary.activeEnergyBurned.doubleValue(for: .kilocalorie())
+            let workoutMinutes = hkActivitySummary.appleExerciseTime.doubleValue(for: .minute())
+            let standingHours = hkActivitySummary.appleStandHours.doubleValue(for: .count())
+            activitySummaries.append(ActivitySummary(date: date, caloriesBurned: caloriesBurned, workoutMinutes: workoutMinutes, standingHours: standingHours))
+        }
+        
+        return (activitySummaries.count > 0) ? activitySummaries : nil
     }
 }
