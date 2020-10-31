@@ -7,11 +7,23 @@
         <attribute name="strength" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="totalSteps" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
+    <entity name="InventoryItem" representedClassName="InventoryItem" syncable="YES">
+        <attribute name="energyAmount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="imageName" optional="YES" attributeType="String"/>
+        <attribute name="isAdOnly" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="sortPriority" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="tokenCost" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="inventoryItems" inverseEntity="User"/>
+    </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="tokens" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="inventoryItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="InventoryItem" inverseName="user" inverseEntity="InventoryItem"/>
     </entity>
     <elements>
-        <element name="User" positionX="-54" positionY="-9" width="128" height="58"/>
         <element name="Creature" positionX="-36" positionY="18" width="128" height="118"/>
+        <element name="User" positionX="-54" positionY="-9" width="128" height="73"/>
+        <element name="InventoryItem" positionX="-45" positionY="45" width="128" height="163"/>
     </elements>
 </model>

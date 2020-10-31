@@ -47,6 +47,11 @@ class MenuVC: GLVC {
         present(vc, animated: true, completion: nil)
     }
     
+    @IBAction func inventory(_ sender: Any) {
+        let vc = InventoryVC()
+        present(vc, animated: true, completion: nil)
+    }
+    
     @IBAction func grantAppleHealthPermissions(_ sender: Any) {
         HealthKitServiceManager.shared.requestReadAccess()
         
