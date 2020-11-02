@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuVC" customModule="DragonOdyssey" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuVC" customModule="Dragon_Odyssey" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,7 +22,7 @@
                     <rect key="frame" x="20" y="64" width="374" height="778"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDD-SF-xIv">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="514"/>
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="480"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <state key="normal" title="Screen 3 - Submit An Idea"/>
                             <connections>
@@ -30,7 +30,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5G-dU-JF6">
-                            <rect key="frame" x="0.0" y="514" width="374" height="34"/>
+                            <rect key="frame" x="0.0" y="480" width="374" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <state key="normal" title="Screen 2 - Home"/>
                             <connections>
@@ -38,7 +38,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ea-6r-DgR">
-                            <rect key="frame" x="0.0" y="548" width="374" height="34"/>
+                            <rect key="frame" x="0.0" y="514" width="374" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <state key="normal" title="Screen 7 - Stats"/>
                             <connections>
@@ -46,11 +46,19 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffJ-yT-76a">
-                            <rect key="frame" x="0.0" y="582" width="374" height="34"/>
+                            <rect key="frame" x="0.0" y="548" width="374" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                             <state key="normal" title="Inventory"/>
                             <connections>
                                 <action selector="inventory:" destination="-1" eventType="touchUpInside" id="Nsr-1I-aP4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FB7-Cr-kNZ">
+                            <rect key="frame" x="0.0" y="582" width="374" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="Give user 10 tokens"/>
+                            <connections>
+                                <action selector="giveUser10Tokens:" destination="-1" eventType="touchUpInside" id="Fco-9K-Ihg"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7It-3Y-wMW">

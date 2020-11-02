@@ -78,14 +78,15 @@ class FuncService: NSObject
     
     // MARK: - Alerts
     
-    class func showBasicAlert(title: String?, message: String, btnTitle: String, action: UIAlertAction?, controller : UIViewController?)
-    {
+    class func showBasicAlert(title: String?, message: String, btnTitle: String, action: UIAlertAction?, controller : UIViewController?) {
         let alert = UIAlertController(title: title,
                                       message: message, preferredStyle: .alert)
         let alertAction: UIAlertAction = (action != nil) ? action! : UIAlertAction(title: btnTitle, style: .default, handler: nil)
         alert.addAction(alertAction)
         
-        controller?.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            controller?.present(alert, animated: true, completion: nil)
+        }
     }
     
     // MARK: - Delay

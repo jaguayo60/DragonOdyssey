@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InventoryVC" customModule="Dragon_Odyssey" customModuleProvider="target">
             <connections>
                 <outlet property="itemsTV" destination="ox8-n3-WbJ" id="myt-s9-vT6"/>
+                <outlet property="userTokensL" destination="xlV-iV-0hi" id="mU1-We-HXE"/>
                 <outlet property="view" destination="e09-Sm-J8I" id="e7M-W0-2PP"/>
             </connections>
         </placeholder>
@@ -55,17 +56,46 @@
                                         <action selector="close:" destination="-1" eventType="touchUpInside" id="lKW-W3-paF"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inventory" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2D-Jn-Y7H">
-                                    <rect key="frame" x="64" y="0.0" width="286" height="44"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Inventory" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2D-Jn-Y7H">
+                                    <rect key="frame" x="64" y="0.0" width="286.5" height="44"/>
                                     <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LSY-WS-uFn">
+                                    <rect key="frame" x="350.5" y="0.0" width="43.5" height="44"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ms5-m1-7S2">
+                                            <rect key="frame" x="0.0" y="0.0" width="26.5" height="44"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="coin" translatesAutoresizingMaskIntoConstraints="NO" id="H3a-aj-pzK">
+                                                    <rect key="frame" x="0.0" y="9" width="26.5" height="26"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="H3a-aj-pzK" secondAttribute="height" multiplier="1:1" id="Ima-aw-Ean"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="H3a-aj-pzK" firstAttribute="height" secondItem="ms5-m1-7S2" secondAttribute="height" multiplier="0.6" id="F3v-1K-JG3"/>
+                                                <constraint firstAttribute="trailing" secondItem="H3a-aj-pzK" secondAttribute="trailing" id="iDX-kR-aI7"/>
+                                                <constraint firstItem="H3a-aj-pzK" firstAttribute="leading" secondItem="ms5-m1-7S2" secondAttribute="leading" id="jJe-DR-hE9"/>
+                                                <constraint firstItem="H3a-aj-pzK" firstAttribute="centerY" secondItem="ms5-m1-7S2" secondAttribute="centerY" id="v8w-3F-tBH"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlV-iV-0hi">
+                                            <rect key="frame" x="34.5" y="0.0" width="9" height="44"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7sB-ug-d7j">
-                                    <rect key="frame" x="350" y="0.0" width="64" height="44"/>
+                                    <rect key="frame" x="394" y="0.0" width="20" height="44"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="64" id="9b5-m1-cza"/>
+                                        <constraint firstAttribute="width" constant="20" id="9b5-m1-cza"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -110,5 +140,6 @@
     </objects>
     <resources>
         <image name="closeB" width="150" height="150"/>
+        <image name="coin" width="100" height="100"/>
     </resources>
 </document>

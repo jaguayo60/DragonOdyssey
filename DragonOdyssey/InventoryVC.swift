@@ -12,16 +12,20 @@ class InventoryVC: GLVC {
 
     // MARK: - IBOutlets
     
+    @IBOutlet weak var userTokensL: UILabel!
     @IBOutlet weak var itemsTV: UITableView!
     
     // MARK: - Instance variables
     
+    let user = UserService.user
     lazy private var inventoryItems = InventoryItemsLibrary.inventoryItemsDict
     
     // MARK: - Class functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.coreDataManagerControllerDidChangeContent), name: NSNotification.Name(rawValue: "CoreDataManager_controllerDidChangeContent"), object: nil)
         
         let nib = UINib(nibName: "InventoryItemTVCell", bundle: nil)
         itemsTV.register(nib, forCellReuseIdentifier: "ItemCell")
@@ -32,7 +36,32 @@ class InventoryVC: GLVC {
     // MARK: - UI
     
     func drawVC() {
+        userTokensL.text = "\(Int(user.tokens))"
+    }
+    
+    // MARK: - Purchasing
+    
+    private func purchase(item:[String:Any]) {
+        let storedItem = InventoryItem(context: CoreDataService.context)
         
+        storedItem.user = user
+        if let id = item["id"] as? String { storedItem.id = id }
+        if let imageName = item["imageName"] as? String { storedItem.imageName = imageName }
+        if let name = item["name"] as? String { storedItem.name = name }
+        if let energyAmount = item["energyAmount"] as? Double { storedItem.energyAmount = energyAmount }
+        if let isAdOnly = item["isAdOnly"] as? Bool { storedItem.isAdOnly = isAdOnly }
+        if let tokenCost = item["tokenCost"] as? Double { storedItem.tokenCost = tokenCost }
+        if let sortPriority = item["sortPriority"] as? Double { storedItem.sortPriority = sortPriority }
+        
+        user.tokens = ((user.tokens - storedItem.tokenCost) >= 0) ? user.tokens - storedItem.tokenCost : 0
+        CoreDataService.saveContext()
+    }
+    
+    // MARK: - Data Responding
+    
+    @objc func coreDataManagerControllerDidChangeContent(notification: NSNotification) {
+        drawVC()
+        itemsTV.reloadData()
     }
     
     // MARK: - IBActions
@@ -42,8 +71,7 @@ class InventoryVC: GLVC {
     }
 }
 
-extension InventoryVC: UITableViewDataSource
-{
+extension InventoryVC: UITableViewDataSource {
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,6 +86,7 @@ extension InventoryVC: UITableViewDataSource
         
         let item = inventoryItems[indexPath.row]
         
+        if let id = item["id"] as? String { cell.amountOfItemsInInventoryL.text = String(InventoryItemService.numberOfItemsInInventoryWith(id: id)) }
         cell.titleL.text = "\(item["name"] as? String ?? "") gives \(Int(item["energyAmount"] as? Double ?? 0)) energy"
         cell.tokenAmountL.text = "\(Int(item["tokenCost"] as? Double ?? 0))"
         if let isAdOnly = item["isAdOnly"] as? Bool, isAdOnly == true {
@@ -72,12 +101,18 @@ extension InventoryVC: UITableViewDataSource
     }
 }
 
-extension InventoryVC: UITableViewDelegate
-{
+extension InventoryVC: UITableViewDelegate {
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let inventoryItemDict = inventoryItems[indexPath.row]
+        guard let itemCost = inventoryItemDict["tokenCost"] as? Double else { return }
+        if itemCost >= user.tokens {
+            FuncService.showBasicAlert(title: "Whoops", message: "Looks like you don't have enough tokens to buy this item.", btnTitle: "Okay", action: nil, controller: self)
+        } else {
+            purchase(item: inventoryItemDict)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

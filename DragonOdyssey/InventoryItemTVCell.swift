@@ -14,6 +14,7 @@ class InventoryItemTVCell: UITableViewCell {
     
     @IBOutlet weak var imageV: UIImageView!
     @IBOutlet weak var titleL: UILabel!
+    @IBOutlet weak var amountOfItemsInInventoryL: UILabel!
     
     @IBOutlet weak var tokenL: UILabel!
     @IBOutlet weak var tokenAmountL: UILabel!

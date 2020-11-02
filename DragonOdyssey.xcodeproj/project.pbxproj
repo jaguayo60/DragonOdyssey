@@ -15,6 +15,8 @@
 		B103F0E5254C9E3900A8BB04 /* InventoryItemTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103F0E3254C9E3900A8BB04 /* InventoryItemTVCell.swift */; };
 		B103F0E6254C9E3900A8BB04 /* InventoryItemTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B103F0E4254C9E3900A8BB04 /* InventoryItemTVCell.xib */; };
 		B112E1E1253F9F710039E59B /* MKRingProgressGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112E1E0253F9DD20039E59B /* MKRingProgressGroupView.swift */; };
+		B11827BF2550A2A3008E5FF9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11827BE2550A2A3008E5FF9 /* UserService.swift */; };
+		B11827C12550A7C1008E5FF9 /* InventoryItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11827C02550A7C1008E5FF9 /* InventoryItemService.swift */; };
 		B13916D3253768EB00A2CFA2 /* EntryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916D2253768EB00A2CFA2 /* EntryService.swift */; };
 		B13916D62537692000A2CFA2 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916D42537692000A2CFA2 /* MenuVC.swift */; };
 		B13916D72537692000A2CFA2 /* MenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13916D52537692000A2CFA2 /* MenuVC.xib */; };
@@ -67,6 +69,8 @@
 		B103F0E3254C9E3900A8BB04 /* InventoryItemTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItemTVCell.swift; sourceTree = "<group>"; };
 		B103F0E4254C9E3900A8BB04 /* InventoryItemTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryItemTVCell.xib; sourceTree = "<group>"; };
 		B112E1E0253F9DD20039E59B /* MKRingProgressGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKRingProgressGroupView.swift; sourceTree = "<group>"; };
+		B11827BE2550A2A3008E5FF9 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		B11827C02550A7C1008E5FF9 /* InventoryItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItemService.swift; sourceTree = "<group>"; };
 		B13916D2253768EB00A2CFA2 /* EntryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryService.swift; sourceTree = "<group>"; };
 		B13916D42537692000A2CFA2 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		B13916D52537692000A2CFA2 /* MenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuVC.xib; sourceTree = "<group>"; };
@@ -159,9 +163,19 @@
 			name = MKRingProgressView;
 			sourceTree = "<group>";
 		};
+		B11827BD2550A28C008E5FF9 /* CoreData Services */ = {
+			isa = PBXGroup;
+			children = (
+				B11827BE2550A2A3008E5FF9 /* UserService.swift */,
+				B11827C02550A7C1008E5FF9 /* InventoryItemService.swift */,
+			);
+			name = "CoreData Services";
+			sourceTree = "<group>";
+		};
 		B13916D12537648600A2CFA2 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				B11827BD2550A28C008E5FF9 /* CoreData Services */,
 				B13916EB25376F6400A2CFA2 /* Managed Classes */,
 				B1A41DDC252D2A6900E57C7E /* DragonOdyssey.xcdatamodeld */,
 				B13916E725376E6200A2CFA2 /* CoreDataService.swift */,
@@ -467,6 +481,7 @@
 				B13916F125376F7A00A2CFA2 /* Creature+CoreDataProperties.swift in Sources */,
 				B13916FA2537710300A2CFA2 /* FunctionService.swift in Sources */,
 				B13916EA25376EE600A2CFA2 /* CoreDataManager.swift in Sources */,
+				B11827C12550A7C1008E5FF9 /* InventoryItemService.swift in Sources */,
 				B13916F62537707B00A2CFA2 /* HapticFeedbackManager.swift in Sources */,
 				B14AA4B02540BBDD00D630A7 /* HealthKitServiceManager.swift in Sources */,
 				B13916FE253771AD00A2CFA2 /* TimingManager.swift in Sources */,
@@ -477,6 +492,7 @@
 				B13916D3253768EB00A2CFA2 /* EntryService.swift in Sources */,
 				B13916D62537692000A2CFA2 /* MenuVC.swift in Sources */,
 				B112E1E1253F9F710039E59B /* MKRingProgressGroupView.swift in Sources */,
+				B11827BF2550A2A3008E5FF9 /* UserService.swift in Sources */,
 				B1A41DFB252E2CB000E57C7E /* GLVC.swift in Sources */,
 				B1A41DEF252D3A5300E57C7E /* FuncService.swift in Sources */,
 				B1A41DDE252D2A6900E57C7E /* DragonOdyssey.xcdatamodeld in Sources */,

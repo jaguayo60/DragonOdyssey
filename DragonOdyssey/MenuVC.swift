@@ -52,6 +52,11 @@ class MenuVC: GLVC {
         present(vc, animated: true, completion: nil)
     }
     
+    @IBAction func giveUser10Tokens(_ sender: Any) {
+        UserService.user.tokens += 10
+        CoreDataService.saveContext()
+    }
+    
     @IBAction func grantAppleHealthPermissions(_ sender: Any) {
         HealthKitServiceManager.shared.requestReadAccess()
         
