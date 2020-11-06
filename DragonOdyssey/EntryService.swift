@@ -18,7 +18,7 @@ class EntryService: NSObject {
     enum UserEntryType { case newDay, dayStarted }
     
     class func directEntry() {
-        let vc = MenuVC()
+        let vc = HomeVC()
         UIApplication.shared.delegate?.window??.rootViewController = vc
     }
 }

@@ -20,7 +20,6 @@ class DebugService: NSObject
     static let bypassStoreKitFunctionality = false
     
     static let forceShowIntro = false
-    static let alwaysShowAffirmations = false
     static let scheduleTestNotification = false
     
     // MARK: - Announcements
