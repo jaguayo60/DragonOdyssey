@@ -91,4 +91,23 @@ class HomeVC: GLVC {
     @IBAction func close(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func settings(_ sender: Any) {
+        let vc = SettingsVC()
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func shop(_ sender: Any) {
+        let vc = InventoryVC()
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func stats(_ sender: Any) {
+        let vc = StatsVC()
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func hunt(_ sender: Any) {
+        
+    }
 }

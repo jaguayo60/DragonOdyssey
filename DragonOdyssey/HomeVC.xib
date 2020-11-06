@@ -47,7 +47,7 @@
                                         <constraint firstAttribute="width" constant="20" id="4x8-OQ-bmY"/>
                                     </constraints>
                                 </view>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Mg-vO-FE9">
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Mg-vO-FE9">
                                     <rect key="frame" x="20" y="0.0" width="44" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="9Mg-vO-FE9" secondAttribute="height" multiplier="1:1" id="Nmg-xM-UsP"/>
@@ -60,10 +60,33 @@
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xza-hV-FRn">
-                                    <rect key="frame" x="64" y="0.0" width="350" height="44"/>
+                                    <rect key="frame" x="20" y="0.0" width="330" height="44"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIH-E1-E2K">
+                                    <rect key="frame" x="350" y="0.0" width="44" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="eIH-E1-E2K" secondAttribute="height" multiplier="1:1" id="XMn-Eq-tK4"/>
+                                        <constraint firstAttribute="height" constant="44" id="ieN-uZ-5YY"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" image="gear"/>
+                                    <connections>
+                                        <action selector="close:" destination="-1" eventType="touchUpInside" id="JnF-WN-436"/>
+                                        <action selector="settings:" destination="-1" eventType="touchUpInside" id="01C-tq-mW3"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYN-Ee-W8I">
+                                    <rect key="frame" x="394" y="0.0" width="20" height="44"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="IYq-q8-BtZ"/>
+                                    </constraints>
+                                </view>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="eIH-E1-E2K" firstAttribute="width" secondItem="eIH-E1-E2K" secondAttribute="height" multiplier="1:1" id="KX8-UP-T8d"/>
+                            </constraints>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fh5-Hd-0Id">
                             <rect key="frame" x="0.0" y="60" width="414" height="758"/>
@@ -154,6 +177,9 @@
                                                                 <constraint firstAttribute="width" secondItem="3jg-qT-maO" secondAttribute="height" multiplier="1:1" id="fsV-Ei-6eB"/>
                                                             </constraints>
                                                             <state key="normal" image="tokensB"/>
+                                                            <connections>
+                                                                <action selector="shop:" destination="-1" eventType="touchUpInside" id="BgH-Jb-weN"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqG-Wf-l2M" customClass="RoundedCornersB" customModule="Dragon_Odyssey" customModuleProvider="target">
                                                             <rect key="frame" x="100" y="0.0" width="80" height="80"/>
@@ -162,6 +188,9 @@
                                                                 <constraint firstAttribute="width" secondItem="vqG-Wf-l2M" secondAttribute="height" multiplier="1:1" id="STh-Jw-NeX"/>
                                                             </constraints>
                                                             <state key="normal" image="strengthB"/>
+                                                            <connections>
+                                                                <action selector="stats:" destination="-1" eventType="touchUpInside" id="wG9-GE-lJS"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgl-Ay-Ur0" customClass="RoundedCornersB" customModule="Dragon_Odyssey" customModuleProvider="target">
                                                             <rect key="frame" x="200" y="0.0" width="80" height="80"/>
@@ -170,6 +199,9 @@
                                                                 <constraint firstAttribute="width" secondItem="lgl-Ay-Ur0" secondAttribute="height" multiplier="1:1" id="TDv-rW-dLj"/>
                                                             </constraints>
                                                             <state key="normal" image="agilityB"/>
+                                                            <connections>
+                                                                <action selector="hunt:" destination="-1" eventType="touchUpInside" id="OMu-4f-MeX"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -227,6 +259,7 @@
         <image name="agilityB" width="150" height="150"/>
         <image name="closeB" width="150" height="150"/>
         <image name="dragon" width="1200" height="869"/>
+        <image name="gear" width="150" height="150"/>
         <image name="strengthB" width="150" height="150"/>
         <image name="tokensB" width="150" height="150"/>
     </resources>

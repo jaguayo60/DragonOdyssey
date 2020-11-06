@@ -10,9 +10,9 @@ import UIKit
 
 class GLVC: UIViewController
 {
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        return .lightContent
-//    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override var prefersStatusBarHidden: Bool {
         if UIService.deviceScreenSize == ._4In { // IPhone 5/SE

@@ -54,6 +54,10 @@
 		B1A41DFB252E2CB000E57C7E /* GLVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DFA252E2CAD00E57C7E /* GLVC.swift */; };
 		B1A41DFD252E2CE100E57C7E /* UIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DFC252E2CE100E57C7E /* UIService.swift */; };
 		B1B0DE6E2540CCB300713E0C /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B0DE6D2540CCB300713E0C /* HealthKit.framework */; };
+		B1CB2F032555DDE300D36E0C /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CB2F012555DDE300D36E0C /* SettingsVC.swift */; };
+		B1CB2F042555DDE300D36E0C /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1CB2F022555DDE300D36E0C /* SettingsVC.xib */; };
+		B1CB2F092555DEE700D36E0C /* DebugVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CB2F072555DEE700D36E0C /* DebugVC.swift */; };
+		B1CB2F0A2555DEE700D36E0C /* DebugVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1CB2F082555DEE700D36E0C /* DebugVC.xib */; };
 		F924C87B4A07D6355805A583 /* Pods_DragonOdyssey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +115,10 @@
 		B1A41DFC252E2CE100E57C7E /* UIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIService.swift; sourceTree = "<group>"; };
 		B1B0DE6C2540CCB200713E0C /* DragonOdyssey.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DragonOdyssey.entitlements; sourceTree = "<group>"; };
 		B1B0DE6D2540CCB300713E0C /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		B1CB2F012555DDE300D36E0C /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		B1CB2F022555DDE300D36E0C /* SettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
+		B1CB2F072555DEE700D36E0C /* DebugVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugVC.swift; sourceTree = "<group>"; };
+		B1CB2F082555DEE700D36E0C /* DebugVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebugVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +333,7 @@
 		B1A41DF9252E2C9600E57C7E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B1CB2F002555DDCE00D36E0C /* SettingsVC */,
 				B103F0D7254C96D700A8BB04 /* Inventory */,
 				B13916E225376B5800A2CFA2 /* StatsVC */,
 				B13916D9253769FF00A2CFA2 /* HomeVC */,
@@ -334,6 +343,17 @@
 				B13916D52537692000A2CFA2 /* MenuVC.xib */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B1CB2F002555DDCE00D36E0C /* SettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				B1CB2F012555DDE300D36E0C /* SettingsVC.swift */,
+				B1CB2F022555DDE300D36E0C /* SettingsVC.xib */,
+				B1CB2F072555DEE700D36E0C /* DebugVC.swift */,
+				B1CB2F082555DEE700D36E0C /* DebugVC.xib */,
+			);
+			name = SettingsVC;
 			sourceTree = "<group>";
 		};
 		CC4D385ADFD0B47B3AC53E3E /* Frameworks */ = {
@@ -409,6 +429,8 @@
 				B13916E125376B4E00A2CFA2 /* HomeVC.xib in Resources */,
 				B13916D72537692000A2CFA2 /* MenuVC.xib in Resources */,
 				B103F0DB254C96F800A8BB04 /* InventoryVC.xib in Resources */,
+				B1CB2F0A2555DEE700D36E0C /* DebugVC.xib in Resources */,
+				B1CB2F042555DDE300D36E0C /* SettingsVC.xib in Resources */,
 				B13916E625376B7400A2CFA2 /* StatsVC.xib in Resources */,
 				B13916DD25376A1900A2CFA2 /* FeedbackVC.xib in Resources */,
 				B1A41DE0252D2A6A00E57C7E /* Assets.xcassets in Resources */,
@@ -483,6 +505,7 @@
 				B1A41DF8252D42C700E57C7E /* UIExtensions.swift in Sources */,
 				B13916DC25376A1900A2CFA2 /* FeedbackVC.swift in Sources */,
 				B13916D3253768EB00A2CFA2 /* EntryService.swift in Sources */,
+				B1CB2F032555DDE300D36E0C /* SettingsVC.swift in Sources */,
 				B13916D62537692000A2CFA2 /* MenuVC.swift in Sources */,
 				B112E1E1253F9F710039E59B /* MKRingProgressGroupView.swift in Sources */,
 				B11827BF2550A2A3008E5FF9 /* UserService.swift in Sources */,
@@ -490,6 +513,7 @@
 				B1A41DEF252D3A5300E57C7E /* FuncService.swift in Sources */,
 				B1A41DDE252D2A6900E57C7E /* DragonOdyssey.xcdatamodeld in Sources */,
 				B103F0E1254C9CEF00A8BB04 /* InventoryItemsLibrary.swift in Sources */,
+				B1CB2F092555DEE700D36E0C /* DebugVC.swift in Sources */,
 				B13916E525376B7400A2CFA2 /* StatsVC.swift in Sources */,
 				B103F0DF254C995C00A8BB04 /* InventoryItem+CoreDataProperties.swift in Sources */,
 				B13916F025376F7A00A2CFA2 /* User+CoreDataClass.swift in Sources */,

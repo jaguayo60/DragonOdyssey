@@ -63,6 +63,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         // 🤑 In-App purchases
 //        StoreKitService.shared.didFinishLaunchingTasks()
         
+        // ⚠️ Should move to a better place later!
+        HealthKitServiceManager.shared.requestReadAccess()
+        
         return true
     }
     
