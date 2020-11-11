@@ -34,7 +34,8 @@ class HealthKitServiceManager: NSObject {
     
     static let shared = HealthKitServiceManager()
     
-    var dietaryWaterType = HKQuantityType.quantityType(forIdentifier: .dietaryWater)
+//    var dietaryWaterType = HKQuantityType.quantityType(forIdentifier: .dietaryWater)
+    var stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount)
     var activitySummaryType = HKActivitySummaryType.activitySummaryType()
     
     lazy var healthStore: HKHealthStore? = {
@@ -47,6 +48,7 @@ class HealthKitServiceManager: NSObject {
     
     func fetchActivitySummariesBetween(startDate: Date, endDate: Date, completion: @escaping ([ActivitySummary]?) -> Void) {
         let predicate = activitySummaryPredicateFor(startDate: startDate, endDate: endDate)
+        
         let query = HKActivitySummaryQuery(predicate: predicate) { (query, summariesOrNil, errorOrNil) -> Void in
             
             guard let summaries = summariesOrNil else {
@@ -92,6 +94,78 @@ class HealthKitServiceManager: NSObject {
         return summariesWithinRange
     }
     
+//    func fetchStepsBetween(startDate: Date, endDate: Date, completion: @escaping ([ActivitySummary]?) -> Void) {
+//        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+//        
+//    }
+    
+    func fetchStepsBetween(startDate: Date, endDate: Date, completion: @escaping ([HKSample]?) -> Void) {
+        guard let stepCountType = stepCountType else { completion(nil) ; return }
+        
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        
+        let query = HKSampleQuery(sampleType: stepCountType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { (query, samplesOrNil, errorOrNil) in
+            guard let samples = samplesOrNil else { completion(nil) ; return }
+            
+            if DebugService.logDetailedHealthKitAction == true {
+                for sample in samples {
+                    print("❤️ \(sample)")
+                }
+            }
+            
+            if DebugService.logBasicHealthKitAction == true { print("❤️ Fetched \(samples.count) HKSamples") }
+            
+            DispatchQueue.main.async {
+                completion (samples)
+            }
+        }
+
+        healthStore?.execute(query)
+    }
+    
+//    func retrieveStepCount(completion: (stepRetrieved: Double) -> Void) {
+//        guard let stepCountType = stepCountType else { return }
+//
+//            //   Get the start of the day
+//            let date = Date()
+//            let cal = Calendar(identifier: Calendar.Identifier.gregorian)
+//            let newDate = cal.startOfDay(for: date)
+//
+//            //  Set the Predicates & Interval
+//            let predicate = HKQuery.predicateForSamples(withStart: newDate, end: Date(), options: .strictStartDate)
+//            var interval = DateComponents()
+//            interval.day = 1
+//
+//            //  Perform the Query
+//            let query = HKStatisticsCollectionQuery(quantityType: stepCountType, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: newDate as Date, intervalComponents:interval)
+//
+//            query.initialResultsHandler = { query, results, error in
+//
+//                if error != nil {
+//
+//                    //  Something went Wrong
+//                    return
+//                }
+//
+//                if let myResults = results{
+//                    myResults.enumerateStatistics(from: self.yesterday, to: self.today) {
+//                        statistics, stop in
+//
+//                        if let quantity = statistics.sumQuantity() {
+//
+//                            let steps = quantity.doubleValue(for: HKUnit.count())
+//
+//                            print("Steps = \(steps)")
+//                            completion(stepRetrieved: steps)
+//
+//                        }
+//                    }
+//                }
+//            }
+//
+//            storage.execute(query)
+//        }
+    
     // MARK: - Writing
     
 //    func createAndSaveSampleFor(drink: sdDrink) {
@@ -121,25 +195,27 @@ class HealthKitServiceManager: NSObject {
     
     // MARK: - Permission
     
-    func requestWriteAccess(completion:(()->Void)? = nil) {
-        guard let type = dietaryWaterType else { return }
-        healthStore?.requestAuthorization(toShare: [type], read: nil, completion: { (success, error) in
-            if completion != nil { completion!() }
-        })
-    }
+//    func requestWriteAccess(completion:(()->Void)? = nil) {
+//        guard let type = dietaryWaterType else { return }
+//        healthStore?.requestAuthorization(toShare: [type], read: nil, completion: { (success, error) in
+//            if completion != nil { completion!() }
+//        })
+//    }
     
     func requestReadAccess(completion:(()->Void)? = nil) {
-        healthStore?.requestAuthorization(toShare: nil, read: [activitySummaryType], completion: { (success, error) in
+        guard let healthStore = healthStore, let stepCountType = stepCountType else { if completion != nil { completion!() } ; return }
+        
+        healthStore.requestAuthorization(toShare: nil, read: [activitySummaryType, stepCountType], completion: { (success, error) in
             if completion != nil { completion!() }
         })
     }
 
-    var appleHealthAuthorizationStatus: HKAuthorizationStatus? {
-        guard let type = dietaryWaterType else { return nil }
-        
-        let status = healthStore?.authorizationStatus(for: type)
-        return status
-    }
+//    var appleHealthAuthorizationStatus: HKAuthorizationStatus? {
+//        guard let type = dietaryWaterType else { return nil }
+//
+//        let status = healthStore?.authorizationStatus(for: type)
+//        return status
+//    }
     
     // MARK: - Activity Summary
     

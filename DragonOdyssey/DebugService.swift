@@ -75,7 +75,9 @@ class DebugService: NSObject
     }
     
     static func didBecomeActiveTasks() {
-        
+        HealthKitServiceManager.shared.fetchStepsBetween(startDate: Date().plusNumberOfDays(numberOfDays: -20), endDate: Date()) { (samples) in
+            
+        }
 //        if WADebug.logAllTips == true {
 //            TipService.logAllTips()
 //        }
