@@ -21,37 +21,37 @@ class CoreDataManager: NSObject {
     
     override init() {
         super.init()
-//        self.daysFRCFetch()
+        self.creaturesFRCFetch()
         self.usersFRCFetch()
     }
     
     //MARK: - NSFetchedResultsController
     
-//    lazy var daysFetchedResultsController: NSFetchedResultsController<Day> = {
-//
-//        // Initialize Fetch Request
-//        let fetchRequest = NSFetchRequest<Day>(entityName: "Day")
-//
-//        // Add Sort Descriptor & Predicate
-//        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: false)]
-//
-//        // Initialize Fetched Results Controller
-//        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataService.context, sectionNameKeyPath: nil, cacheName: nil)
-//
-//        // Configure Fetched Results Controller
-//        fetchedResultsController.delegate = self
-//
-//        return fetchedResultsController
-//    }()
-//
-//    func daysFRCFetch() {
-//        do {
-//            try self.daysFetchedResultsController.performFetch()
-//        } catch {
-//            let fetchError = error as NSError
-//            print("\(fetchError), \(fetchError.userInfo)")
-//        }
-//    }
+    lazy var creaturesFetchedResultsController: NSFetchedResultsController<Creature> = {
+
+        // Initialize Fetch Request
+        let fetchRequest = NSFetchRequest<Creature>(entityName: "Creature")
+
+        // Add Sort Descriptor & Predicate
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "level", ascending: false)]
+
+        // Initialize Fetched Results Controller
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataService.context, sectionNameKeyPath: nil, cacheName: nil)
+
+        // Configure Fetched Results Controller
+        fetchedResultsController.delegate = self
+
+        return fetchedResultsController
+    }()
+
+    func creaturesFRCFetch() {
+        do {
+            try self.creaturesFetchedResultsController.performFetch()
+        } catch {
+            let fetchError = error as NSError
+            print("\(fetchError), \(fetchError.userInfo)")
+        }
+    }
 
     lazy var usersFetchedResultsController: NSFetchedResultsController<User> = {
 
@@ -91,7 +91,7 @@ extension CoreDataManager: NSFetchedResultsControllerDelegate {
     {
         if skipUpdating == true { return }
         
-//        if let day = anObject as? Day { managedObjectChangedValues = Array(day.changedValuesForCurrentEvent().keys) }
+        if let creature = anObject as? Creature { managedObjectChangedValues = Array(creature.changedValuesForCurrentEvent().keys) }
         if let user = anObject as? User { managedObjectChangedValues = Array(user.changedValuesForCurrentEvent().keys) }
         
 //        // Days

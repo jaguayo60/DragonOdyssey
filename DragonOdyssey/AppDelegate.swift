@@ -64,7 +64,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 //        StoreKitService.shared.didFinishLaunchingTasks()
         
         // ⚠️ Should move to a better place later!
-        HealthKitServiceManager.shared.requestReadAccess()
+        HealthKitServiceManager.shared.requestReadAccess {
+            StepCountService.addStepsSinceLastStepsAddedDate()
+        }
         
         return true
     }
@@ -110,12 +112,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         
         // 🤑 In-App Purchases
 //        StoreKitService.shared.verifyAllPremiumSubscriptions()
+
+        // Fetch and add steps from Apple Health
+        StepCountService.addStepsSinceLastStepsAddedDate()
         
         // Clear notifications
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
-        
-        appEnteredBackground = false // turn off to prevent applicationWillResignActive (alerts) from triggering applicationDidBecomeActive_fromBackground
 
+        FuncService.userDefaultsSet(object: Date(), key: "lastAppOpenDate")
+
+        appEnteredBackground = false // turn off to prevent applicationWillResignActive (alerts) from triggering applicationDidBecomeActive_fromBackground
+        
         TimingManager.shared.appDelegate_applicationDidBecomeActive_fromBackground_wasCalled = true
         NotificationCenter.default.post(name: NSNotification.Name("AppDelegate_applicationDidBecomeActive_fromBackground"), object: nil)
         if DebugService.logDelegateEvents == true { print("•AppDelegate: applicationDidBecomeActive_fromBackground") }

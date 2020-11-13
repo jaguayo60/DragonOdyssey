@@ -27,7 +27,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Leg-zn-947">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="148"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="283"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxW-Mh-Qud">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="8"/>
@@ -76,15 +76,15 @@
                                     </constraints>
                                 </stackView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Sb-eA-SQR">
-                                    <rect key="frame" x="0.0" y="84" width="414" height="44"/>
+                                    <rect key="frame" x="0.0" y="84" width="414" height="179"/>
                                     <subviews>
-                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Khg-lV-0P9" customClass="SettingsCntV" customModule="HarmLess" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="0.0" width="382" height="44"/>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Khg-lV-0P9" customClass="SettingsCntV" customModule="Dragon_Odyssey" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="0.0" width="382" height="179"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="hbd-Ys-f7C">
-                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="179"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h80-Gy-7cG" customClass="SettingsMenuBGV" customModule="HarmLess" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h80-Gy-7cG" customClass="SettingsMenuBGV" customModule="Dragon_Odyssey" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7c-82-kdj">
@@ -108,8 +108,80 @@
                                                                 <constraint firstItem="E7c-82-kdj" firstAttribute="leading" secondItem="h80-Gy-7cG" secondAttribute="leading" constant="10" id="zOE-wB-G8j"/>
                                                             </constraints>
                                                         </view>
-                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44E-g1-p4n" customClass="SettingsMenuBGV" customModule="HarmLess" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Djg-6U-AzB" customClass="SettingsMenuBGV" customModule="Dragon_Odyssey" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="45" width="382" height="44"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQk-wN-tdA">
+                                                                    <rect key="frame" x="10" y="3" width="362" height="41"/>
+                                                                    <accessibility key="accessibilityConfiguration" label="Units of measure"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <state key="normal" title="7: Add 3,000 Steps">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="button07:" destination="-1" eventType="touchUpInside" id="Wwd-iO-FaF"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstItem="bQk-wN-tdA" firstAttribute="leading" secondItem="Djg-6U-AzB" secondAttribute="leading" constant="10" id="GDt-Pb-tpk"/>
+                                                                <constraint firstAttribute="trailing" secondItem="bQk-wN-tdA" secondAttribute="trailing" constant="10" id="GuW-iX-bEh"/>
+                                                                <constraint firstItem="bQk-wN-tdA" firstAttribute="top" secondItem="Djg-6U-AzB" secondAttribute="top" constant="3" id="Nxw-bi-SRk"/>
+                                                                <constraint firstAttribute="bottom" secondItem="bQk-wN-tdA" secondAttribute="bottom" id="RKt-Fk-AOd"/>
+                                                                <constraint firstAttribute="height" constant="44" id="hfX-Od-SOO"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaN-EM-aQa" customClass="SettingsMenuBGV" customModule="Dragon_Odyssey" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="90" width="382" height="44"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duI-5y-mab">
+                                                                    <rect key="frame" x="10" y="3" width="362" height="41"/>
+                                                                    <accessibility key="accessibilityConfiguration" label="Units of measure"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <state key="normal" title="15: Log Creature Stats">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="button15:" destination="-1" eventType="touchUpInside" id="oYk-1p-dXH"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="44" id="2ao-5q-XVm"/>
+                                                                <constraint firstItem="duI-5y-mab" firstAttribute="leading" secondItem="aaN-EM-aQa" secondAttribute="leading" constant="10" id="6W6-48-sp1"/>
+                                                                <constraint firstAttribute="bottom" secondItem="duI-5y-mab" secondAttribute="bottom" id="ETl-Bf-4h4"/>
+                                                                <constraint firstAttribute="trailing" secondItem="duI-5y-mab" secondAttribute="trailing" constant="10" id="XKt-fR-gk1"/>
+                                                                <constraint firstItem="duI-5y-mab" firstAttribute="top" secondItem="aaN-EM-aQa" secondAttribute="top" constant="3" id="fks-Vk-WUg"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1CD-hu-g2S" customClass="SettingsMenuBGV" customModule="Dragon_Odyssey" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="135" width="382" height="44"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLB-aJ-gso">
+                                                                    <rect key="frame" x="10" y="3" width="362" height="41"/>
+                                                                    <accessibility key="accessibilityConfiguration" label="Units of measure"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <state key="normal" title="20: Request Apple Health Access">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="button20:" destination="-1" eventType="touchUpInside" id="4ul-Po-32t"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="HLB-aJ-gso" secondAttribute="trailing" constant="10" id="F5y-mm-4v4"/>
+                                                                <constraint firstItem="HLB-aJ-gso" firstAttribute="leading" secondItem="1CD-hu-g2S" secondAttribute="leading" constant="10" id="QwJ-eg-yLm"/>
+                                                                <constraint firstAttribute="bottom" secondItem="HLB-aJ-gso" secondAttribute="bottom" id="Zph-gk-zfm"/>
+                                                                <constraint firstItem="HLB-aJ-gso" firstAttribute="top" secondItem="1CD-hu-g2S" secondAttribute="top" constant="3" id="aQX-Lg-rOW"/>
+                                                                <constraint firstAttribute="height" constant="44" id="thh-6C-tww"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44E-g1-p4n" customClass="SettingsMenuBGV" customModule="Dragon_Odyssey" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="179" width="382" height="44"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDp-t6-z0y">
                                                                     <rect key="frame" x="10" y="0.0" width="362" height="44"/>
@@ -165,15 +237,15 @@
                                     </constraints>
                                 </view>
                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7Q-nB-AW4">
-                                    <rect key="frame" x="0.0" y="136" width="414" height="134"/>
+                                    <rect key="frame" x="0.0" y="271" width="414" height="134"/>
                                     <subviews>
-                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCS-2g-NVT" customClass="SettingsCntV" customModule="HarmLess" customModuleProvider="target">
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCS-2g-NVT" customClass="SettingsCntV" customModule="Dragon_Odyssey" customModuleProvider="target">
                                             <rect key="frame" x="16" y="0.0" width="382" height="134"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="39n-eT-ZP4">
                                                     <rect key="frame" x="0.0" y="0.0" width="382" height="134"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pba-0K-0jw" customClass="SettingsMenuBGV" customModule="HarmLess" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pba-0K-0jw" customClass="SettingsMenuBGV" customModule="Dragon_Odyssey" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdb-b7-Rtt">
@@ -211,7 +283,7 @@
                                                                 <constraint firstItem="gdb-b7-Rtt" firstAttribute="top" secondItem="pba-0K-0jw" secondAttribute="top" id="wBz-2x-pGY"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2N-iH-hGL" customClass="SettingsMenuBGV" customModule="HarmLess" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2N-iH-hGL" customClass="SettingsMenuBGV" customModule="Dragon_Odyssey" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="45" width="382" height="44"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qza-lS-VgV">
@@ -249,7 +321,7 @@
                                                                 <constraint firstItem="Qza-lS-VgV" firstAttribute="leading" secondItem="a2N-iH-hGL" secondAttribute="leading" constant="10" id="qEc-U6-RbE"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLx-fW-QL9" customClass="SettingsMenuBGV" customModule="HarmLess" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLx-fW-QL9" customClass="SettingsMenuBGV" customModule="Dragon_Odyssey" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="90" width="382" height="44"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F21-Qn-f2P">
@@ -306,7 +378,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyL-ZN-3Zb">
-                                    <rect key="frame" x="0.0" y="144" width="414" height="4"/>
+                                    <rect key="frame" x="0.0" y="279" width="414" height="4"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="4" id="rZN-la-2cv"/>

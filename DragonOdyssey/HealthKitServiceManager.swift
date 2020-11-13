@@ -35,8 +35,8 @@ class HealthKitServiceManager: NSObject {
     static let shared = HealthKitServiceManager()
     
 //    var dietaryWaterType = HKQuantityType.quantityType(forIdentifier: .dietaryWater)
-    var stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount)
-    var activitySummaryType = HKActivitySummaryType.activitySummaryType()
+    private var stepCountType = HKQuantityType.quantityType(forIdentifier: .stepCount)
+    private var activitySummaryType = HKActivitySummaryType.activitySummaryType()
     
     lazy var healthStore: HKHealthStore? = {
         if HKHealthStore.isHealthDataAvailable() {
@@ -94,12 +94,23 @@ class HealthKitServiceManager: NSObject {
         return summariesWithinRange
     }
     
-//    func fetchStepsBetween(startDate: Date, endDate: Date, completion: @escaping ([ActivitySummary]?) -> Void) {
-//        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
-//        
-//    }
+    func fetchStepCountBetween(startDate: Date, endDate: Date, completion: @escaping (Double) -> Void) {
+        fetchStepCountSamplesBetween(startDate: startDate, endDate: endDate, completion: { (samplesOrNil) in
+            guard let samples = samplesOrNil else { completion(0) ; return }
+            
+            var totalSteps: Double = 0
+            for sample in samples {
+                guard let quantitySample = sample as? HKQuantitySample else { continue }
+                totalSteps += quantitySample.quantity.doubleValue(for: .count())
+            }
+            
+            if DebugService.logBasicHealthKitAction == true { print("❤️ Step Count between \(startDate.stringWithFormat(formatString: "MMM d, h:mm a")) and \(endDate.stringWithFormat(formatString: "MMM d, h:mm a")) : \(totalSteps)") }
+            
+            completion(totalSteps)
+        })
+    }
     
-    func fetchStepsBetween(startDate: Date, endDate: Date, completion: @escaping ([HKSample]?) -> Void) {
+    private func fetchStepCountSamplesBetween(startDate: Date, endDate: Date, completion: @escaping ([HKSample]?) -> Void) {
         guard let stepCountType = stepCountType else { completion(nil) ; return }
         
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
@@ -113,7 +124,7 @@ class HealthKitServiceManager: NSObject {
                 }
             }
             
-            if DebugService.logBasicHealthKitAction == true { print("❤️ Fetched \(samples.count) HKSamples") }
+            if DebugService.logBasicHealthKitAction == true { print("❤️ Fetched \(samples.count) stepCount HKSamples") }
             
             DispatchQueue.main.async {
                 completion (samples)
@@ -123,48 +134,43 @@ class HealthKitServiceManager: NSObject {
         healthStore?.execute(query)
     }
     
-//    func retrieveStepCount(completion: (stepRetrieved: Double) -> Void) {
-//        guard let stepCountType = stepCountType else { return }
+//    func retrieveStepCount(completion: @escaping (Double?) -> Void) {
+//        guard let stepCountType = stepCountType else { completion(nil) ; return }
 //
-//            //   Get the start of the day
-//            let date = Date()
-//            let cal = Calendar(identifier: Calendar.Identifier.gregorian)
-//            let newDate = cal.startOfDay(for: date)
+//        let startDate = Date().midnight.plusNumberOfDays(numberOfDays: -20)
 //
-//            //  Set the Predicates & Interval
-//            let predicate = HKQuery.predicateForSamples(withStart: newDate, end: Date(), options: .strictStartDate)
-//            var interval = DateComponents()
-//            interval.day = 1
+//        //  Set the Predicates & Interval
+//        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictStartDate)
+//        var interval = DateComponents()
+//        interval.day = 1
 //
-//            //  Perform the Query
-//            let query = HKStatisticsCollectionQuery(quantityType: stepCountType, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: newDate as Date, intervalComponents:interval)
+//        //  Perform the Query
+//        let query = HKStatisticsCollectionQuery(quantityType: stepCountType, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate, intervalComponents:interval)
 //
-//            query.initialResultsHandler = { query, results, error in
+//        query.initialResultsHandler = { query, results, error in
 //
-//                if error != nil {
+//            if error != nil {
 //
-//                    //  Something went Wrong
-//                    return
-//                }
+//                //  Something went Wrong
+//                return
+//            }
 //
-//                if let myResults = results{
-//                    myResults.enumerateStatistics(from: self.yesterday, to: self.today) {
-//                        statistics, stop in
+//            if let myResults = results {
+//                myResults.enumerateStatistics(from: Date().midnight, to: Date()) {
+//                    statistics, stop in
 //
-//                        if let quantity = statistics.sumQuantity() {
+//                    if let quantity = statistics.sumQuantity() {
 //
-//                            let steps = quantity.doubleValue(for: HKUnit.count())
+//                        let steps = quantity.doubleValue(for: HKUnit.count())
 //
-//                            print("Steps = \(steps)")
-//                            completion(stepRetrieved: steps)
-//
-//                        }
+//                        print("Steps = \(steps)")
+//                        completion(steps)
 //                    }
 //                }
 //            }
-//
-//            storage.execute(query)
 //        }
+//        healthStore?.execute(query)
+//    }
     
     // MARK: - Writing
     
@@ -206,6 +212,7 @@ class HealthKitServiceManager: NSObject {
         guard let healthStore = healthStore, let stepCountType = stepCountType else { if completion != nil { completion!() } ; return }
         
         healthStore.requestAuthorization(toShare: nil, read: [activitySummaryType, stepCountType], completion: { (success, error) in
+            if error != nil { print(error!) }
             if completion != nil { completion!() }
         })
     }

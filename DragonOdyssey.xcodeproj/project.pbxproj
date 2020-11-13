@@ -15,6 +15,8 @@
 		B103F0E5254C9E3900A8BB04 /* InventoryItemTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103F0E3254C9E3900A8BB04 /* InventoryItemTVCell.swift */; };
 		B103F0E6254C9E3900A8BB04 /* InventoryItemTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B103F0E4254C9E3900A8BB04 /* InventoryItemTVCell.xib */; };
 		B112E1E1253F9F710039E59B /* MKRingProgressGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112E1E0253F9DD20039E59B /* MKRingProgressGroupView.swift */; };
+		B1130B32255C9020008C05FC /* StepCountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1130B31255C9020008C05FC /* StepCountService.swift */; };
+		B1130B35255C92C6008C05FC /* CreatureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1130B34255C92C6008C05FC /* CreatureService.swift */; };
 		B11827BF2550A2A3008E5FF9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11827BE2550A2A3008E5FF9 /* UserService.swift */; };
 		B11827C12550A7C1008E5FF9 /* InventoryItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11827C02550A7C1008E5FF9 /* InventoryItemService.swift */; };
 		B13916D3253768EB00A2CFA2 /* EntryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916D2253768EB00A2CFA2 /* EntryService.swift */; };
@@ -39,6 +41,7 @@
 		B13916FE253771AD00A2CFA2 /* TimingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916FD253771AD00A2CFA2 /* TimingManager.swift */; };
 		B13917012537814100A2CFA2 /* GLProgressV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13917002537814100A2CFA2 /* GLProgressV.swift */; };
 		B1391703253783C300A2CFA2 /* GLProgressV.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1391702253783C300A2CFA2 /* GLProgressV.xib */; };
+		B1462D1C255DA206006C5D7D /* CreatureLevelLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1462D1B255DA206006C5D7D /* CreatureLevelLibrary.swift */; };
 		B14AA4B02540BBDD00D630A7 /* HealthKitServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AA4AF2540BBDD00D630A7 /* HealthKitServiceManager.swift */; };
 		B1A41DD4252D2A6900E57C7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DD3252D2A6900E57C7E /* AppDelegate.swift */; };
 		B1A41DD8252D2A6900E57C7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DD7252D2A6900E57C7E /* ViewController.swift */; };
@@ -73,6 +76,8 @@
 		B103F0E3254C9E3900A8BB04 /* InventoryItemTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItemTVCell.swift; sourceTree = "<group>"; };
 		B103F0E4254C9E3900A8BB04 /* InventoryItemTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryItemTVCell.xib; sourceTree = "<group>"; };
 		B112E1E0253F9DD20039E59B /* MKRingProgressGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKRingProgressGroupView.swift; sourceTree = "<group>"; };
+		B1130B31255C9020008C05FC /* StepCountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountService.swift; sourceTree = "<group>"; };
+		B1130B34255C92C6008C05FC /* CreatureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureService.swift; sourceTree = "<group>"; };
 		B11827BE2550A2A3008E5FF9 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		B11827C02550A7C1008E5FF9 /* InventoryItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItemService.swift; sourceTree = "<group>"; };
 		B13916D2253768EB00A2CFA2 /* EntryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryService.swift; sourceTree = "<group>"; };
@@ -97,6 +102,7 @@
 		B13916FD253771AD00A2CFA2 /* TimingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingManager.swift; sourceTree = "<group>"; };
 		B13917002537814100A2CFA2 /* GLProgressV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLProgressV.swift; sourceTree = "<group>"; };
 		B1391702253783C300A2CFA2 /* GLProgressV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLProgressV.xib; sourceTree = "<group>"; };
+		B1462D1B255DA206006C5D7D /* CreatureLevelLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureLevelLibrary.swift; sourceTree = "<group>"; };
 		B14AA4AF2540BBDD00D630A7 /* HealthKitServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitServiceManager.swift; sourceTree = "<group>"; };
 		B1A41DD0252D2A6900E57C7E /* Dragon Odyssey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dragon Odyssey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A41DD3252D2A6900E57C7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +182,7 @@
 			children = (
 				B11827BE2550A2A3008E5FF9 /* UserService.swift */,
 				B11827C02550A7C1008E5FF9 /* InventoryItemService.swift */,
+				B1130B34255C92C6008C05FC /* CreatureService.swift */,
 			);
 			name = "CoreData Services";
 			sourceTree = "<group>";
@@ -251,6 +258,14 @@
 			name = Agnostic;
 			sourceTree = "<group>";
 		};
+		B1462D16255DA17D006C5D7D /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				B1462D1B255DA206006C5D7D /* CreatureLevelLibrary.swift */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 		B1A41DC7252D2A6900E57C7E = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +314,7 @@
 		B1A41DEC252D3A2E00E57C7E /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				B1462D16255DA17D006C5D7D /* Libraries */,
 				B13916F42537706400A2CFA2 /* Managers */,
 				B1A41DED252D3A3200E57C7E /* Services */,
 				B1A41DF2252D426400E57C7E /* UI */,
@@ -316,6 +332,7 @@
 				B13916F7253770DA00A2CFA2 /* GlobalService.swift */,
 				B13916F92537710300A2CFA2 /* FunctionService.swift */,
 				B13916FB2537714000A2CFA2 /* DebugService.swift */,
+				B1130B31255C9020008C05FC /* StepCountService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -488,7 +505,9 @@
 				B1A41DD8252D2A6900E57C7E /* ViewController.swift in Sources */,
 				B13916F325376F7A00A2CFA2 /* Creature+CoreDataClass.swift in Sources */,
 				B13916E025376B4E00A2CFA2 /* HomeVC.swift in Sources */,
+				B1462D1C255DA206006C5D7D /* CreatureLevelLibrary.swift in Sources */,
 				B1A41DF1252D3ACF00E57C7E /* SharedDataExtensions.swift in Sources */,
+				B1130B32255C9020008C05FC /* StepCountService.swift in Sources */,
 				B13916F8253770DA00A2CFA2 /* GlobalService.swift in Sources */,
 				B13916FC2537714000A2CFA2 /* DebugService.swift in Sources */,
 				B103F0DE254C995C00A8BB04 /* InventoryItem+CoreDataClass.swift in Sources */,
@@ -512,6 +531,7 @@
 				B1A41DFB252E2CB000E57C7E /* GLVC.swift in Sources */,
 				B1A41DEF252D3A5300E57C7E /* FuncService.swift in Sources */,
 				B1A41DDE252D2A6900E57C7E /* DragonOdyssey.xcdatamodeld in Sources */,
+				B1130B35255C92C6008C05FC /* CreatureService.swift in Sources */,
 				B103F0E1254C9CEF00A8BB04 /* InventoryItemsLibrary.swift in Sources */,
 				B1CB2F092555DEE700D36E0C /* DebugVC.swift in Sources */,
 				B13916E525376B7400A2CFA2 /* StatsVC.swift in Sources */,

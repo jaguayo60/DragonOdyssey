@@ -12,6 +12,10 @@ class SharedExtensions: NSObject {
 
 }
 
+extension Numeric {
+    var formattedWithSeparator: String { Formatter.withSeparator.string(for: self) ?? "" }
+}
+
 extension Int32
 {
     func toInt() -> Int
@@ -314,6 +318,15 @@ extension Data
     var html2String: String {
         return html2AttributedString?.string ?? ""
     }
+}
+
+extension Formatter {
+    static let withSeparator: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = ","
+        return formatter
+    }()
 }
 
 extension String

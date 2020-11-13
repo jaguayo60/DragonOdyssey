@@ -38,10 +38,11 @@ class DebugService: NSObject
     static let logTimingActions = false
     static let logMigrationActions = false
     static let logFirebaseActions = false
+    static let logCreatureStats = true
     
     //❤️ HealthKit
     static let logBasicHealthKitAction = true
-    static let logDetailedHealthKitAction = true
+    static let logDetailedHealthKitAction = false
     
     //📦 Core Data
     static let logBasicCoreDataActions = true
@@ -75,9 +76,7 @@ class DebugService: NSObject
     }
     
     static func didBecomeActiveTasks() {
-        HealthKitServiceManager.shared.fetchStepsBetween(startDate: Date().plusNumberOfDays(numberOfDays: -20), endDate: Date()) { (samples) in
-            
-        }
+        
 //        if WADebug.logAllTips == true {
 //            TipService.logAllTips()
 //        }

@@ -41,4 +41,23 @@ class DebugVC: GLVC {
         UserService.user.tokens += 10
         CoreDataService.saveContext()
     }
+    
+    @IBAction func button07(_ sender: Any) {
+        CreatureService.creature.totalSteps += 3000
+        CoreDataService.saveContext()
+        
+        if DebugService.logCreatureStats == true { print("🐲 Added \(3000) steps to total. Total steps: \(CreatureService.creature.totalSteps)") }
+        
+        CreatureService.creature.updateLevel()
+    }
+    
+    @IBAction func button15(_ sender: Any) {
+        print(CreatureService.creature)
+    }
+    
+    @IBAction func button20(_ sender: Any) {
+        HealthKitServiceManager.shared.requestReadAccess {
+            StepCountService.addStepsSinceLastStepsAddedDate()
+        }
+    }
 }

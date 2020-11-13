@@ -21,6 +21,8 @@ class HomeVC: GLVC {
     
     // MARK: - Instance variables
     
+    let creature = CreatureService.creature
+    
     var isVisible: Bool {
         // validate if vc is visible here...
         return true
@@ -62,7 +64,8 @@ class HomeVC: GLVC {
     }
     
     func drawStaticUI() {
-        
+        stepsRemainingL.text = "\(creature.stepsRemainingToNextLevel.formattedWithSeparator) Steps Remaining"
+        levelTitleL.text = "Level \(Int(creature.level))"
     }
     
     func stageAnimatedUI() {
@@ -70,7 +73,7 @@ class HomeVC: GLVC {
     }
     
     func drawAnimatedUI(animated: Bool = true) {
-        levelProgressV.setProgressTo(percent: 0.25, animated: true)
+        levelProgressV.setProgressTo(percent: creature.percentageOfLevelComplete, animated: true)
         energyProgressV.setProgressTo(percent: 0.6, animated: true)
     }
     
