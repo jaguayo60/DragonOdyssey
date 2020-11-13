@@ -13,6 +13,7 @@ class StepCountService: NSObject {
     static let creature = CreatureService.creature
     
     static func addStepsSinceLastStepsAddedDate() {
+        
         var startDate = Date().midnight // if lastStepsAddedDate does not exist, set to start of today
         
         if let lastStepsAddedDate = FuncService.userDefaultsGet(objectForKey: "lastStepsAddedDate") as? Date {
@@ -28,6 +29,14 @@ class StepCountService: NSObject {
                 if DebugService.logCreatureStats == true { print("🐲 No new steps to add") }
                 return
             }
+            
+            // guard against steps being added twice
+            if let lastStepsAddedDate = FuncService.userDefaultsGet(objectForKey: "lastStepsAddedDate") as? Date {
+                print("lastStepsAddedDate: \(lastStepsAddedDate)")
+                print("interval since lastStepsAddedDate: \(Date().timeIntervalSince(lastStepsAddedDate))")
+                guard Date().timeIntervalSince(lastStepsAddedDate) > 3 else { return }
+            }
+            
             creature.totalSteps += stepCount
             
             CoreDataService.saveContext()
