@@ -111,6 +111,7 @@ class HomeVC: GLVC {
     }
     
     @IBAction func hunt(_ sender: Any) {
-        
+        let vc = HuntVC()
+        present(vc, animated: true, completion: nil)
     }
 }

@@ -42,11 +42,13 @@ public class Creature: NSManagedObject {
         for levelDict in CreatureLevelLibrary.creatureLevelDicts {
             guard let totalStepsForLevel = levelDict["totalStepsForLevel"] as? Int,
                   let stepsToNextLevel = levelDict["stepsToNextLevel"] as? Int,
-                  let level = levelDict["level"] as? Int
+                  let level = levelDict["level"] as? Int,
+                  let maxEnergy = levelDict["maxEnergy"] as? Int
             else { continue }
             
             if Int(totalSteps) >= totalStepsForLevel && Int(totalSteps) < (totalStepsForLevel + stepsToNextLevel) {
                 self.level = Double(level)
+                self.energy = Double(maxEnergy)
                 CoreDataService.saveContext()
                 
                 if DebugService.logCreatureStats == true { print("🐲 Updated creature level to Level \(level)") }
