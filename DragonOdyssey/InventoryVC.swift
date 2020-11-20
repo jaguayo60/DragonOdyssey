@@ -18,6 +18,7 @@ class InventoryVC: GLVC {
     // MARK: - Instance variables
     
     let user = UserService.user
+    let creature = CreatureService.creature
     lazy private var inventoryItems = InventoryItemsLibrary.inventoryItemsDict
     
     // MARK: - Class functions
@@ -41,7 +42,7 @@ class InventoryVC: GLVC {
     
     // MARK: - Purchasing
     
-    private func purchase(item:[String:Any]) {
+    func purchase(item:[String:Any]) {
         let storedItem = InventoryItem(context: CoreDataService.context)
         
         storedItem.user = user
@@ -86,6 +87,9 @@ extension InventoryVC: UITableViewDataSource {
         
         let item = inventoryItems[indexPath.row]
         
+        cell.inventoryItemDict = item
+        cell.parentVC = self
+        
         if let id = item["id"] as? String { cell.amountOfItemsInInventoryL.text = String(InventoryItemService.numberOfItemsInInventoryWith(id: id)) }
         cell.titleL.text = "\(item["name"] as? String ?? "") gives \(Int(item["energyAmount"] as? Double ?? 0)) energy"
         cell.tokenAmountL.text = "\(Int(item["tokenCost"] as? Double ?? 0))"
@@ -107,12 +111,17 @@ extension InventoryVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let inventoryItemDict = inventoryItems[indexPath.row]
-        guard let itemCost = inventoryItemDict["tokenCost"] as? Double else { return }
-        if itemCost >= user.tokens {
-            FuncService.showBasicAlert(title: "Whoops", message: "Looks like you don't have enough tokens to buy this item.", btnTitle: "Okay", action: nil, controller: self)
-        } else {
-            purchase(item: inventoryItemDict)
+        
+        guard let itemID = inventoryItemDict["id"] as? String, let item = InventoryItemService.fetchInventoryItemsWith(id: itemID)?[0] else { return }
+        
+        guard creature.energyLeftBeforeMax > 0 else {
+            FuncService.showBasicAlert(title: "Whoops", message: "It looks like your energy is full, try using this item when you need energy.", btnTitle: "Okay", action: nil, controller: self)
+            return
         }
+        
+        creature.energy = (creature.energy + item.energyAmount) <= creature.totalEnergy ? creature.energy + item.energyAmount : creature.totalEnergy
+        CoreDataService.context.delete(item)
+        CoreDataService.saveContext()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

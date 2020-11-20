@@ -13,6 +13,7 @@
                 <outlet property="agilityAmountL" destination="0bv-hV-uer" id="E42-ei-sRi"/>
                 <outlet property="energyAmountL" destination="meK-8D-Xm5" id="v8q-Fo-ABp"/>
                 <outlet property="levelL" destination="NY5-uM-u4p" id="YoK-xB-iq8"/>
+                <outlet property="levelProgressV" destination="dsc-de-pBl" id="y7e-7f-p09"/>
                 <outlet property="mapsTV" destination="pS1-OS-vUP" id="Hd2-jG-dJl"/>
                 <outlet property="strengthAmountL" destination="he9-Bq-k7k" id="Pk0-XF-lsz"/>
                 <outlet property="view" destination="hSd-Gu-FA0" id="BL8-fb-38a"/>
@@ -124,7 +125,7 @@
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KdG-uN-B13">
                                                                             <rect key="frame" x="0.0" y="0.0" width="79.5" height="56.5"/>
                                                                             <subviews>
-                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdg-gk-hPF" customClass="RoundedCornersV" customModule="Dragon_Odyssey" customModuleProvider="target">
+                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdg-gk-hPF" customClass="HuntVCEnergyBGView" customModule="Dragon_Odyssey" customModuleProvider="target">
                                                                                     <rect key="frame" x="11.5" y="0.0" width="56.5" height="56.5"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="meK-8D-Xm5">
@@ -134,7 +135,7 @@
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                     </subviews>
-                                                                                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.49543378999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.10131278539999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="Fdg-gk-hPF" secondAttribute="height" multiplier="1:1" id="Zyx-DJ-sbD"/>
                                                                                         <constraint firstItem="meK-8D-Xm5" firstAttribute="width" secondItem="Fdg-gk-hPF" secondAttribute="width" multiplier="0.6" id="bnj-CN-2N9"/>
@@ -177,7 +178,7 @@
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                     </subviews>
-                                                                                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.49543378999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="backgroundColor" red="0.72941176470000002" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="B2d-JX-t3c" secondAttribute="height" multiplier="1:1" id="8UJ-1N-nwS"/>
                                                                                         <constraint firstItem="he9-Bq-k7k" firstAttribute="centerX" secondItem="B2d-JX-t3c" secondAttribute="centerX" id="Baa-7c-m2u"/>
@@ -217,7 +218,7 @@
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                     </subviews>
-                                                                                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.4954337899543379" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                    <color key="backgroundColor" red="0.2784313725" green="0.72941176470000002" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="GE9-yZ-dy3" secondAttribute="height" multiplier="1:1" id="7ho-ky-5ZW"/>
                                                                                         <constraint firstItem="0bv-hV-uer" firstAttribute="width" secondItem="GE9-yZ-dy3" secondAttribute="width" multiplier="0.6" id="QmY-2u-3FH"/>

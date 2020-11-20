@@ -66,6 +66,7 @@ class HomeVC: GLVC {
     func drawStaticUI() {
         stepsRemainingL.text = "\(creature.stepsRemainingToNextLevel.formattedWithSeparator) Steps Remaining"
         levelTitleL.text = "Level \(Int(creature.level))"
+        energyAmountL.text = "\(Int(creature.energy))/\(Int(creature.totalEnergy))"
     }
     
     func stageAnimatedUI() {
@@ -74,7 +75,7 @@ class HomeVC: GLVC {
     
     func drawAnimatedUI(animated: Bool = true) {
         levelProgressV.setProgressTo(percent: creature.percentageOfLevelComplete, animated: true)
-        energyProgressV.setProgressTo(percent: 0.6, animated: true)
+        energyProgressV.setProgressTo(percent: creature.percentageOfEnergyAvailable, animated: true)
     }
     
     // MARK: - Data Responding

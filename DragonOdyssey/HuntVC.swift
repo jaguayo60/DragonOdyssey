@@ -13,6 +13,7 @@ class HuntVC: GLVC {
     // MARK: - IBOutlets
     
     @IBOutlet weak var levelL: UILabel!
+    @IBOutlet weak var levelProgressV: GLProgressV!
     @IBOutlet weak var energyAmountL: UILabel!
     @IBOutlet weak var strengthAmountL: UILabel!
     @IBOutlet weak var agilityAmountL: UILabel!
@@ -32,16 +33,40 @@ class HuntVC: GLVC {
         let nib = UINib(nibName: "HuntVCMapTVCell", bundle: nil)
         mapsTV.register(nib, forCellReuseIdentifier: "MapCell")
         
-        drawVC()
+        drawInitialUI()
+        drawStaticUI()
+    }
+    
+    var viewDidAppearLastCalled: Date?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // Prevent viewDidAppear from being called twice
+        if let viewDidAppearLastCalled = viewDidAppearLastCalled {
+            let secondsSinceLastCalled = -viewDidAppearLastCalled.timeIntervalSinceNow
+            if secondsSinceLastCalled < 0.5 { return }
+        }
+        
+        super.viewDidAppear(animated)
+        viewDidAppearLastCalled = Date()
+        
+        drawAnimatedUI()
     }
     
     // MARK: - UI
     
-    func drawVC() {
+    func drawInitialUI() {
+        levelProgressV.progressBarVColor = #colorLiteral(red: 0.4284983277, green: 0.9816996455, blue: 0.5134830475, alpha: 1)
+    }
+    
+    func drawStaticUI() {
         levelL.text = "Level \(Int(creature.level))"
         energyAmountL.text = String(Int(creature.energy))
         strengthAmountL.text = String(Int(creature.strength))
         agilityAmountL.text = String(Int(creature.agility))
+    }
+    
+    func drawAnimatedUI(animated: Bool = true) {
+        levelProgressV.setProgressTo(percent: creature.percentageOfLevelComplete, animated: true)
     }
     
     // MARK: - IBActions
@@ -81,6 +106,28 @@ extension HuntVC: UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 180
+    }
+}
+
+class HuntVCEnergyBGView: UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = bounds.height / 2
+    }
+    
+    private func commonInit() {
+        layer.borderWidth = 3
+        layer.borderColor = #colorLiteral(red: 0.9995340705, green: 0.988355577, blue: 0.4726552367, alpha: 1)
     }
 }

@@ -33,9 +33,18 @@ public class Creature: NSManagedObject {
         return stepsToNextLevel - stepsIntoLevel
     }
     
+    var energyLeftBeforeMax: Int { // example 10/15, 5 energyLeftBeforeMax
+        return (totalEnergy - energy) >= 0 ? Int(totalEnergy - energy) : 0
+    }
+    
     var percentageOfLevelComplete: CGFloat {
         guard let stepsToNextLevel = stepsToNextLevel else { return 0 }
         return CGFloat(stepsIntoLevel) / CGFloat(stepsToNextLevel)
+    }
+    
+    var percentageOfEnergyAvailable: CGFloat {
+        guard totalEnergy > 0 else { return 0 } // guard against divising by 0
+        return CGFloat(energy / totalEnergy)
     }
     
     func updateLevel() {
@@ -48,7 +57,7 @@ public class Creature: NSManagedObject {
             
             if Int(totalSteps) >= totalStepsForLevel && Int(totalSteps) < (totalStepsForLevel + stepsToNextLevel) {
                 self.level = Double(level)
-                self.energy = Double(maxEnergy)
+                self.totalEnergy = Double(maxEnergy)
                 CoreDataService.saveContext()
                 
                 if DebugService.logCreatureStats == true { print("🐲 Updated creature level to Level \(level)") }
