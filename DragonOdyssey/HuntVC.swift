@@ -93,6 +93,10 @@ extension HuntVC: UITableViewDataSource
         
         cell.nameL.text = mapDict["name"] as? String
         
+        if let bgImageName = mapDict["bgImageName"] as? String, let bgImage = UIImage(named: bgImageName) {
+            cell.mapBGImgV.image = bgImage
+        }
+        
         return cell
     }
 }
@@ -102,11 +106,21 @@ extension HuntVC: UITableViewDelegate
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let map = maps[indexPath.row]
+        FuncService.showBasicAlert(title: map["name"] as? String ?? "", message: "Level: \(Int(map["level"] as? Double ?? 0))\nTime to complete: \(Int(map["timeLengthInSeconds"] as? Double ?? 0)) seconds\nEnergy Cost: \(Int(map["energyCost"] as? Double ?? 0))\nExperience: \(Int(map["rewardExperience"] as? Double ?? 0))", btnTitle: "Okay", action: nil, controller: self)
         
+        
+//        "name":"Grasslands",
+//        "bgImageName":"mapGrasslands",
+//        "timeLengthInSeconds":Double(3*60),
+//        "level":Double(1),
+//        "energyCost":Double(1),
+//        "rewardExperience":Double(300),
+//        "rewardFoodItems":["strawberry"]
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
+        return (tableView.bounds.width * (765/1100)) + 20
     }
 }
 

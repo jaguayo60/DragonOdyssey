@@ -11,8 +11,8 @@ import UIKit
 class MapsLibrary: NSObject {
     static let maps: [[String:Any]] = [
         ["id":"001",
-         "name":"Hills",
-         "bgImageName":"",
+         "name":"Grasslands",
+         "bgImageName":"mapGrasslands",
          "timeLengthInSeconds":Double(3*60),
          "level":Double(1),
          "energyCost":Double(1),
@@ -21,7 +21,7 @@ class MapsLibrary: NSObject {
         ],
         ["id":"010",
          "name":"Desert",
-         "bgImageName":"",
+         "bgImageName":"mapDesert",
          "timeLengthInSeconds":Double(10*60),
          "level":Double(3),
          "energyCost":Double(5),
@@ -29,8 +29,8 @@ class MapsLibrary: NSObject {
          "rewardFoodItems":["strawberry","mango"]
         ],
         ["id":"020",
-         "name":"Beach",
-         "bgImageName":"",
+         "name":"Ocean",
+         "bgImageName":"mapOcean",
          "timeLengthInSeconds":Double(20*60),
          "level":Double(5),
          "energyCost":Double(10),

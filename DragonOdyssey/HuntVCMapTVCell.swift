@@ -14,6 +14,7 @@ class HuntVCMapTVCell: UITableViewCell {
     
     @IBOutlet weak var mapCtnV: UIView!
     @IBOutlet weak var nameL: UILabel!
+    @IBOutlet weak var mapBGImgV: UIImageView!
     
     
     // MARK: - Class functions
