@@ -91,6 +91,7 @@ extension HuntVC: UITableViewDataSource
         
         let mapDict = maps[indexPath.row]
         
+        cell.levelL.text = String(Int(mapDict["level"] as? Double ?? 0))
         cell.nameL.text = mapDict["name"] as? String
         
         if let bgImageName = mapDict["bgImageName"] as? String, let bgImage = UIImage(named: bgImageName) {

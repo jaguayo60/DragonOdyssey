@@ -27,17 +27,52 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMt-ZJ-FUB" userLabel="FlexibleSpace">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="178.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYh-ww-HfZ">
-                                        <rect key="frame" x="0.0" y="178.5" width="320" height="44.5"/>
+                                        <rect key="frame" x="0.0" y="157" width="320" height="66"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bqh-Il-ZRe">
-                                                <rect key="frame" x="20" y="8" width="280" height="28.5"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Bqh-Il-ZRe">
+                                                <rect key="frame" x="10" y="8" width="290" height="50"/>
                                                 <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJt-ww-mpL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="50"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ht-tE-CVN" customClass="LevelBGV" customModule="Dragon_Odyssey" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="10" width="30" height="30"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="war-Hz-tTW">
+                                                                        <rect key="frame" x="6" y="6" width="18" height="18"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="war-Hz-tTW" secondAttribute="height" multiplier="1:1" id="tGy-R3-9aR"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.2513199200913242" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="war-Hz-tTW" firstAttribute="centerX" secondItem="0Ht-tE-CVN" secondAttribute="centerX" id="L8l-d1-O3t"/>
+                                                                    <constraint firstAttribute="width" constant="30" id="SG9-68-wt9"/>
+                                                                    <constraint firstAttribute="width" secondItem="0Ht-tE-CVN" secondAttribute="height" multiplier="1:1" id="XNi-Wf-eFs"/>
+                                                                    <constraint firstItem="war-Hz-tTW" firstAttribute="centerY" secondItem="0Ht-tE-CVN" secondAttribute="centerY" id="fBY-do-bSr"/>
+                                                                    <constraint firstItem="war-Hz-tTW" firstAttribute="width" secondItem="0Ht-tE-CVN" secondAttribute="width" multiplier="0.6" id="pwZ-dA-qe4"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="0Ht-tE-CVN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uJt-ww-mpL" secondAttribute="top" id="4po-Bl-dth"/>
+                                                            <constraint firstAttribute="trailing" secondItem="0Ht-tE-CVN" secondAttribute="trailing" id="5sf-Dg-3ui"/>
+                                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="0Ht-tE-CVN" secondAttribute="bottom" id="cM6-sy-xbw"/>
+                                                            <constraint firstItem="0Ht-tE-CVN" firstAttribute="leading" secondItem="uJt-ww-mpL" secondAttribute="leading" id="eOB-bP-yg6"/>
+                                                            <constraint firstItem="0Ht-tE-CVN" firstAttribute="centerY" secondItem="uJt-ww-mpL" secondAttribute="centerY" id="kv8-nz-ei0"/>
+                                                        </constraints>
+                                                    </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBw-RG-KBh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="28.5"/>
+                                                        <rect key="frame" x="40" y="0.0" width="250" height="50"/>
                                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="26"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -48,7 +83,7 @@
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="Bqh-Il-ZRe" secondAttribute="bottom" constant="8" id="MLq-wQ-MOU"/>
-                                            <constraint firstItem="Bqh-Il-ZRe" firstAttribute="leading" secondItem="uYh-ww-HfZ" secondAttribute="leading" constant="20" id="gfe-54-vTK"/>
+                                            <constraint firstItem="Bqh-Il-ZRe" firstAttribute="leading" secondItem="uYh-ww-HfZ" secondAttribute="leading" constant="10" id="gfe-54-vTK"/>
                                             <constraint firstItem="Bqh-Il-ZRe" firstAttribute="top" secondItem="uYh-ww-HfZ" secondAttribute="top" constant="8" id="mk4-o7-npP"/>
                                             <constraint firstAttribute="trailing" secondItem="Bqh-Il-ZRe" secondAttribute="trailing" constant="20" id="wQT-U1-JoQ"/>
                                         </constraints>
@@ -80,6 +115,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="levelL" destination="war-Hz-tTW" id="Zbv-by-Dk9"/>
                 <outlet property="mapBGImgV" destination="ui9-t3-ldc" id="6g5-MR-SHa"/>
                 <outlet property="mapCtnV" destination="Zjb-Pl-kUg" id="hWc-wD-a6B"/>
                 <outlet property="nameL" destination="OBw-RG-KBh" id="lGq-Db-EOh"/>

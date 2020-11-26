@@ -13,6 +13,7 @@ class HuntVCMapTVCell: UITableViewCell {
     // MARK: - IBOutlets
     
     @IBOutlet weak var mapCtnV: UIView!
+    @IBOutlet weak var levelL: UILabel!
     @IBOutlet weak var nameL: UILabel!
     @IBOutlet weak var mapBGImgV: UIImageView!
     
@@ -30,4 +31,26 @@ class HuntVCMapTVCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+}
+
+class LevelBGV: UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = bounds.height / 2
+    }
+    
+    private func commonInit() {
+        layer.borderWidth = 3
+        layer.borderColor = UIColor.white.cgColor
+    }
 }
