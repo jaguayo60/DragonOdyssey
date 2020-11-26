@@ -93,6 +93,7 @@ extension HuntVC: UITableViewDataSource
         
         cell.levelL.text = String(Int(mapDict["level"] as? Double ?? 0))
         cell.nameL.text = mapDict["name"] as? String
+        cell.energyCostL.text = String(Int(mapDict["energyCost"] as? Double ?? 0))
         
         if let bgImageName = mapDict["bgImageName"] as? String, let bgImage = UIImage(named: bgImageName) {
             cell.mapBGImgV.image = bgImage

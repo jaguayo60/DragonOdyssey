@@ -71,12 +71,48 @@
                                                             <constraint firstItem="0Ht-tE-CVN" firstAttribute="centerY" secondItem="uJt-ww-mpL" secondAttribute="centerY" id="kv8-nz-ei0"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBw-RG-KBh">
-                                                        <rect key="frame" x="40" y="0.0" width="250" height="50"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Map Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OBw-RG-KBh">
+                                                        <rect key="frame" x="40" y="0.0" width="193" height="50"/>
                                                         <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="26"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pcz-Mi-VyW">
+                                                        <rect key="frame" x="243" y="0.0" width="47" height="50"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WjU-EY-Fam">
+                                                                <rect key="frame" x="0.0" y="0.0" width="24" height="50"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RiC-AR-ewD">
+                                                                        <rect key="frame" x="0.0" y="13" width="24" height="24"/>
+                                                                        <accessibility key="accessibilityConfiguration">
+                                                                            <bool key="isElement" value="NO"/>
+                                                                        </accessibility>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="RiC-AR-ewD" secondAttribute="height" multiplier="1:1" id="OPH-xD-9g3"/>
+                                                                            <constraint firstAttribute="width" constant="24" id="oqe-Lx-dLh"/>
+                                                                        </constraints>
+                                                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" image="energy"/>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="RiC-AR-ewD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WjU-EY-Fam" secondAttribute="top" id="Gp3-9y-maG"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="RiC-AR-ewD" secondAttribute="trailing" id="KXO-2i-wrq"/>
+                                                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="RiC-AR-ewD" secondAttribute="bottom" id="Wcr-4y-53R"/>
+                                                                    <constraint firstItem="RiC-AR-ewD" firstAttribute="leading" secondItem="WjU-EY-Fam" secondAttribute="leading" id="kaX-EM-d8T"/>
+                                                                    <constraint firstItem="RiC-AR-ewD" firstAttribute="centerY" secondItem="WjU-EY-Fam" secondAttribute="centerY" id="rvy-tc-sjD"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mja-HI-J8e">
+                                                                <rect key="frame" x="24" y="0.0" width="23" height="50"/>
+                                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -115,6 +151,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="energyCostL" destination="mja-HI-J8e" id="423-FR-Shj"/>
                 <outlet property="levelL" destination="war-Hz-tTW" id="Zbv-by-Dk9"/>
                 <outlet property="mapBGImgV" destination="ui9-t3-ldc" id="6g5-MR-SHa"/>
                 <outlet property="mapCtnV" destination="Zjb-Pl-kUg" id="hWc-wD-a6B"/>
@@ -124,6 +161,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="energy" width="90" height="90"/>
         <image name="mapGrasslands" width="1100" height="765"/>
     </resources>
 </document>
