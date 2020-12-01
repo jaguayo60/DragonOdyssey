@@ -15,6 +15,9 @@ class MapVC: GLVC {
     @IBOutlet weak var nameL: UILabel!
     @IBOutlet weak var levelL: UILabel!
     @IBOutlet weak var energyCostL: UILabel!
+    @IBOutlet weak var timeLengthL: UILabel!
+    @IBOutlet weak var experienceL: UILabel!
+    @IBOutlet weak var itemsL: UILabel!
     
     // MARK: - Instance variables
     
@@ -41,14 +44,80 @@ class MapVC: GLVC {
     
     // MARK: - UI
     
-    func drawVC() {
+    private func drawVC() {
         levelL.text = String(Int(map["level"] as? Double ?? 0))
         nameL.text = map["name"] as? String
-        energyCostL.text = String(Int(map["energyCost"] as? Double ?? 0))
+        energyCostL.text = "\((Int(map["energyCost"] as? Double ?? 0))) Energy"
+        timeLengthL.text = timeLengthStringFor(map: map)
+        experienceL.text = "\((Int(map["rewardExperience"] as? Double ?? 0))) Experience"
+        itemsL.text = itemsStringFor(map: map)
+    }
+    
+    private func timeLengthStringFor(map: [String:Any]) -> String {
+        guard let timeLengthInSecondsDouble = map["timeLengthInSeconds"] as? Double else { return "" }
+        let timeLengthInSeconds = Int(timeLengthInSecondsDouble)
+        
+//        dayL.text = String(format: "%02d", timeInterval / 86400)
+        let hours = String((timeLengthInSeconds % 86400) / 60 / 60)
+        let minutes = String((timeLengthInSeconds % 3600) / 60)
+        let seconds = String((timeLengthInSeconds % 3600) % 60)
+        
+//        return "\(hours):\(minutes):\(seconds)"
+        
+        var timeLengthString = ""
+        if hours != "0" { timeLengthString.append("\(hours) \((hours == "1") ? "Hour" : "Hours")") }
+        if minutes != "0" {
+            if timeLengthString != "" { timeLengthString.append(", ") }
+            timeLengthString.append("\(minutes) \((minutes == "1") ? "Minute" : "Minutes")")
+        }
+        if seconds != "0" {
+            if timeLengthString != "" { timeLengthString.append(", ") }
+            timeLengthString.append("\(seconds) \((seconds == "1") ? "Second" : "Seconds")")
+        }
+        
+        return timeLengthString
+    }
+    
+    private func itemsStringFor(map: [String:Any]) -> String {
+        guard let itemIDs = map["rewardItems"] as? [String] else { return "" }
+        
+        var itemDicts = [[String:Any]]()
+        
+        for itemID in itemIDs {
+            guard let itemDict = InventoryItemsLibrary.itemDictWith(id: itemID) else { continue }
+            itemDicts.append(itemDict)
+        }
+        
+        var itemsString = ""
+        var itemIDsAddedToString = [String]()
+        
+        for itemDict in itemDicts {
+            guard let itemID = itemDict["id"] as? String,
+                  let itemName = itemDict["name"] as? String,
+                  itemIDsAddedToString.contains(itemID) == false
+            else { continue }
+            
+            let number = numberOfItemsWith(id: itemID, inItemDicts: itemDicts)
+            itemsString.append((itemsString == "") ? "\(number) x \(itemName)" : "\n\(number) x \(itemName)")
+            itemIDsAddedToString.append(itemID)
+        }
+        return itemsString
+    }
+    
+    private func numberOfItemsWith(id: String, inItemDicts itemDicts: [[String:Any]]) -> Int {
+        var number = 0
+        for itemDict in itemDicts {
+            guard let itemID = itemDict["id"] as? String else { continue }
+            if id == itemID { number += 1 }
+        }
+        return number
     }
     
     // MARK: - IBActions
 
+    @IBAction func close(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 class MapPopUpView: UIView {
@@ -65,7 +134,7 @@ class MapPopUpView: UIView {
     
     private func commonInit() {
         layer.cornerRadius = 10
-        layer.borderWidth = 3
-        layer.borderColor = UIColor.from(hexValue: "4770B7").cgColor
+//        layer.borderWidth = 3
+//        layer.borderColor = UIColor.from(hexValue: "4770B7").cgColor
     }
 }

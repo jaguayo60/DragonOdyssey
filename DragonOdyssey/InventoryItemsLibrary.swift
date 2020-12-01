@@ -9,7 +9,16 @@
 import UIKit
 
 class InventoryItemsLibrary: NSObject {
-    static var inventoryItemsDict = [
+    
+    static func itemDictWith(id: String) -> [String:Any]? {
+        for item in inventoryItemsArray {
+            guard let itemID = item["id"] as? String else { continue }
+            if id == itemID { return item }
+        }
+        return nil
+    }
+    
+    static var inventoryItemsArray = [
         
         ["id":"strawberry",
          "imageName":"strawberry",

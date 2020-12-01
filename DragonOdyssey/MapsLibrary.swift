@@ -17,7 +17,7 @@ class MapsLibrary: NSObject {
          "level":Double(1),
          "energyCost":Double(1),
          "rewardExperience":Double(300),
-         "rewardFoodItems":["strawberry"]
+         "rewardItems":["strawberry"]
         ],
         ["id":"010",
          "name":"Desert",
@@ -26,7 +26,7 @@ class MapsLibrary: NSObject {
          "level":Double(3),
          "energyCost":Double(5),
          "rewardExperience":Double(700),
-         "rewardFoodItems":["strawberry","mango"]
+         "rewardItems":["strawberry","mango"]
         ],
         ["id":"020",
          "name":"Ocean",
@@ -35,7 +35,7 @@ class MapsLibrary: NSObject {
          "level":Double(5),
          "energyCost":Double(10),
          "rewardExperience":Double(1200),
-         "rewardFoodItems":["strawberry","strawberry","bread"]
+         "rewardItems":["strawberry","strawberry","bread"]
         ]
     ]
 }

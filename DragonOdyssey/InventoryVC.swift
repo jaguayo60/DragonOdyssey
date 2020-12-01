@@ -19,7 +19,7 @@ class InventoryVC: GLVC {
     
     let user = UserService.user
     let creature = CreatureService.creature
-    lazy private var inventoryItems = InventoryItemsLibrary.inventoryItemsDict
+    lazy private var inventoryItems = InventoryItemsLibrary.inventoryItemsArray
     
     // MARK: - Class functions
     
