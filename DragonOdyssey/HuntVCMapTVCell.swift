@@ -13,11 +13,15 @@ class HuntVCMapTVCell: UITableViewCell {
     // MARK: - IBOutlets
     
     @IBOutlet weak var mapCtnV: UIView!
+    @IBOutlet weak var mapBGImgV: UIImageView!
+    
+    @IBOutlet weak var detailsOverlaySV: UIStackView!
     @IBOutlet weak var levelL: UILabel!
     @IBOutlet weak var nameL: UILabel!
     @IBOutlet weak var energyCostL: UILabel!
-    @IBOutlet weak var mapBGImgV: UIImageView!
     
+    @IBOutlet weak var missionActiveOverlayV: UIView!
+    @IBOutlet weak var timeLeftL: UILabel!
     
     // MARK: - Class functions
     
@@ -32,6 +36,10 @@ class HuntVCMapTVCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        detailsOverlaySV.isHidden = false
+        missionActiveOverlayV.isHidden = true
+    }
 }
 
 class LevelBGV: UIView {

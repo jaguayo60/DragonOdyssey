@@ -22,6 +22,7 @@ extension Creature {
     @NSManaged public var totalSteps: Double
     @NSManaged public var agility: Double
     @NSManaged public var strength: Double
+    @NSManaged public var currentMission: [String:Any]?
 
     public override func awakeFromInsert() {
         totalEnergy = 3

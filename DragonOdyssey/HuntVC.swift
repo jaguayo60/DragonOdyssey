@@ -30,6 +30,8 @@ class HuntVC: GLVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.coreDataManagerControllerDidChangeContent), name: NSNotification.Name(rawValue: "CoreDataManager_controllerDidChangeContent"), object: nil)
+        
         let nib = UINib(nibName: "HuntVCMapTVCell", bundle: nil)
         mapsTV.register(nib, forCellReuseIdentifier: "MapCell")
         
@@ -69,6 +71,13 @@ class HuntVC: GLVC {
         levelProgressV.setProgressTo(percent: creature.percentageOfLevelComplete, animated: true)
     }
     
+    // MARK: - Data Responding
+    
+    @objc func coreDataManagerControllerDidChangeContent(notification: NSNotification) {
+        drawStaticUI()
+        mapsTV.reloadData()
+    }
+    
     // MARK: - IBActions
 
     @IBAction func close(_ sender: Any) {
@@ -99,7 +108,22 @@ extension HuntVC: UITableViewDataSource
             cell.mapBGImgV.image = bgImage
         }
         
+        if mapIsInProgress(map: mapDict) == true {
+            cell.detailsOverlaySV.isHidden = true
+            cell.missionActiveOverlayV.isHidden = false
+        }
+        
         return cell
+    }
+    
+    private func mapIsInProgress(map: [String:Any]) -> Bool {
+        guard let creatureCurrentMission = creature.currentMission,
+              let missionMap = creatureCurrentMission["map"] as? [String:Any],
+              let missionMapID = missionMap["id"] as? String,
+              let mapID = map["id"] as? String
+              else { return false }
+        
+        return missionMapID == mapID
     }
 }
 

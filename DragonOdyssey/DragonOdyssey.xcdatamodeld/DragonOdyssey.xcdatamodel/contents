@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Creature" representedClassName="Creature" syncable="YES">
         <attribute name="agility" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="currentMission" optional="YES" attributeType="Transformable"/>
         <attribute name="energy" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="level" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="strength" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -23,7 +24,7 @@
         <relationship name="inventoryItems" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="InventoryItem" inverseName="user" inverseEntity="InventoryItem"/>
     </entity>
     <elements>
-        <element name="Creature" positionX="-36" positionY="18" width="128" height="133"/>
+        <element name="Creature" positionX="-36" positionY="18" width="128" height="148"/>
         <element name="InventoryItem" positionX="-45" positionY="45" width="128" height="163"/>
         <element name="User" positionX="-54" positionY="-9" width="128" height="73"/>
     </elements>

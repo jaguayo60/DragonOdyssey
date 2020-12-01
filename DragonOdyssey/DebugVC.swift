@@ -43,10 +43,10 @@ class DebugVC: GLVC {
     }
     
     @IBAction func button07(_ sender: Any) {
-        CreatureService.creature.totalSteps += 3000
+        CreatureService.creature.totalSteps += 2500
         CoreDataService.saveContext()
         
-        if DebugService.logCreatureStats == true { print("🐲 Added \(3000) steps to total. Total steps: \(CreatureService.creature.totalSteps)") }
+        if DebugService.logCreatureStats == true { print("🐲 Added \(2500) steps to total. Total steps: \(CreatureService.creature.totalSteps)") }
         
         CreatureService.creature.updateLevel()
     }

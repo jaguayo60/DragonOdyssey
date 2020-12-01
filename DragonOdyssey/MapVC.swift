@@ -22,6 +22,7 @@ class MapVC: GLVC {
     // MARK: - Instance variables
     
     var map: [String:Any]!
+    let creature = CreatureService.creature
     
     // MARK: - Class functions
     
@@ -113,9 +114,34 @@ class MapVC: GLVC {
         return number
     }
     
+    // MARK: - Mission Generation
+    
+    private func startMissionForMap() {
+        guard let map = map else { return }
+        
+        let mission: [String:Any] = [
+            "startDate":Date(),
+            "map":map
+        ]
+        
+        creature.currentMission = mission
+        CoreDataService.saveContext()
+    }
+    
     // MARK: - IBActions
 
     @IBAction func close(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func sendDragon(_ sender: Any) {
+        guard let mapEnergyCost = map["energyCost"] as? Double else { return }
+        guard mapEnergyCost <= creature.energy else {
+            FuncService.showBasicAlert(title: "Whoops", message: "It looks like your dragon only has \(Int(creature.energy)) energy. \(Int(mapEnergyCost)) energy is required for this mission.", btnTitle: "Okay", action: nil, controller: self)
+            return
+        }
+        
+        startMissionForMap()
         dismiss(animated: true, completion: nil)
     }
 }

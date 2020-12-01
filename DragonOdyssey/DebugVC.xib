@@ -115,7 +115,7 @@
                                                                     <rect key="frame" x="10" y="3" width="362" height="41"/>
                                                                     <accessibility key="accessibilityConfiguration" label="Units of measure"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <state key="normal" title="7: Add 3,000 Steps">
+                                                                    <state key="normal" title="7: Add 2,500 Steps">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </state>
                                                                     <connections>

@@ -23,6 +23,37 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapGrasslands" translatesAutoresizingMaskIntoConstraints="NO" id="ui9-t3-ldc">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
                             </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZV-ab-y0h">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="p0o-T1-yLq">
+                                        <rect key="frame" x="50" y="79" width="220.5" height="65"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Mission Complete In:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Whn-dh-neI">
+                                                <rect key="frame" x="0.0" y="0.0" width="220.5" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="26"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="00:24:21" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jTp-6P-pxY">
+                                                <rect key="frame" x="0.0" y="36.5" width="220.5" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="26"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="p0o-T1-yLq" firstAttribute="top" relation="greaterThanOrEqual" secondItem="eZV-ab-y0h" secondAttribute="top" constant="20" id="9OB-As-4vS"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="p0o-T1-yLq" secondAttribute="bottom" constant="20" id="T8b-yq-Izr"/>
+                                    <constraint firstItem="p0o-T1-yLq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eZV-ab-y0h" secondAttribute="leading" constant="20" id="TTs-f9-1At"/>
+                                    <constraint firstItem="p0o-T1-yLq" firstAttribute="centerX" secondItem="eZV-ab-y0h" secondAttribute="centerX" id="bYI-zV-RzM"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="p0o-T1-yLq" secondAttribute="trailing" constant="20" id="oUs-Ja-zVf"/>
+                                    <constraint firstItem="p0o-T1-yLq" firstAttribute="centerY" secondItem="eZV-ab-y0h" secondAttribute="centerY" id="tJ5-Uv-Eb4"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="X8Q-rt-yCW">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
                                 <subviews>
@@ -131,7 +162,11 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ui9-t3-ldc" secondAttribute="trailing" id="7Uk-vR-oip"/>
                             <constraint firstAttribute="bottom" secondItem="X8Q-rt-yCW" secondAttribute="bottom" id="BdH-UD-4yV"/>
+                            <constraint firstAttribute="trailing" secondItem="eZV-ab-y0h" secondAttribute="trailing" id="D7x-yb-fPm"/>
                             <constraint firstAttribute="bottom" secondItem="ui9-t3-ldc" secondAttribute="bottom" id="EnZ-l1-Wqh"/>
+                            <constraint firstItem="eZV-ab-y0h" firstAttribute="leading" secondItem="Zjb-Pl-kUg" secondAttribute="leading" id="Nfw-wY-6th"/>
+                            <constraint firstItem="eZV-ab-y0h" firstAttribute="top" secondItem="Zjb-Pl-kUg" secondAttribute="top" id="Wv8-nx-eZt"/>
+                            <constraint firstAttribute="bottom" secondItem="eZV-ab-y0h" secondAttribute="bottom" id="hVJ-9C-xtj"/>
                             <constraint firstItem="X8Q-rt-yCW" firstAttribute="leading" secondItem="Zjb-Pl-kUg" secondAttribute="leading" id="k2s-dy-aDK"/>
                             <constraint firstItem="ui9-t3-ldc" firstAttribute="leading" secondItem="Zjb-Pl-kUg" secondAttribute="leading" id="kJV-Qq-k8M"/>
                             <constraint firstItem="X8Q-rt-yCW" firstAttribute="top" secondItem="Zjb-Pl-kUg" secondAttribute="top" id="loH-49-qhq"/>
@@ -151,11 +186,14 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="detailsOverlaySV" destination="X8Q-rt-yCW" id="9DJ-gD-wSr"/>
                 <outlet property="energyCostL" destination="mja-HI-J8e" id="423-FR-Shj"/>
                 <outlet property="levelL" destination="war-Hz-tTW" id="Zbv-by-Dk9"/>
                 <outlet property="mapBGImgV" destination="ui9-t3-ldc" id="6g5-MR-SHa"/>
                 <outlet property="mapCtnV" destination="Zjb-Pl-kUg" id="hWc-wD-a6B"/>
+                <outlet property="missionActiveOverlayV" destination="eZV-ab-y0h" id="LNS-UN-Wjh"/>
                 <outlet property="nameL" destination="OBw-RG-KBh" id="lGq-Db-EOh"/>
+                <outlet property="timeLeftL" destination="jTp-6P-pxY" id="sH7-c2-3Xy"/>
             </connections>
             <point key="canvasLocation" x="-58" y="133"/>
         </tableViewCell>
