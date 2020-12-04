@@ -23,6 +23,12 @@ class HuntVCMapTVCell: UITableViewCell {
     @IBOutlet weak var missionActiveOverlayV: UIView!
     @IBOutlet weak var timeLeftL: UILabel!
     
+    
+    // MARK: - Instance Variables
+    
+    var huntVC: HuntVC?
+    
+    
     // MARK: - Class functions
     
     override func awakeFromNib() {
@@ -39,6 +45,50 @@ class HuntVCMapTVCell: UITableViewCell {
     override func prepareForReuse() {
         detailsOverlaySV.isHidden = false
         missionActiveOverlayV.isHidden = true
+    }
+    
+    // MARK: - Timer
+    
+    var timeLeftTimer = Timer()
+
+    var timeIntervalLeft: Int = 0
+    
+    func startTimeLeftTimerWith(startDate: Date, durationInSeconds: Double) {
+        timeLeftTimer.invalidate()
+        let endDate = startDate.addingTimeInterval(durationInSeconds)
+        timeIntervalLeft = Int(endDate.timeIntervalSince(Date()))
+        drawCounterWith(timeInterval: timeIntervalLeft)
+        
+        timeLeftTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(counter), userInfo: nil, repeats: true)
+    }
+    
+    @objc func counter() {
+        guard timeIntervalLeft >= 0,
+              UIService.topMostViewController() is HuntVC // stop timer when view is dismissed
+        else {
+            timeLeftTimer.invalidate()
+            huntVC?.completeMission()
+            return
+        }
+        
+        print(timeIntervalLeft)
+        
+        timeIntervalLeft -= 1
+        drawCounterWith(timeInterval: timeIntervalLeft)
+    }
+    
+    private func drawCounterWith(timeInterval: Int) {
+        guard timeInterval > 0 else {
+            timeLeftL.text = "00:00:00"
+            return
+        }
+        
+//        dayL.text = String(format: "%02d", timeInterval / 86400)
+        let hourString = String(format: "%02d", (timeInterval % 86400) / 60 / 60)
+        let minuteString = String(format: "%02d", (timeInterval % 3600) / 60)
+        let secondString = String(format: "%02d", (timeInterval % 3600) % 60)
+        
+        timeLeftL.text = "\(hourString):\(minuteString):\(secondString)"
     }
 }
 

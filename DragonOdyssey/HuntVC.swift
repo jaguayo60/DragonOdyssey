@@ -71,6 +71,40 @@ class HuntVC: GLVC {
         levelProgressV.setProgressTo(percent: creature.percentageOfLevelComplete, animated: true)
     }
     
+    // MARK: - Maps
+    
+    private func mapIsInProgress(map: [String:Any]) -> Bool {
+        guard let creatureCurrentMission = creature.currentMission,
+              let missionMap = creatureCurrentMission["map"] as? [String:Any],
+              let missionMapID = missionMap["id"] as? String,
+              let mapID = map["id"] as? String
+              else { return false }
+        
+        return missionMapID == mapID
+    }
+    
+    // MARK: - Missions
+    
+    func completeMission() {
+        guard let currentMission = creature.currentMission else { return }
+        if missionIsComplete(mission: currentMission) {
+            FuncService.showBasicAlert(title: "Mission Complete", message: "Your dragon has successfully completed a mission.", btnTitle: "Okay", action: nil, controller: self)
+            creature.currentMission = nil
+            CoreDataService.saveContext()
+        }
+    }
+    
+    private func missionIsComplete(mission:[String:Any]) -> Bool {
+        guard let startDate = mission["startDate"] as? Date,
+              let map = mission["map"] as? [String:Any],
+              let timeLengthInSeconds = map["timeLengthInSeconds"] as? Double
+        else { return true }
+        
+        let secondsSinceStartDate = Date().timeIntervalSince(startDate)
+        
+        return secondsSinceStartDate >= timeLengthInSeconds
+    }
+    
     // MARK: - Data Responding
     
     @objc func coreDataManagerControllerDidChangeContent(notification: NSNotification) {
@@ -100,6 +134,7 @@ extension HuntVC: UITableViewDataSource
         
         let mapDict = maps[indexPath.row]
         
+        cell.huntVC = self
         cell.levelL.text = String(Int(mapDict["level"] as? Double ?? 0))
         cell.nameL.text = mapDict["name"] as? String
         cell.energyCostL.text = String(Int(mapDict["energyCost"] as? Double ?? 0))
@@ -108,22 +143,15 @@ extension HuntVC: UITableViewDataSource
             cell.mapBGImgV.image = bgImage
         }
         
-        if mapIsInProgress(map: mapDict) == true {
+        if mapIsInProgress(map: mapDict) == true,
+           let startDate = creature.currentMission?["startDate"] as? Date,
+           let timeLengthInSeconds = mapDict["timeLengthInSeconds"] as? Double {
             cell.detailsOverlaySV.isHidden = true
             cell.missionActiveOverlayV.isHidden = false
+            cell.startTimeLeftTimerWith(startDate: startDate, durationInSeconds: timeLengthInSeconds)
         }
         
         return cell
-    }
-    
-    private func mapIsInProgress(map: [String:Any]) -> Bool {
-        guard let creatureCurrentMission = creature.currentMission,
-              let missionMap = creatureCurrentMission["map"] as? [String:Any],
-              let missionMapID = missionMap["id"] as? String,
-              let mapID = map["id"] as? String
-              else { return false }
-        
-        return missionMapID == mapID
     }
 }
 
@@ -133,6 +161,13 @@ extension HuntVC: UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let map = maps[indexPath.row]
+
+        guard mapIsInProgress(map: map) == false else { return }
+        
+        guard creature.currentMission == nil else {
+            FuncService.showBasicAlert(title: "Whoops", message: "It looks like your dragon is already out on a mission. You can send him on another one once he returns.", btnTitle: "Okay", action: nil, controller: self)
+            return
+        }
         
         let vc = MapVC(map: map)
         vc.modalPresentationStyle = .overFullScreen

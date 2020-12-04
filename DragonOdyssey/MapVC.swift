@@ -117,13 +117,14 @@ class MapVC: GLVC {
     // MARK: - Mission Generation
     
     private func startMissionForMap() {
-        guard let map = map else { return }
+        guard let map = map, let energyCost = map["energyCost"] as? Double else { return }
         
         let mission: [String:Any] = [
             "startDate":Date(),
             "map":map
         ]
         
+        creature.energy -= energyCost
         creature.currentMission = mission
         CoreDataService.saveContext()
     }

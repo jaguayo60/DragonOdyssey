@@ -13,7 +13,7 @@ class MapsLibrary: NSObject {
         ["id":"001",
          "name":"Grasslands",
          "bgImageName":"mapGrasslands",
-         "timeLengthInSeconds":Double(3*60),
+         "timeLengthInSeconds":Double(30),
          "level":Double(1),
          "energyCost":Double(1),
          "rewardExperience":Double(300),
