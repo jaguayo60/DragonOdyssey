@@ -51,7 +51,7 @@ class MapVC: GLVC {
         energyCostL.text = "\((Int(map["energyCost"] as? Double ?? 0))) Energy"
         timeLengthL.text = timeLengthStringFor(map: map)
         experienceL.text = "\((Int(map["rewardExperience"] as? Double ?? 0))) Experience"
-        itemsL.text = itemsStringFor(map: map)
+        itemsL.text = MapService.itemsStringFor(map: map)
     }
     
     private func timeLengthStringFor(map: [String:Any]) -> String {
@@ -77,41 +77,6 @@ class MapVC: GLVC {
         }
         
         return timeLengthString
-    }
-    
-    private func itemsStringFor(map: [String:Any]) -> String {
-        guard let itemIDs = map["rewardItems"] as? [String] else { return "" }
-        
-        var itemDicts = [[String:Any]]()
-        
-        for itemID in itemIDs {
-            guard let itemDict = InventoryItemsLibrary.itemDictWith(id: itemID) else { continue }
-            itemDicts.append(itemDict)
-        }
-        
-        var itemsString = ""
-        var itemIDsAddedToString = [String]()
-        
-        for itemDict in itemDicts {
-            guard let itemID = itemDict["id"] as? String,
-                  let itemName = itemDict["name"] as? String,
-                  itemIDsAddedToString.contains(itemID) == false
-            else { continue }
-            
-            let number = numberOfItemsWith(id: itemID, inItemDicts: itemDicts)
-            itemsString.append((itemsString == "") ? "\(number) x \(itemName)" : "\n\(number) x \(itemName)")
-            itemIDsAddedToString.append(itemID)
-        }
-        return itemsString
-    }
-    
-    private func numberOfItemsWith(id: String, inItemDicts itemDicts: [[String:Any]]) -> Int {
-        var number = 0
-        for itemDict in itemDicts {
-            guard let itemID = itemDict["id"] as? String else { continue }
-            if id == itemID { number += 1 }
-        }
-        return number
     }
     
     // MARK: - Mission Generation

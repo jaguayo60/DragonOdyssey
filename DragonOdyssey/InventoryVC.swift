@@ -40,24 +40,6 @@ class InventoryVC: GLVC {
         userTokensL.text = "\(Int(user.tokens))"
     }
     
-    // MARK: - Purchasing
-    
-    func purchase(item:[String:Any]) {
-        let storedItem = InventoryItem(context: CoreDataService.context)
-        
-        storedItem.user = user
-        if let id = item["id"] as? String { storedItem.id = id }
-        if let imageName = item["imageName"] as? String { storedItem.imageName = imageName }
-        if let name = item["name"] as? String { storedItem.name = name }
-        if let energyAmount = item["energyAmount"] as? Double { storedItem.energyAmount = energyAmount }
-        if let isAdOnly = item["isAdOnly"] as? Bool { storedItem.isAdOnly = isAdOnly }
-        if let tokenCost = item["tokenCost"] as? Double { storedItem.tokenCost = tokenCost }
-        if let sortPriority = item["sortPriority"] as? Double { storedItem.sortPriority = sortPriority }
-        
-        user.tokens = ((user.tokens - storedItem.tokenCost) >= 0) ? user.tokens - storedItem.tokenCost : 0
-        CoreDataService.saveContext()
-    }
-    
     // MARK: - Data Responding
     
     @objc func coreDataManagerControllerDidChangeContent(notification: NSNotification) {

@@ -57,14 +57,16 @@ class InventoryItemTVCell: UITableViewCell {
     
     @IBAction func buy(_ sender: Any) {
         guard let inventoryItemDict = self.inventoryItemDict,
+              let itemID = inventoryItemDict["id"] as? String,
               let itemCost = inventoryItemDict["tokenCost"] as? Double,
               let parentVC = parentVC
               else { return }
         
-        if itemCost >= user.tokens {
+        guard itemCost <= user.tokens else {
             FuncService.showBasicAlert(title: "Whoops", message: "Looks like you don't have enough tokens to buy this item.", btnTitle: "Okay", action: nil, controller: parentVC)
-        } else if let inventoryVC = parentVC as? InventoryVC {
-            inventoryVC.purchase(item: inventoryItemDict)
+            return
         }
+        
+        InventoryItemService.giveUserInventoryItemWith(id: itemID, purchase: true)
     }
 }

@@ -11,6 +11,10 @@ import CoreData
 
 class InventoryItemService: NSObject {
     
+    // MARK: - Instance variables
+    
+    static let user = UserService.user
+    
     // MARK: - Counts
     
     static func numberOfItemsInInventoryWith(id: String) -> Int {
@@ -43,5 +47,24 @@ class InventoryItemService: NSObject {
             if items.count > 0 { return items }
         }
         return nil
+    }
+    
+    // MARK: - Purchasing
+    
+    static func giveUserInventoryItemWith(id: String, purchase: Bool, saveContext: Bool? = true) {
+        guard let itemDict = InventoryItemsLibrary.itemDictWith(id: id) else { return }
+        let storedItem = InventoryItem(context: CoreDataService.context)
+        
+        storedItem.user = user
+        if let id = itemDict["id"] as? String { storedItem.id = id }
+        if let imageName = itemDict["imageName"] as? String { storedItem.imageName = imageName }
+        if let name = itemDict["name"] as? String { storedItem.name = name }
+        if let energyAmount = itemDict["energyAmount"] as? Double { storedItem.energyAmount = energyAmount }
+        if let isAdOnly = itemDict["isAdOnly"] as? Bool { storedItem.isAdOnly = isAdOnly }
+        if let tokenCost = itemDict["tokenCost"] as? Double { storedItem.tokenCost = tokenCost }
+        if let sortPriority = itemDict["sortPriority"] as? Double { storedItem.sortPriority = sortPriority }
+        
+        if purchase == true { user.tokens = ((user.tokens - storedItem.tokenCost) >= 0) ? user.tokens - storedItem.tokenCost : 0 }
+        if saveContext == true { CoreDataService.saveContext() }
     }
 }

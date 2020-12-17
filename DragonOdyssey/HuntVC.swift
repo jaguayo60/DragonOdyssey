@@ -25,6 +25,11 @@ class HuntVC: GLVC {
     let creature = CreatureService.creature
     let maps = MapsLibrary.maps
     
+    var isVisible: Bool {
+        // validate if vc is visible here...
+        return true
+    }
+    
     // MARK: - Class functions
     
     override func viewDidLoad() {
@@ -87,8 +92,20 @@ class HuntVC: GLVC {
     
     func completeMission() {
         guard let currentMission = creature.currentMission else { return }
-        if missionIsComplete(mission: currentMission) {
-            FuncService.showBasicAlert(title: "Mission Complete", message: "Your dragon has successfully completed a mission.", btnTitle: "Okay", action: nil, controller: self)
+        
+        if missionIsComplete(mission: currentMission),
+           let map = currentMission["map"] as? [String:Any],
+           let experience = map["rewardExperience"] as? Double {
+
+            // give creature xp for mission
+            CreatureService.creature.totalSteps += experience
+            if DebugService.logCreatureStats == true { print("🐲 Added \(2500) steps to total. Total steps: \(CreatureService.creature.totalSteps)") }
+            CreatureService.creature.updateLevel()
+            
+            // give user inventory items
+            MapService.giveUserItemsFor(map: map)
+            
+            FuncService.showBasicAlert(title: "Mission Complete", message: "Your dragon has successfully completed a mission.\n\n\(Int(experience)) Experience\n\(MapService.itemsStringFor(map: map))", btnTitle: "Okay", action: nil, controller: self)
             creature.currentMission = nil
             CoreDataService.saveContext()
         }
@@ -110,6 +127,8 @@ class HuntVC: GLVC {
     @objc func coreDataManagerControllerDidChangeContent(notification: NSNotification) {
         drawStaticUI()
         mapsTV.reloadData()
+        
+        if self.isVisible { drawAnimatedUI() }
     }
     
     // MARK: - IBActions
