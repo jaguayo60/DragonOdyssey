@@ -68,6 +68,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate
             StepCountService.addStepsSinceLastStepsAddedDate()
         }
         
+        //Core Location
+        CoreLocationManager.shared.requestAuthorization()
+        
         return true
     }
     
