@@ -114,6 +114,7 @@ extension InventoryItemTVCell: GADRewardedAdDelegate {
                 print("AD Loading failed: \(error)")
             } else {
                 print("AD Loading Succeeded")
+                self.tokenL.alpha = 1.0
             }
         }
         return rewardedAd

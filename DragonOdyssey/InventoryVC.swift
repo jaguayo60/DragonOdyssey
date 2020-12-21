@@ -77,6 +77,7 @@ extension InventoryVC: UITableViewDataSource {
         cell.tokenAmountL.text = "\(Int(item["tokenCost"] as? Double ?? 0))"
         if let isAdOnly = item["isAdOnly"] as? Bool, isAdOnly == true {
             cell.tokenL.text = "ONLY FROM ADS" ; cell.drawOnlyFromAdsView()
+            cell.tokenL.alpha = 0.5
         }
         
         if let imageName = item["imageName"] as? String, let image = UIImage(named: imageName) {
