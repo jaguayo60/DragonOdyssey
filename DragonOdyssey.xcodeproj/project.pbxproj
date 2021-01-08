@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		B103F0DA254C96F800A8BB04 /* InventoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103F0D8254C96F800A8BB04 /* InventoryVC.swift */; };
 		B103F0DB254C96F800A8BB04 /* InventoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B103F0D9254C96F800A8BB04 /* InventoryVC.xib */; };
-		B103F0DE254C995C00A8BB04 /* InventoryItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103F0DC254C995C00A8BB04 /* InventoryItem+CoreDataClass.swift */; };
-		B103F0DF254C995C00A8BB04 /* InventoryItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103F0DD254C995C00A8BB04 /* InventoryItem+CoreDataProperties.swift */; };
 		B103F0E1254C9CEF00A8BB04 /* InventoryItemsLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103F0E0254C9CEF00A8BB04 /* InventoryItemsLibrary.swift */; };
 		B103F0E5254C9E3900A8BB04 /* InventoryItemTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103F0E3254C9E3900A8BB04 /* InventoryItemTVCell.swift */; };
 		B103F0E6254C9E3900A8BB04 /* InventoryItemTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B103F0E4254C9E3900A8BB04 /* InventoryItemTVCell.xib */; };
@@ -69,6 +67,8 @@
 		B1CB2F092555DEE700D36E0C /* DebugVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CB2F072555DEE700D36E0C /* DebugVC.swift */; };
 		B1CB2F0A2555DEE700D36E0C /* DebugVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1CB2F082555DEE700D36E0C /* DebugVC.xib */; };
 		B1CDB9C2257A9E04008DC151 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CDB9C1257A9E04008DC151 /* MapService.swift */; };
+		D02C407D25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C407C25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift */; };
+		D02C408025A91853004D6AEB /* InventoryItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C407F25A91853004D6AEB /* InventoryItem+CoreDataClass.swift */; };
 		F924C87B4A07D6355805A583 /* Pods_DragonOdyssey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,8 +78,6 @@
 		7B89A901CF65B87E142144BB /* Pods-DragonOdyssey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragonOdyssey.release.xcconfig"; path = "Pods/Target Support Files/Pods-DragonOdyssey/Pods-DragonOdyssey.release.xcconfig"; sourceTree = "<group>"; };
 		B103F0D8254C96F800A8BB04 /* InventoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryVC.swift; sourceTree = "<group>"; };
 		B103F0D9254C96F800A8BB04 /* InventoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryVC.xib; sourceTree = "<group>"; };
-		B103F0DC254C995C00A8BB04 /* InventoryItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "InventoryItem+CoreDataClass.swift"; path = "/Users/provmusic/Blue Fruit Local/DragonOdyssey/DragonOdyssey/InventoryItem+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		B103F0DD254C995C00A8BB04 /* InventoryItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "InventoryItem+CoreDataProperties.swift"; path = "/Users/provmusic/Blue Fruit Local/DragonOdyssey/DragonOdyssey/InventoryItem+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		B103F0E0254C9CEF00A8BB04 /* InventoryItemsLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItemsLibrary.swift; sourceTree = "<group>"; };
 		B103F0E3254C9E3900A8BB04 /* InventoryItemTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItemTVCell.swift; sourceTree = "<group>"; };
 		B103F0E4254C9E3900A8BB04 /* InventoryItemTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryItemTVCell.xib; sourceTree = "<group>"; };
@@ -141,6 +139,8 @@
 		B1CB2F072555DEE700D36E0C /* DebugVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugVC.swift; sourceTree = "<group>"; };
 		B1CB2F082555DEE700D36E0C /* DebugVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebugVC.xib; sourceTree = "<group>"; };
 		B1CDB9C1257A9E04008DC151 /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
+		D02C407C25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InventoryItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D02C407F25A91853004D6AEB /* InventoryItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InventoryItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,8 +245,8 @@
 		B13916EB25376F6400A2CFA2 /* Managed Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B103F0DC254C995C00A8BB04 /* InventoryItem+CoreDataClass.swift */,
-				B103F0DD254C995C00A8BB04 /* InventoryItem+CoreDataProperties.swift */,
+				D02C407F25A91853004D6AEB /* InventoryItem+CoreDataClass.swift */,
+				D02C407C25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift */,
 				B13916EF25376F7A00A2CFA2 /* Creature+CoreDataClass.swift */,
 				B13916ED25376F7A00A2CFA2 /* Creature+CoreDataProperties.swift */,
 				B13916EC25376F7A00A2CFA2 /* User+CoreDataClass.swift */,
@@ -443,7 +443,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1210;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Wired Betterment";
 				TargetAttributes = {
 					B1A41DCF252D2A6900E57C7E = {
@@ -545,7 +545,6 @@
 				B1130B32255C9020008C05FC /* StepCountService.swift in Sources */,
 				B13916F8253770DA00A2CFA2 /* GlobalService.swift in Sources */,
 				B13916FC2537714000A2CFA2 /* DebugService.swift in Sources */,
-				B103F0DE254C995C00A8BB04 /* InventoryItem+CoreDataClass.swift in Sources */,
 				B1A41DF5252D42A900E57C7E /* CustomUIButtons.swift in Sources */,
 				B13916F125376F7A00A2CFA2 /* Creature+CoreDataProperties.swift in Sources */,
 				B13916FA2537710300A2CFA2 /* FunctionService.swift in Sources */,
@@ -554,6 +553,7 @@
 				B13916F62537707B00A2CFA2 /* HapticFeedbackManager.swift in Sources */,
 				B14AA4B02540BBDD00D630A7 /* HealthKitServiceManager.swift in Sources */,
 				B13916FE253771AD00A2CFA2 /* TimingManager.swift in Sources */,
+				D02C407D25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift in Sources */,
 				B103F0DA254C96F800A8BB04 /* InventoryVC.swift in Sources */,
 				B13916E825376E6200A2CFA2 /* CoreDataService.swift in Sources */,
 				B1A41DF8252D42C700E57C7E /* UIExtensions.swift in Sources */,
@@ -564,6 +564,7 @@
 				B112E1E1253F9F710039E59B /* MKRingProgressGroupView.swift in Sources */,
 				B1C1AFDA256F338200B9D53B /* MapVC.swift in Sources */,
 				B167262C25647547000A7829 /* MapsLibrary.swift in Sources */,
+				D02C408025A91853004D6AEB /* InventoryItem+CoreDataClass.swift in Sources */,
 				B11827BF2550A2A3008E5FF9 /* UserService.swift in Sources */,
 				B1A41DFB252E2CB000E57C7E /* GLVC.swift in Sources */,
 				B1A41DEF252D3A5300E57C7E /* FuncService.swift in Sources */,
@@ -574,7 +575,6 @@
 				B1CB2F092555DEE700D36E0C /* DebugVC.swift in Sources */,
 				B13916E525376B7400A2CFA2 /* StatsVC.swift in Sources */,
 				B167262825645C8C000A7829 /* HuntVC.swift in Sources */,
-				B103F0DF254C995C00A8BB04 /* InventoryItem+CoreDataProperties.swift in Sources */,
 				B13916F025376F7A00A2CFA2 /* User+CoreDataClass.swift in Sources */,
 				B1A41DFD252E2CE100E57C7E /* UIService.swift in Sources */,
 				B103F0E5254C9E3900A8BB04 /* InventoryItemTVCell.swift in Sources */,
@@ -735,7 +735,7 @@
 				CURRENT_PROJECT_VERSION = 600;
 				DEVELOPMENT_TEAM = 82J5T7H4P4;
 				INFOPLIST_FILE = DragonOdyssey/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -760,7 +760,7 @@
 				CURRENT_PROJECT_VERSION = 600;
 				DEVELOPMENT_TEAM = 82J5T7H4P4;
 				INFOPLIST_FILE = DragonOdyssey/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
