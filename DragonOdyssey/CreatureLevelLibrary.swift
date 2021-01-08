@@ -253,67 +253,67 @@ class CreatureLevelLibrary: NSObject {
         ],
         [
             "level":40,
-            "totalStepsForLevel":240000,
+            "totalStepsForLevel":2230000,
             "stepsToNextLevel":90000,
             "maxEnergy":50
         ],
         [
             "level":41,
-            "totalStepsForLevel":240000,
+            "totalStepsForLevel":2320000,
             "stepsToNextLevel":91000,
             "maxEnergy":50
         ],
         [
             "level":42,
-            "totalStepsForLevel":240000,
+            "totalStepsForLevel":2411000,
             "stepsToNextLevel":92000,
             "maxEnergy":50
         ],
         [
             "level":43,
-            "totalStepsForLevel":240000,
+            "totalStepsForLevel":2503000,
             "stepsToNextLevel":93000,
             "maxEnergy":50
         ],
         [
             "level":44,
-            "totalStepsForLevel":240000,
+            "totalStepsForLevel":2596000,
             "stepsToNextLevel":94000,
             "maxEnergy":50
         ],
         [
             "level":45,
-            "totalStepsForLevel":240000,
+            "totalStepsForLevel":2690000,
             "stepsToNextLevel":95000,
             "maxEnergy":50
         ],
         [
             "level":46,
-            "totalStepsForLevel":240000,
+            "totalStepsForLevel":2785000,
             "stepsToNextLevel":96000,
             "maxEnergy":50
         ],
         [
             "level":47,
-            "totalStepsForLevel":240000,
+            "totalStepsForLevel":2881000,
             "stepsToNextLevel":97000,
             "maxEnergy":50
         ],
         [
             "level":48,
-            "totalStepsForLevel":240000,
+            "totalStepsForLevel":2979000,
             "stepsToNextLevel":98000,
             "maxEnergy":50
         ],
         [
             "level":49,
-            "totalStepsForLevel":240000,
+            "totalStepsForLevel":3077000,
             "stepsToNextLevel":99000,
             "maxEnergy":50
         ],
         [
             "level":50,
-            "totalStepsForLevel":240000,
+            "totalStepsForLevel":3176000,
             "stepsToNextLevel":100000,
             "maxEnergy":50
         ],
