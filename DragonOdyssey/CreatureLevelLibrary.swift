@@ -86,235 +86,235 @@ class CreatureLevelLibrary: NSObject {
         [
             "level":12,
             "totalStepsForLevel":200000,
-            "stepsToNextLevel":68000,
+            "stepsToNextLevel":42000,
             "maxEnergy":50
         ],
         [
             "level":13,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":242000,
+            "stepsToNextLevel":45000,
             "maxEnergy":50
         ],
         [
             "level":14,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":287000,
+            "stepsToNextLevel":48000,
             "maxEnergy":50
         ],
         [
             "level":15,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":335000,
+            "stepsToNextLevel":50000,
             "maxEnergy":50
         ],
         [
             "level":16,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":385000,
+            "stepsToNextLevel":55000,
             "maxEnergy":50
         ],
         [
             "level":17,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":440000,
+            "stepsToNextLevel":60000,
             "maxEnergy":50
         ],
         [
             "level":18,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":500000,
+            "stepsToNextLevel":65000,
             "maxEnergy":50
         ],
         [
             "level":19,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":565000,
+            "stepsToNextLevel":70000,
             "maxEnergy":50
         ],
         [
             "level":20,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":635000,
+            "stepsToNextLevel":71000,
             "maxEnergy":50
         ],
         [
             "level":21,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":706000,
+            "stepsToNextLevel":72000,
             "maxEnergy":50
         ],
         [
             "level":22,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":778000,
+            "stepsToNextLevel":73000,
             "maxEnergy":50
         ],
         [
             "level":23,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":851000,
+            "stepsToNextLevel":74000,
             "maxEnergy":50
         ],
         [
             "level":24,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":925000,
+            "stepsToNextLevel":75000,
             "maxEnergy":50
         ],
         [
             "level":25,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":1000000,
+            "stepsToNextLevel":75000,
             "maxEnergy":50
         ],
         [
             "level":26,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":1075000,
+            "stepsToNextLevel":76000,
             "maxEnergy":50
         ],
         [
             "level":27,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":1151000,
+            "stepsToNextLevel":77000,
             "maxEnergy":50
         ],
         [
             "level":28,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":1228000,
+            "stepsToNextLevel":78000,
             "maxEnergy":50
         ],
         [
             "level":29,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":1306000,
+            "stepsToNextLevel":79000,
             "maxEnergy":50
         ],
         [
             "level":30,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":1385000,
+            "stepsToNextLevel":80000,
             "maxEnergy":50
         ],
         [
             "level":31,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":1465000,
+            "stepsToNextLevel":81000,
             "maxEnergy":50
         ],
         [
             "level":32,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":1546000,
+            "stepsToNextLevel":82000,
             "maxEnergy":50
         ],
         [
             "level":33,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":1628000,
+            "stepsToNextLevel":83000,
             "maxEnergy":50
         ],
         [
             "level":34,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":1711000,
+            "stepsToNextLevel":84000,
             "maxEnergy":50
         ],
         [
             "level":35,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":1795000,
+            "stepsToNextLevel":85000,
             "maxEnergy":50
         ],
         [
             "level":36,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":1880000,
+            "stepsToNextLevel":86000,
             "maxEnergy":50
         ],
         [
             "level":37,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":1966000,
+            "stepsToNextLevel":87000,
             "maxEnergy":50
         ],
         [
             "level":38,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":2053000,
+            "stepsToNextLevel":88000,
             "maxEnergy":50
         ],
         [
             "level":39,
-            "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "totalStepsForLevel":2141000,
+            "stepsToNextLevel":89000,
             "maxEnergy":50
         ],
         [
             "level":40,
             "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "stepsToNextLevel":90000,
             "maxEnergy":50
         ],
         [
             "level":41,
             "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "stepsToNextLevel":91000,
             "maxEnergy":50
         ],
         [
             "level":42,
             "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "stepsToNextLevel":92000,
             "maxEnergy":50
         ],
         [
             "level":43,
             "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "stepsToNextLevel":93000,
             "maxEnergy":50
         ],
         [
             "level":44,
             "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "stepsToNextLevel":94000,
             "maxEnergy":50
         ],
         [
             "level":45,
             "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "stepsToNextLevel":95000,
             "maxEnergy":50
         ],
         [
             "level":46,
             "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "stepsToNextLevel":96000,
             "maxEnergy":50
         ],
         [
             "level":47,
             "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "stepsToNextLevel":97000,
             "maxEnergy":50
         ],
         [
             "level":48,
             "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "stepsToNextLevel":98000,
             "maxEnergy":50
         ],
         [
             "level":49,
             "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "stepsToNextLevel":99000,
             "maxEnergy":50
         ],
         [
             "level":50,
             "totalStepsForLevel":240000,
-            "stepsToNextLevel":68000,
+            "stepsToNextLevel":100000,
             "maxEnergy":50
         ],
         
