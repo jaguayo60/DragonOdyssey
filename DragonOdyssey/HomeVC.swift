@@ -111,8 +111,17 @@ class HomeVC: GLVC {
         present(vc, animated: true, completion: nil)
     }
     
-    @IBAction func hunt(_ sender: Any) {
-        let vc = HuntVC()
-        present(vc, animated: true, completion: nil)
+//    @IBAction func hunt(_ sender: Any) {
+//        let vc = HuntVC()
+//        present(vc, animated: true, completion: nil)
+//    }
+    
+    @available(iOS 13.0, *)
+    @IBAction func world(_ sender: Any) {
+        let sb = UIStoryboard(name: "WorldSB", bundle: nil)
+        let vc = sb.instantiateViewController(identifier: "WorldVC") as WorldVC
+        let navController = UINavigationController(rootViewController: vc)
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true, completion: nil)
     }
 }
