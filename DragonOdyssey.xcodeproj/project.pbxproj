@@ -59,7 +59,6 @@
 		B1A41DFD252E2CE100E57C7E /* UIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DFC252E2CE100E57C7E /* UIService.swift */; };
 		B1AB47AE2565E13C00431A7B /* HuntVCMapTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AB47AC2565E13C00431A7B /* HuntVCMapTVCell.swift */; };
 		B1AB47AF2565E13C00431A7B /* HuntVCMapTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1AB47AD2565E13C00431A7B /* HuntVCMapTVCell.xib */; };
-		B1B0DE6E2540CCB300713E0C /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B0DE6D2540CCB300713E0C /* HealthKit.framework */; };
 		B1C1AFDA256F338200B9D53B /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C1AFD8256F338200B9D53B /* MapVC.swift */; };
 		B1C1AFDB256F338200B9D53B /* MapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C1AFD9256F338200B9D53B /* MapVC.xib */; };
 		B1CB2F032555DDE300D36E0C /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CB2F012555DDE300D36E0C /* SettingsVC.swift */; };
@@ -69,7 +68,9 @@
 		B1CDB9C2257A9E04008DC151 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CDB9C1257A9E04008DC151 /* MapService.swift */; };
 		D02C407D25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C407C25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift */; };
 		D02C408025A91853004D6AEB /* InventoryItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C407F25A91853004D6AEB /* InventoryItem+CoreDataClass.swift */; };
-		F924C87B4A07D6355805A583 /* Pods_DragonOdyssey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */; };
+		D02C408D25A92DB8004D6AEB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B0DE6D2540CCB300713E0C /* HealthKit.framework */; };
+		D02C409025A92DBB004D6AEB /* Pods_DragonOdyssey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */; };
+		D02C409425ABE9AC004D6AEB /* CoreLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C409325ABE9AC004D6AEB /* CoreLocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,6 +142,7 @@
 		B1CDB9C1257A9E04008DC151 /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
 		D02C407C25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InventoryItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D02C407F25A91853004D6AEB /* InventoryItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InventoryItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D02C409325ABE9AC004D6AEB /* CoreLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +150,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F924C87B4A07D6355805A583 /* Pods_DragonOdyssey.framework in Frameworks */,
-				B1B0DE6E2540CCB300713E0C /* HealthKit.framework in Frameworks */,
+				D02C409025A92DBB004D6AEB /* Pods_DragonOdyssey.framework in Frameworks */,
+				D02C408D25A92DB8004D6AEB /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +260,7 @@
 		B13916F42537706400A2CFA2 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				D02C409325ABE9AC004D6AEB /* CoreLocationManager.swift */,
 				B13916F52537707B00A2CFA2 /* HapticFeedbackManager.swift */,
 				B13916FD253771AD00A2CFA2 /* TimingManager.swift */,
 				B14AA4AF2540BBDD00D630A7 /* HealthKitServiceManager.swift */,
@@ -566,6 +569,7 @@
 				B167262C25647547000A7829 /* MapsLibrary.swift in Sources */,
 				D02C408025A91853004D6AEB /* InventoryItem+CoreDataClass.swift in Sources */,
 				B11827BF2550A2A3008E5FF9 /* UserService.swift in Sources */,
+				D02C409425ABE9AC004D6AEB /* CoreLocationManager.swift in Sources */,
 				B1A41DFB252E2CB000E57C7E /* GLVC.swift in Sources */,
 				B1A41DEF252D3A5300E57C7E /* FuncService.swift in Sources */,
 				B1A41DDE252D2A6900E57C7E /* DragonOdyssey.xcdatamodeld in Sources */,
@@ -740,7 +744,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinaguayo.DragonOdyssey;
 				PRODUCT_NAME = "Dragon Odyssey";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -765,7 +769,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinaguayo.DragonOdyssey;
 				PRODUCT_NAME = "Dragon Odyssey";
 				PROVISIONING_PROFILE_SPECIFIER = "";
