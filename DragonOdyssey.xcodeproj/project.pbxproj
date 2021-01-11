@@ -3,10 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5A4A2B6258EA5D800DAAE73 /* GoogleMobileAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A4A2B5258EA5D800DAAE73 /* GoogleMobileAds.xcframework */; };
+		A5A4A2BB258EA5EB00DAAE73 /* FBLPromises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A4A2BA258EA5EB00DAAE73 /* FBLPromises.framework */; };
+		A5A4A2BF258EA6B500DAAE73 /* InventoryItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A4A2BD258EA6B500DAAE73 /* InventoryItem+CoreDataClass.swift */; };
+		A5A4A2C0258EA6B500DAAE73 /* InventoryItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A4A2BE258EA6B500DAAE73 /* InventoryItem+CoreDataProperties.swift */; };
+		A5A4A2E12591385700DAAE73 /* CoreLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A4A2E02591385700DAAE73 /* CoreLocationManager.swift */; };
+		A5D98941259A897400069B79 /* WorldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D9893F259A897400069B79 /* WorldVC.swift */; };
+		A5D98945259AA6EA00069B79 /* WorldSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D98944259AA6EA00069B79 /* WorldSB.storyboard */; };
 		B103F0DA254C96F800A8BB04 /* InventoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103F0D8254C96F800A8BB04 /* InventoryVC.swift */; };
 		B103F0DB254C96F800A8BB04 /* InventoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B103F0D9254C96F800A8BB04 /* InventoryVC.xib */; };
 		B103F0E1254C9CEF00A8BB04 /* InventoryItemsLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103F0E0254C9CEF00A8BB04 /* InventoryItemsLibrary.swift */; };
@@ -59,6 +66,7 @@
 		B1A41DFD252E2CE100E57C7E /* UIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DFC252E2CE100E57C7E /* UIService.swift */; };
 		B1AB47AE2565E13C00431A7B /* HuntVCMapTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1AB47AC2565E13C00431A7B /* HuntVCMapTVCell.swift */; };
 		B1AB47AF2565E13C00431A7B /* HuntVCMapTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1AB47AD2565E13C00431A7B /* HuntVCMapTVCell.xib */; };
+		B1B0DE6E2540CCB300713E0C /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B0DE6D2540CCB300713E0C /* HealthKit.framework */; };
 		B1C1AFDA256F338200B9D53B /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C1AFD8256F338200B9D53B /* MapVC.swift */; };
 		B1C1AFDB256F338200B9D53B /* MapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C1AFD9256F338200B9D53B /* MapVC.xib */; };
 		B1CB2F032555DDE300D36E0C /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CB2F012555DDE300D36E0C /* SettingsVC.swift */; };
@@ -68,15 +76,21 @@
 		B1CDB9C2257A9E04008DC151 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CDB9C1257A9E04008DC151 /* MapService.swift */; };
 		D02C407D25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C407C25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift */; };
 		D02C408025A91853004D6AEB /* InventoryItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C407F25A91853004D6AEB /* InventoryItem+CoreDataClass.swift */; };
-		D02C408D25A92DB8004D6AEB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B0DE6D2540CCB300713E0C /* HealthKit.framework */; };
-		D02C409025A92DBB004D6AEB /* Pods_DragonOdyssey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */; };
-		D02C409425ABE9AC004D6AEB /* CoreLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C409325ABE9AC004D6AEB /* CoreLocationManager.swift */; };
+		F924C87B4A07D6355805A583 /* Pods_DragonOdyssey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DragonOdyssey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		517647D07101D942767962B8 /* Pods-DragonOdyssey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragonOdyssey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DragonOdyssey/Pods-DragonOdyssey.debug.xcconfig"; sourceTree = "<group>"; };
 		7B89A901CF65B87E142144BB /* Pods-DragonOdyssey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragonOdyssey.release.xcconfig"; path = "Pods/Target Support Files/Pods-DragonOdyssey/Pods-DragonOdyssey.release.xcconfig"; sourceTree = "<group>"; };
+		A5A4A2B5258EA5D800DAAE73 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
+		A5A4A2B8258EA5E000DAAE73 /* Pods_DragonOdyssey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_DragonOdyssey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5A4A2BA258EA5EB00DAAE73 /* FBLPromises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBLPromises.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5A4A2BD258EA6B500DAAE73 /* InventoryItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InventoryItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A5A4A2BE258EA6B500DAAE73 /* InventoryItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InventoryItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A5A4A2E02591385700DAAE73 /* CoreLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationManager.swift; sourceTree = "<group>"; };
+		A5D9893F259A897400069B79 /* WorldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldVC.swift; sourceTree = "<group>"; };
+		A5D98944259AA6EA00069B79 /* WorldSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorldSB.storyboard; sourceTree = "<group>"; };
 		B103F0D8254C96F800A8BB04 /* InventoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryVC.swift; sourceTree = "<group>"; };
 		B103F0D9254C96F800A8BB04 /* InventoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InventoryVC.xib; sourceTree = "<group>"; };
 		B103F0E0254C9CEF00A8BB04 /* InventoryItemsLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItemsLibrary.swift; sourceTree = "<group>"; };
@@ -142,7 +156,6 @@
 		B1CDB9C1257A9E04008DC151 /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
 		D02C407C25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InventoryItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D02C407F25A91853004D6AEB /* InventoryItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InventoryItem+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D02C409325ABE9AC004D6AEB /* CoreLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +163,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D02C409025A92DBB004D6AEB /* Pods_DragonOdyssey.framework in Frameworks */,
-				D02C408D25A92DB8004D6AEB /* HealthKit.framework in Frameworks */,
+				A5A4A2BB258EA5EB00DAAE73 /* FBLPromises.framework in Frameworks */,
+				A5A4A2B6258EA5D800DAAE73 /* GoogleMobileAds.xcframework in Frameworks */,
+				F924C87B4A07D6355805A583 /* Pods_DragonOdyssey.framework in Frameworks */,
+				B1B0DE6E2540CCB300713E0C /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +180,15 @@
 				7B89A901CF65B87E142144BB /* Pods-DragonOdyssey.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A5D9893E259A893F00069B79 /* WorldVC */ = {
+			isa = PBXGroup;
+			children = (
+				A5D9893F259A897400069B79 /* WorldVC.swift */,
+				A5D98944259AA6EA00069B79 /* WorldSB.storyboard */,
+			);
+			name = WorldVC;
 			sourceTree = "<group>";
 		};
 		B103F0D7254C96D700A8BB04 /* Inventory */ = {
@@ -247,9 +271,14 @@
 		B13916EB25376F6400A2CFA2 /* Managed Classes */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+=======
 				D02C407F25A91853004D6AEB /* InventoryItem+CoreDataClass.swift */,
 				D02C407C25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift */,
+>>>>>>> 30ffef9ef63e5085290a5be806688d48d8e5c9ee
 				B13916EF25376F7A00A2CFA2 /* Creature+CoreDataClass.swift */,
+				A5A4A2BD258EA6B500DAAE73 /* InventoryItem+CoreDataClass.swift */,
+				A5A4A2BE258EA6B500DAAE73 /* InventoryItem+CoreDataProperties.swift */,
 				B13916ED25376F7A00A2CFA2 /* Creature+CoreDataProperties.swift */,
 				B13916EC25376F7A00A2CFA2 /* User+CoreDataClass.swift */,
 				B13916EE25376F7A00A2CFA2 /* User+CoreDataProperties.swift */,
@@ -260,10 +289,10 @@
 		B13916F42537706400A2CFA2 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				D02C409325ABE9AC004D6AEB /* CoreLocationManager.swift */,
 				B13916F52537707B00A2CFA2 /* HapticFeedbackManager.swift */,
 				B13916FD253771AD00A2CFA2 /* TimingManager.swift */,
 				B14AA4AF2540BBDD00D630A7 /* HealthKitServiceManager.swift */,
+				A5A4A2E02591385700DAAE73 /* CoreLocationManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -384,6 +413,7 @@
 		B1A41DF9252E2C9600E57C7E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A5D9893E259A893F00069B79 /* WorldVC */,
 				B167262525645C76000A7829 /* HuntVC */,
 				B1CB2F002555DDCE00D36E0C /* SettingsVC */,
 				B103F0D7254C96D700A8BB04 /* Inventory */,
@@ -411,6 +441,9 @@
 		CC4D385ADFD0B47B3AC53E3E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5A4A2BA258EA5EB00DAAE73 /* FBLPromises.framework */,
+				A5A4A2B8258EA5E000DAAE73 /* Pods_DragonOdyssey.framework */,
+				A5A4A2B5258EA5D800DAAE73 /* GoogleMobileAds.xcframework */,
 				B1B0DE6D2540CCB300713E0C /* HealthKit.framework */,
 				407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */,
 			);
@@ -479,6 +512,7 @@
 			files = (
 				B1A41DE3252D2A6A00E57C7E /* LaunchScreen.storyboard in Resources */,
 				B13916E125376B4E00A2CFA2 /* HomeVC.xib in Resources */,
+				A5D98945259AA6EA00069B79 /* WorldSB.storyboard in Resources */,
 				B13916D72537692000A2CFA2 /* MenuVC.xib in Resources */,
 				B103F0DB254C96F800A8BB04 /* InventoryVC.xib in Resources */,
 				B1CB2F0A2555DEE700D36E0C /* DebugVC.xib in Resources */,
@@ -545,9 +579,14 @@
 				B13916E025376B4E00A2CFA2 /* HomeVC.swift in Sources */,
 				B1462D1C255DA206006C5D7D /* CreatureLevelLibrary.swift in Sources */,
 				B1A41DF1252D3ACF00E57C7E /* SharedDataExtensions.swift in Sources */,
+				A5A4A2BF258EA6B500DAAE73 /* InventoryItem+CoreDataClass.swift in Sources */,
 				B1130B32255C9020008C05FC /* StepCountService.swift in Sources */,
 				B13916F8253770DA00A2CFA2 /* GlobalService.swift in Sources */,
 				B13916FC2537714000A2CFA2 /* DebugService.swift in Sources */,
+<<<<<<< HEAD
+				A5D98941259A897400069B79 /* WorldVC.swift in Sources */,
+=======
+>>>>>>> 30ffef9ef63e5085290a5be806688d48d8e5c9ee
 				B1A41DF5252D42A900E57C7E /* CustomUIButtons.swift in Sources */,
 				B13916F125376F7A00A2CFA2 /* Creature+CoreDataProperties.swift in Sources */,
 				B13916FA2537710300A2CFA2 /* FunctionService.swift in Sources */,
@@ -565,11 +604,12 @@
 				B1CB2F032555DDE300D36E0C /* SettingsVC.swift in Sources */,
 				B13916D62537692000A2CFA2 /* MenuVC.swift in Sources */,
 				B112E1E1253F9F710039E59B /* MKRingProgressGroupView.swift in Sources */,
+				A5A4A2C0258EA6B500DAAE73 /* InventoryItem+CoreDataProperties.swift in Sources */,
 				B1C1AFDA256F338200B9D53B /* MapVC.swift in Sources */,
 				B167262C25647547000A7829 /* MapsLibrary.swift in Sources */,
 				D02C408025A91853004D6AEB /* InventoryItem+CoreDataClass.swift in Sources */,
 				B11827BF2550A2A3008E5FF9 /* UserService.swift in Sources */,
-				D02C409425ABE9AC004D6AEB /* CoreLocationManager.swift in Sources */,
+				A5A4A2E12591385700DAAE73 /* CoreLocationManager.swift in Sources */,
 				B1A41DFB252E2CB000E57C7E /* GLVC.swift in Sources */,
 				B1A41DEF252D3A5300E57C7E /* FuncService.swift in Sources */,
 				B1A41DDE252D2A6900E57C7E /* DragonOdyssey.xcdatamodeld in Sources */,
@@ -744,7 +784,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.2;
+				MARKETING_VERSION = 0.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinaguayo.DragonOdyssey;
 				PRODUCT_NAME = "Dragon Odyssey";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -769,7 +809,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.2;
+				MARKETING_VERSION = 0.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinaguayo.DragonOdyssey;
 				PRODUCT_NAME = "Dragon Odyssey";
 				PROVISIONING_PROFILE_SPECIFIER = "";
