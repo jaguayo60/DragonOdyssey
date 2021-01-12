@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Your current location will be used in the game map.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -28,6 +26,8 @@
 	<string>Allow this app to view your Health data in the specific categories.</string>
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>Allow this app to record data into Apple Health.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your current location will be used in the game map.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
