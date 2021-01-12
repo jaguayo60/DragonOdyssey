@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		401CD647B23CCD907B84DDF6 /* Pods_DragonOdyssey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A4A2B8258EA5E000DAAE73 /* Pods_DragonOdyssey.framework */; };
+		A54BB0C825AD273A0036B5B6 /* WorldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54BB0C725AD273A0036B5B6 /* WorldManager.swift */; };
 		A5A4A2B6258EA5D800DAAE73 /* GoogleMobileAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A4A2B5258EA5D800DAAE73 /* GoogleMobileAds.xcframework */; };
 		A5A4A2BB258EA5EB00DAAE73 /* FBLPromises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A4A2BA258EA5EB00DAAE73 /* FBLPromises.framework */; };
 		A5A4A2BF258EA6B500DAAE73 /* InventoryItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A4A2BD258EA6B500DAAE73 /* InventoryItem+CoreDataClass.swift */; };
@@ -83,6 +85,7 @@
 		407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DragonOdyssey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		517647D07101D942767962B8 /* Pods-DragonOdyssey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragonOdyssey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DragonOdyssey/Pods-DragonOdyssey.debug.xcconfig"; sourceTree = "<group>"; };
 		7B89A901CF65B87E142144BB /* Pods-DragonOdyssey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragonOdyssey.release.xcconfig"; path = "Pods/Target Support Files/Pods-DragonOdyssey/Pods-DragonOdyssey.release.xcconfig"; sourceTree = "<group>"; };
+		A54BB0C725AD273A0036B5B6 /* WorldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldManager.swift; sourceTree = "<group>"; };
 		A5A4A2B5258EA5D800DAAE73 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
 		A5A4A2B8258EA5E000DAAE73 /* Pods_DragonOdyssey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_DragonOdyssey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A4A2BA258EA5EB00DAAE73 /* FBLPromises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBLPromises.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +170,7 @@
 				A5A4A2B6258EA5D800DAAE73 /* GoogleMobileAds.xcframework in Frameworks */,
 				F924C87B4A07D6355805A583 /* Pods_DragonOdyssey.framework in Frameworks */,
 				B1B0DE6E2540CCB300713E0C /* HealthKit.framework in Frameworks */,
+				401CD647B23CCD907B84DDF6 /* Pods_DragonOdyssey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +191,7 @@
 			children = (
 				A5D9893F259A897400069B79 /* WorldVC.swift */,
 				A5D98944259AA6EA00069B79 /* WorldSB.storyboard */,
+				A54BB0C725AD273A0036B5B6 /* WorldManager.swift */,
 			);
 			name = WorldVC;
 			sourceTree = "<group>";
@@ -271,11 +276,8 @@
 		B13916EB25376F6400A2CFA2 /* Managed Classes */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-=======
 				D02C407F25A91853004D6AEB /* InventoryItem+CoreDataClass.swift */,
 				D02C407C25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift */,
->>>>>>> 30ffef9ef63e5085290a5be806688d48d8e5c9ee
 				B13916EF25376F7A00A2CFA2 /* Creature+CoreDataClass.swift */,
 				A5A4A2BD258EA6B500DAAE73 /* InventoryItem+CoreDataClass.swift */,
 				A5A4A2BE258EA6B500DAAE73 /* InventoryItem+CoreDataProperties.swift */,
@@ -583,10 +585,7 @@
 				B1130B32255C9020008C05FC /* StepCountService.swift in Sources */,
 				B13916F8253770DA00A2CFA2 /* GlobalService.swift in Sources */,
 				B13916FC2537714000A2CFA2 /* DebugService.swift in Sources */,
-<<<<<<< HEAD
 				A5D98941259A897400069B79 /* WorldVC.swift in Sources */,
-=======
->>>>>>> 30ffef9ef63e5085290a5be806688d48d8e5c9ee
 				B1A41DF5252D42A900E57C7E /* CustomUIButtons.swift in Sources */,
 				B13916F125376F7A00A2CFA2 /* Creature+CoreDataProperties.swift in Sources */,
 				B13916FA2537710300A2CFA2 /* FunctionService.swift in Sources */,
@@ -595,6 +594,7 @@
 				B13916F62537707B00A2CFA2 /* HapticFeedbackManager.swift in Sources */,
 				B14AA4B02540BBDD00D630A7 /* HealthKitServiceManager.swift in Sources */,
 				B13916FE253771AD00A2CFA2 /* TimingManager.swift in Sources */,
+				A54BB0C825AD273A0036B5B6 /* WorldManager.swift in Sources */,
 				D02C407D25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift in Sources */,
 				B103F0DA254C96F800A8BB04 /* InventoryVC.swift in Sources */,
 				B13916E825376E6200A2CFA2 /* CoreDataService.swift in Sources */,
