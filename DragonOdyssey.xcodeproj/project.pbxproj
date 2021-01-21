@@ -11,8 +11,6 @@
 		A54BB0C825AD273A0036B5B6 /* WorldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54BB0C725AD273A0036B5B6 /* WorldManager.swift */; };
 		A5A4A2B6258EA5D800DAAE73 /* GoogleMobileAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A4A2B5258EA5D800DAAE73 /* GoogleMobileAds.xcframework */; };
 		A5A4A2BB258EA5EB00DAAE73 /* FBLPromises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A4A2BA258EA5EB00DAAE73 /* FBLPromises.framework */; };
-		A5A4A2BF258EA6B500DAAE73 /* InventoryItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A4A2BD258EA6B500DAAE73 /* InventoryItem+CoreDataClass.swift */; };
-		A5A4A2C0258EA6B500DAAE73 /* InventoryItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A4A2BE258EA6B500DAAE73 /* InventoryItem+CoreDataProperties.swift */; };
 		A5A4A2E12591385700DAAE73 /* CoreLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A4A2E02591385700DAAE73 /* CoreLocationManager.swift */; };
 		A5D98941259A897400069B79 /* WorldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D9893F259A897400069B79 /* WorldVC.swift */; };
 		A5D98945259AA6EA00069B79 /* WorldSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D98944259AA6EA00069B79 /* WorldSB.storyboard */; };
@@ -38,7 +36,6 @@
 		B13916E825376E6200A2CFA2 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916E725376E6200A2CFA2 /* CoreDataService.swift */; };
 		B13916EA25376EE600A2CFA2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916E925376EE600A2CFA2 /* CoreDataManager.swift */; };
 		B13916F025376F7A00A2CFA2 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916EC25376F7A00A2CFA2 /* User+CoreDataClass.swift */; };
-		B13916F125376F7A00A2CFA2 /* Creature+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916ED25376F7A00A2CFA2 /* Creature+CoreDataProperties.swift */; };
 		B13916F225376F7A00A2CFA2 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916EE25376F7A00A2CFA2 /* User+CoreDataProperties.swift */; };
 		B13916F325376F7A00A2CFA2 /* Creature+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916EF25376F7A00A2CFA2 /* Creature+CoreDataClass.swift */; };
 		B13916F62537707B00A2CFA2 /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916F52537707B00A2CFA2 /* HapticFeedbackManager.swift */; };
@@ -76,6 +73,7 @@
 		B1CB2F092555DEE700D36E0C /* DebugVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CB2F072555DEE700D36E0C /* DebugVC.swift */; };
 		B1CB2F0A2555DEE700D36E0C /* DebugVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1CB2F082555DEE700D36E0C /* DebugVC.xib */; };
 		B1CDB9C2257A9E04008DC151 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CDB9C1257A9E04008DC151 /* MapService.swift */; };
+		D008D2C425AE2F9100AE864E /* Creature+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D008D2C325AE2F9000AE864E /* Creature+CoreDataProperties.swift */; };
 		D02C407D25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C407C25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift */; };
 		D02C408025A91853004D6AEB /* InventoryItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C407F25A91853004D6AEB /* InventoryItem+CoreDataClass.swift */; };
 		F924C87B4A07D6355805A583 /* Pods_DragonOdyssey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */; };
@@ -89,8 +87,6 @@
 		A5A4A2B5258EA5D800DAAE73 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
 		A5A4A2B8258EA5E000DAAE73 /* Pods_DragonOdyssey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_DragonOdyssey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A4A2BA258EA5EB00DAAE73 /* FBLPromises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBLPromises.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5A4A2BD258EA6B500DAAE73 /* InventoryItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InventoryItem+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A5A4A2BE258EA6B500DAAE73 /* InventoryItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InventoryItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A5A4A2E02591385700DAAE73 /* CoreLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationManager.swift; sourceTree = "<group>"; };
 		A5D9893F259A897400069B79 /* WorldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldVC.swift; sourceTree = "<group>"; };
 		A5D98944259AA6EA00069B79 /* WorldSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorldSB.storyboard; sourceTree = "<group>"; };
@@ -116,7 +112,6 @@
 		B13916E725376E6200A2CFA2 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		B13916E925376EE600A2CFA2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B13916EC25376F7A00A2CFA2 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B13916ED25376F7A00A2CFA2 /* Creature+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Creature+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B13916EE25376F7A00A2CFA2 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B13916EF25376F7A00A2CFA2 /* Creature+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Creature+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B13916F52537707B00A2CFA2 /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
@@ -157,6 +152,7 @@
 		B1CB2F072555DEE700D36E0C /* DebugVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugVC.swift; sourceTree = "<group>"; };
 		B1CB2F082555DEE700D36E0C /* DebugVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebugVC.xib; sourceTree = "<group>"; };
 		B1CDB9C1257A9E04008DC151 /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
+		D008D2C325AE2F9000AE864E /* Creature+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Creature+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D02C407C25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InventoryItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D02C407F25A91853004D6AEB /* InventoryItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InventoryItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -279,9 +275,7 @@
 				D02C407F25A91853004D6AEB /* InventoryItem+CoreDataClass.swift */,
 				D02C407C25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift */,
 				B13916EF25376F7A00A2CFA2 /* Creature+CoreDataClass.swift */,
-				A5A4A2BD258EA6B500DAAE73 /* InventoryItem+CoreDataClass.swift */,
-				A5A4A2BE258EA6B500DAAE73 /* InventoryItem+CoreDataProperties.swift */,
-				B13916ED25376F7A00A2CFA2 /* Creature+CoreDataProperties.swift */,
+				D008D2C325AE2F9000AE864E /* Creature+CoreDataProperties.swift */,
 				B13916EC25376F7A00A2CFA2 /* User+CoreDataClass.swift */,
 				B13916EE25376F7A00A2CFA2 /* User+CoreDataProperties.swift */,
 			);
@@ -581,13 +575,11 @@
 				B13916E025376B4E00A2CFA2 /* HomeVC.swift in Sources */,
 				B1462D1C255DA206006C5D7D /* CreatureLevelLibrary.swift in Sources */,
 				B1A41DF1252D3ACF00E57C7E /* SharedDataExtensions.swift in Sources */,
-				A5A4A2BF258EA6B500DAAE73 /* InventoryItem+CoreDataClass.swift in Sources */,
 				B1130B32255C9020008C05FC /* StepCountService.swift in Sources */,
 				B13916F8253770DA00A2CFA2 /* GlobalService.swift in Sources */,
 				B13916FC2537714000A2CFA2 /* DebugService.swift in Sources */,
 				A5D98941259A897400069B79 /* WorldVC.swift in Sources */,
 				B1A41DF5252D42A900E57C7E /* CustomUIButtons.swift in Sources */,
-				B13916F125376F7A00A2CFA2 /* Creature+CoreDataProperties.swift in Sources */,
 				B13916FA2537710300A2CFA2 /* FunctionService.swift in Sources */,
 				B13916EA25376EE600A2CFA2 /* CoreDataManager.swift in Sources */,
 				B11827C12550A7C1008E5FF9 /* InventoryItemService.swift in Sources */,
@@ -604,10 +596,10 @@
 				B1CB2F032555DDE300D36E0C /* SettingsVC.swift in Sources */,
 				B13916D62537692000A2CFA2 /* MenuVC.swift in Sources */,
 				B112E1E1253F9F710039E59B /* MKRingProgressGroupView.swift in Sources */,
-				A5A4A2C0258EA6B500DAAE73 /* InventoryItem+CoreDataProperties.swift in Sources */,
 				B1C1AFDA256F338200B9D53B /* MapVC.swift in Sources */,
 				B167262C25647547000A7829 /* MapsLibrary.swift in Sources */,
 				D02C408025A91853004D6AEB /* InventoryItem+CoreDataClass.swift in Sources */,
+				D008D2C425AE2F9100AE864E /* Creature+CoreDataProperties.swift in Sources */,
 				B11827BF2550A2A3008E5FF9 /* UserService.swift in Sources */,
 				A5A4A2E12591385700DAAE73 /* CoreLocationManager.swift in Sources */,
 				B1A41DFB252E2CB000E57C7E /* GLVC.swift in Sources */,
@@ -784,7 +776,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinaguayo.DragonOdyssey;
 				PRODUCT_NAME = "Dragon Odyssey";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -809,7 +801,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinaguayo.DragonOdyssey;
 				PRODUCT_NAME = "Dragon Odyssey";
 				PROVISIONING_PROFILE_SPECIFIER = "";
