@@ -23,22 +23,24 @@ class WorldVC: UIViewController {
     //MARK: - Outlets
     
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var navBar: UINavigationItem!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var gameMapLabel: UILabel!
     
     
     //MARK: - Actions
     
-    @IBAction func xButtonTapped(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "BackToHome", sender: nil)
     }
     
     //MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavBar()
         setupDelegates()
         setupLocationManager()
+        view.addSubview(backButton)
+        view.addSubview(gameMapLabel)
     }
     
     func setupDelegates() {
@@ -50,14 +52,6 @@ class WorldVC: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.startUpdatingLocation()
-    }
-    
-    //MARK: - NavBar
-    
-    func setupNavBar() {
-        navigationController?.navigationBar.barTintColor = UIColor(named: "backgroundColor")
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     
     func addGridToMap(grid: [MKPolygon]) {
@@ -115,7 +109,7 @@ extension WorldVC: MKMapViewDelegate {
         if overlay is MKPolygon {
             let polygonRenderer = MKPolygonRenderer(overlay: overlay)
             polygonRenderer.fillColor = UIColor.gray
-            polygonRenderer.alpha = 0.6
+            polygonRenderer.alpha = 1.0
             return polygonRenderer
         }
         

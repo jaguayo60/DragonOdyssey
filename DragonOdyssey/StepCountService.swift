@@ -10,7 +10,8 @@ import UIKit
 
 class StepCountService: NSObject {
     
-    static let creature = CreatureService.creature
+    //TODO: delete
+//    static let creature = CreatureService.creature
     
     static func addStepsSinceLastStepsAddedDate() {
         
@@ -31,19 +32,21 @@ class StepCountService: NSObject {
             }
             
             // guard against steps being added twice
-            if let lastStepsAddedDate = FuncService.userDefaultsGet(objectForKey: "lastStepsAddedDate") as? Date {
-                print("lastStepsAddedDate: \(lastStepsAddedDate)")
-                print("interval since lastStepsAddedDate: \(Date().timeIntervalSince(lastStepsAddedDate))")
-                guard Date().timeIntervalSince(lastStepsAddedDate) > 3 else { return }
-            }
+//            if let lastStepsAddedDate = FuncService.userDefaultsGet(objectForKey: "lastStepsAddedDate") as? Date {
+//                print("lastStepsAddedDate: \(lastStepsAddedDate)")
+//                print("interval since lastStepsAddedDate: \(Date().timeIntervalSince(lastStepsAddedDate))")
+//                guard Date().timeIntervalSince(lastStepsAddedDate) > 3 else { return }
+//            }
             
-            creature.totalSteps += stepCount
+            //TODO: Update the user's total steps
+//            creature.totalSteps += stepCount
             
-            CoreDataService.saveContext()
-            FuncService.userDefaultsSet(object: Date(), key: "lastStepsAddedDate")
-            if DebugService.logCreatureStats == true { print("🐲 Added \(stepCount) steps to total. Total steps: \(CreatureService.creature.totalSteps)") }
+            //TODO: Save data without core data
+//            CoreDataService.saveContext()
+//            FuncService.userDefaultsSet(object: Date(), key: "lastStepsAddedDate")
+//            if DebugService.logCreatureStats == true { print("🐲 Added \(stepCount) steps to total. Total steps: \(CreatureService.creature.totalSteps)") }
 
-            creature.updateLevel()
+//            creature.updateLevel()
         }
     }
 }

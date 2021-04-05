@@ -21,7 +21,7 @@ class HomeVC: GLVC {
     
     // MARK: - Instance variables
     
-    let creature = CreatureService.creature
+//    let creature = CreatureService.creature
     
     var isVisible: Bool {
         // validate if vc is visible here...
@@ -33,7 +33,8 @@ class HomeVC: GLVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.coreDataManagerControllerDidChangeContent), name: NSNotification.Name(rawValue: "CoreDataManager_controllerDidChangeContent"), object: nil)
+        //TODO: Delete Core Data
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.coreDataManagerControllerDidChangeContent), name: NSNotification.Name(rawValue: "CoreDataManager_controllerDidChangeContent"), object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(self.outsideDataSynced), name: NSNotification.Name(rawValue: <#notificationName#>), object: nil)
         
         drawInitialUI()
@@ -64,9 +65,10 @@ class HomeVC: GLVC {
     }
     
     func drawStaticUI() {
-        stepsRemainingL.text = "\(creature.stepsRemainingToNextLevel.formattedWithSeparator) Steps Remaining"
-        levelTitleL.text = "Level \(Int(creature.level))"
-        energyAmountL.text = "\(Int(creature.energy))/\(Int(creature.totalEnergy))"
+        //TODO: redo this
+//        stepsRemainingL.text = "\(creature.stepsRemainingToNextLevel.formattedWithSeparator) Steps Remaining"
+//        levelTitleL.text = "Level \(Int(creature.level))"
+//        energyAmountL.text = "\(Int(creature.energy))/\(Int(creature.totalEnergy))"
     }
     
     func stageAnimatedUI() {
@@ -74,16 +76,18 @@ class HomeVC: GLVC {
     }
     
     func drawAnimatedUI(animated: Bool = true) {
-        levelProgressV.setProgressTo(percent: creature.percentageOfLevelComplete, animated: true)
-        energyProgressV.setProgressTo(percent: creature.percentageOfEnergyAvailable, animated: true)
+        //TODO: Redo this
+//        levelProgressV.setProgressTo(percent: creature.percentageOfLevelComplete, animated: true)
+//        energyProgressV.setProgressTo(percent: creature.percentageOfEnergyAvailable, animated: true)
     }
     
     // MARK: - Data Responding
     
-    @objc func coreDataManagerControllerDidChangeContent(notification: NSNotification) {
-        drawStaticUI()
-        if self.isVisible { drawAnimatedUI() }
-    }
+    //TODO: Delete core data
+//    @objc func coreDataManagerControllerDidChangeContent(notification: NSNotification) {
+//        drawStaticUI()
+//        if self.isVisible { drawAnimatedUI() }
+//    }
     
     @objc func outsideDataSynced(notification: NSNotification) {
         drawStaticUI()
@@ -96,11 +100,6 @@ class HomeVC: GLVC {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func settings(_ sender: Any) {
-        let vc = SettingsVC()
-        present(vc, animated: true, completion: nil)
-    }
-    
     @IBAction func shop(_ sender: Any) {
         let vc = InventoryVC()
         present(vc, animated: true, completion: nil)
@@ -110,11 +109,6 @@ class HomeVC: GLVC {
         let vc = StatsVC()
         present(vc, animated: true, completion: nil)
     }
-    
-//    @IBAction func hunt(_ sender: Any) {
-//        let vc = HuntVC()
-//        present(vc, animated: true, completion: nil)
-//    }
     
     @available(iOS 13.0, *)
     @IBAction func world(_ sender: Any) {

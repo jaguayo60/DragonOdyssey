@@ -7,23 +7,70 @@
 //
 
 import UIKit
-import CoreData
+import Firebase
+import FBSDKCoreKit
+import FBSDKLoginKit
+import GoogleSignIn
 
 //import Firebase
 //import FirebaseMessaging
 //import OneSignal
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate
-{
-    // MARK: - Instance variables
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
+    // MARK: - Instance variables
+        
     var window: UIWindow?
     var appEnteredBackground = true
     var didFinishLaunchingWithOptionsLastCalled: Date?
-    
-    let coreDataManager = CoreDataManager.shared
     let hapticFeedbackManager = HapticFeedbackManager.shared
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            print("Error: \(error)")
+            return
+        }
+        
+        guard let authentication = user.authentication else { return }
+          let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                            accessToken: authentication.accessToken)
+        
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            if let error = error {
+                print("Error: \(error)")
+                return
+            }
+            NotificationCenter.default.post(name: .signInGoogleCompleted, object: nil)
+        }
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url)
+    }
+    
+    @available(iOS 9.0, *)
+    func application(
+        _ app: UIApplication,
+        open url: URL,
+        options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+    ) -> Bool {
+
+        ApplicationDelegate.shared.application(
+            app,
+            open: url,
+            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+        )
+
+        return GIDSignIn.sharedInstance().handle(url)
+    }
+    
     
     // MARK: - Class functions
 
@@ -45,17 +92,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 //        UserService.setUserPreferenceDefaultValues()
         
         // First launch
-        GlobalService.firstLaunchActions()
+//        GlobalService.firstLaunchActions()
         
         // Migration
 //        MigrationService.runMigrationTasks() // must be executed after firstLaunchActions & Generation
         
         // Debug
         DebugService.didFinishLaunchingTasks()
-        CoreDataService.debugModelUpdates()
+        //TODO: delete core data
+//        CoreDataService.debugModelUpdates()
         
         // Entry
-        EntryService.directEntry()
+//        EntryService.directEntry()
 
         // Set Notification Categories/Actions
 //        NotificationManager.shared.setNotificationCategories()
@@ -71,7 +119,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         //Core Location
         CoreLocationManager.shared.requestAuthorization()
         
+        FirebaseApp.configure()
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
+        ApplicationDelegate.shared.application(
+            application,
+            didFinishLaunchingWithOptions: launchOptions
+        )
+        
         return true
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        if K.Enums.loggedInUsing == .Facebook {
+            LoginManager().logOut()
+            print("Logged out of Facebook")
+        } else if K.Enums.loggedInUsing == .Google {
+            GIDSignIn.sharedInstance()?.signOut()
+            print("Signed out of Google")
+        }
     }
     
     func applicationWillResignActive(_ application: UIApplication) // Executed when alert is shown & when application is minimized or closed
@@ -82,7 +149,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     func applicationDidEnterBackground(_ application: UIApplication) // Only executed when app is minimized or closed
     {
         appEnteredBackground = true
-        TimingManager.shared.appDelegate_applicationDidEnterBackground_fromBackground_wasCalled = true
+//        TimingManager.shared.appDelegate_applicationDidEnterBackground_fromBackground_wasCalled = true
         NotificationCenter.default.post(name: NSNotification.Name("AppDelegate_applicationDidEnterBackground"), object: nil)
         if DebugService.logDelegateEvents == true { print("•AppDelegate: applicationDidEnterBackground") }
     }
@@ -126,20 +193,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
         appEnteredBackground = false // turn off to prevent applicationWillResignActive (alerts) from triggering applicationDidBecomeActive_fromBackground
         
-        TimingManager.shared.appDelegate_applicationDidBecomeActive_fromBackground_wasCalled = true
+//        TimingManager.shared.appDelegate_applicationDidBecomeActive_fromBackground_wasCalled = true
         NotificationCenter.default.post(name: NSNotification.Name("AppDelegate_applicationDidBecomeActive_fromBackground"), object: nil)
         if DebugService.logDelegateEvents == true { print("•AppDelegate: applicationDidBecomeActive_fromBackground") }
     }
 
-    func applicationWillTerminate(_ application: UIApplication)
-    {
-    }
     
     // MARK: - openApp Urls
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        if url.scheme == "open"
-        {
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+//        if url.scheme == "open"
+//        {
 //            switch url.host
 //            {
 //            case "wwPremium":
@@ -155,9 +219,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 //            default:
 //                break
 //            }
-        }
-        return true
-    }
+//        }
+//        return true
+//    }
     
     // MARK: - OneSignal
     
@@ -183,3 +247,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 //    }
 }
 
+// MARK: - Notification names
+
+extension Notification.Name {
+    static var signInGoogleCompleted: Notification.Name {
+        return .init(#function)
+    }
+}

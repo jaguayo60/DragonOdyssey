@@ -17,8 +17,8 @@ class InventoryVC: GLVC {
     
     // MARK: - Instance variables
     
-    let user = UserService.user
-    let creature = CreatureService.creature
+//    let user = UserService.user
+//    let creature = CreatureService.creature
     lazy private var inventoryItems = InventoryItemsLibrary.inventoryItemsArray
     
     // MARK: - Class functions
@@ -26,7 +26,8 @@ class InventoryVC: GLVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.coreDataManagerControllerDidChangeContent), name: NSNotification.Name(rawValue: "CoreDataManager_controllerDidChangeContent"), object: nil)
+        //TODO: DELETE core data
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.coreDataManagerControllerDidChangeContent), name: NSNotification.Name(rawValue: "CoreDataManager_controllerDidChangeContent"), object: nil)
         
         let nib = UINib(nibName: "InventoryItemTVCell", bundle: nil)
         itemsTV.register(nib, forCellReuseIdentifier: "ItemCell")
@@ -37,15 +38,16 @@ class InventoryVC: GLVC {
     // MARK: - UI
     
     func drawVC() {
-        userTokensL.text = "\(Int(user.tokens))"
+//        userTokensL.text = "\(Int(user.tokens))"
     }
     
     // MARK: - Data Responding
     
-    @objc func coreDataManagerControllerDidChangeContent(notification: NSNotification) {
-        drawVC()
-        itemsTV.reloadData()
-    }
+    //TODO: Replace with Server Function calls
+//    @objc func coreDataManagerControllerDidChangeContent(notification: NSNotification) {
+//        drawVC()
+//        itemsTV.reloadData()
+//    }
     
     // MARK: - IBActions
 
@@ -72,7 +74,7 @@ extension InventoryVC: UITableViewDataSource {
         cell.inventoryItemDict = item
         cell.parentVC = self
         
-        if let id = item["id"] as? String { cell.amountOfItemsInInventoryL.text = String(InventoryItemService.numberOfItemsInInventoryWith(id: id)) }
+//        if let id = item["id"] as? String { cell.amountOfItemsInInventoryL.text = String(InventoryItemService.numberOfItemsInInventoryWith(id: id)) }
         cell.titleL.text = "\(item["name"] as? String ?? "") gives \(Int(item["energyAmount"] as? Double ?? 0)) energy"
         cell.tokenAmountL.text = "\(Int(item["tokenCost"] as? Double ?? 0))"
         if let isAdOnly = item["isAdOnly"] as? Bool, isAdOnly == true {
@@ -95,16 +97,18 @@ extension InventoryVC: UITableViewDelegate {
         
         let inventoryItemDict = inventoryItems[indexPath.row]
         
-        guard let itemID = inventoryItemDict["id"] as? String, let item = InventoryItemService.fetchInventoryItemsWith(id: itemID)?[0] else { return }
+//        guard let itemID = inventoryItemDict["id"] as? String, let item = InventoryItemService.fetchInventoryItemsWith(id: itemID)?[0] else { return }
         
-        guard creature.energyLeftBeforeMax > 0 else {
-            FuncService.showBasicAlert(title: "Whoops", message: "It looks like your energy is full, try using this item when you need energy.", btnTitle: "Okay", action: nil, controller: self)
-            return
-        }
+//        guard creature.energyLeftBeforeMax > 0 else {
+//            FuncService.showBasicAlert(title: "Whoops", message: "It looks like your energy is full, try using this item when you need energy.", btnTitle: "Okay", action: nil, controller: self)
+//            return
+//        }
         
-        creature.energy = (creature.energy + item.energyAmount) <= creature.totalEnergy ? creature.energy + item.energyAmount : creature.totalEnergy
-        CoreDataService.context.delete(item)
-        CoreDataService.saveContext()
+//        creature.energy = (creature.energy + item.energyAmount) <= creature.totalEnergy ? creature.energy + item.energyAmount : creature.totalEnergy
+        
+        //TODO: Delete these lines of code, replace with server function calls
+//        CoreDataService.context.delete(item)
+//        CoreDataService.saveContext()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

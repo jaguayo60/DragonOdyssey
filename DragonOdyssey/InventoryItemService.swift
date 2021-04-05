@@ -2,18 +2,15 @@
 //  InventoryItemService.swift
 //  DragonOdyssey
 //
-//  Created by Jared on 11/2/20.
-//  Copyright © 2020 Wired Betterment. All rights reserved.
+//  Created by James Sedlacek on 3/19/21.
+//  Copyright © 2021 Wired Betterment. All rights reserved.
 //
 
 import UIKit
-import CoreData
 
 class InventoryItemService: NSObject {
     
     // MARK: - Instance variables
-    
-    static let user = UserService.user
     
     // MARK: - Counts
     
@@ -48,23 +45,3 @@ class InventoryItemService: NSObject {
         }
         return nil
     }
-    
-    // MARK: - Purchasing
-    
-    static func giveUserInventoryItemWith(id: String, purchase: Bool, saveContext: Bool? = true) {
-        guard let itemDict = InventoryItemsLibrary.itemDictWith(id: id) else { return }
-        let storedItem = InventoryItem(context: CoreDataService.context)
-        
-        storedItem.user = user
-        if let id = itemDict["id"] as? String { storedItem.id = id }
-        if let imageName = itemDict["imageName"] as? String { storedItem.imageName = imageName }
-        if let name = itemDict["name"] as? String { storedItem.name = name }
-        if let energyAmount = itemDict["energyAmount"] as? Double { storedItem.energyAmount = energyAmount }
-        if let isAdOnly = itemDict["isAdOnly"] as? Bool { storedItem.isAdOnly = isAdOnly }
-        if let tokenCost = itemDict["tokenCost"] as? Double { storedItem.tokenCost = tokenCost }
-        if let sortPriority = itemDict["sortPriority"] as? Double { storedItem.sortPriority = sortPriority }
-        
-        if purchase == true { user.tokens = ((user.tokens - storedItem.tokenCost) >= 0) ? user.tokens - storedItem.tokenCost : 0 }
-        if saveContext == true { CoreDataService.saveContext() }
-    }
-}

@@ -54,7 +54,8 @@ class MenuVC: GLVC {
     
     @IBAction func giveUser10Tokens(_ sender: Any) {
         UserService.user.tokens += 10
-        CoreDataService.saveContext()
+        //TODO: Delete Core Data
+//        CoreDataService.saveContext()
     }
     
     @IBAction func grantAppleHealthPermissions(_ sender: Any) {

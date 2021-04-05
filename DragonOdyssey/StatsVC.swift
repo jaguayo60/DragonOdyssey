@@ -53,7 +53,7 @@ class StatsVC: GLVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.coreDataManagerControllerDidChangeContent), name: NSNotification.Name(rawValue: "CoreDataManager_controllerDidChangeContent"), object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.coreDataManagerControllerDidChangeContent), name: NSNotification.Name(rawValue: "CoreDataManager_controllerDidChangeContent"), object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(self.outsideDataSynced), name: NSNotification.Name(rawValue: <#notificationName#>), object: nil)
         
         drawInitialUI()
@@ -128,10 +128,11 @@ class StatsVC: GLVC {
     
     // MARK: - Data Responding
     
-    @objc func coreDataManagerControllerDidChangeContent(notification: NSNotification) {
-        drawStaticUI()
-        if self.isVisible { drawAnimatedUI() }
-    }
+    //TODO: Replace with server function calls
+//    @objc func coreDataManagerControllerDidChangeContent(notification: NSNotification) {
+//        drawStaticUI()
+//        if self.isVisible { drawAnimatedUI() }
+//    }
     
     @objc func outsideDataSynced(notification: NSNotification) {
         drawStaticUI()

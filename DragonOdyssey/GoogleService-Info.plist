@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1029461255080-tgct0uflr9s8mbmmc1kl0ro3c9mimpb9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1029461255080-tgct0uflr9s8mbmmc1kl0ro3c9mimpb9</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC6fZ2wdd8SfjEVGOK05A9AM_47dNlWKoU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1029461255080</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.justinaguayo.DragonOdyssey</string>
+	<key>PROJECT_ID</key>
+	<string>dragon-odyssey</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dragon-odyssey.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1029461255080:ios:ee55a53bc7a6f5a3edb39d</string>
+</dict>
+</plist>

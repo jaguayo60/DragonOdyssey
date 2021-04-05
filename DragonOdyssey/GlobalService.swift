@@ -14,22 +14,22 @@ class GlobalService: NSObject
     
     // MARK: - First Launch
     
-    static func firstLaunchActions() {
-        setFirstLaunchDate()
-        setFirstVersion()
-    }
+//    static func firstLaunchActions() {
+//        setFirstLaunchDate()
+//        setFirstVersion()
+//    }
     
-    private static func setFirstLaunchDate() {
-        guard FunctionService.userDefaultsGet(objectForKey: "firstLaunchDate") == nil else { return }
-        FunctionService.userDefaultsSet(object: Date(), key: "firstLaunchDate")
-    }
+//    private static func setFirstLaunchDate() {
+//        guard FunctionService.userDefaultsGet(objectForKey: "firstLaunchDate") == nil else { return }
+//        FunctionService.userDefaultsSet(object: Date(), key: "firstLaunchDate")
+//    }
     
-    private static func setFirstVersion() {
-        guard FunctionService.userDefaultsGet(objectForKey: "firstLaunchVersion") == nil,
-            let currentAppVersionString = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-        else { return }
-        FunctionService.userDefaultsSet(object: currentAppVersionString, key: "firstLaunchVersion")
-    }
+//    private static func setFirstVersion() {
+//        guard FunctionService.userDefaultsGet(objectForKey: "firstLaunchVersion") == nil,
+//            let currentAppVersionString = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+//        else { return }
+//        FunctionService.userDefaultsSet(object: currentAppVersionString, key: "firstLaunchVersion")
+//    }
     
     // MARK: - Misc
     
