@@ -55,7 +55,6 @@
 		B13916E525376B7400A2CFA2 /* StatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916E325376B7400A2CFA2 /* StatsVC.swift */; };
 		B13916E625376B7400A2CFA2 /* StatsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13916E425376B7400A2CFA2 /* StatsVC.xib */; };
 		B13916F62537707B00A2CFA2 /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916F52537707B00A2CFA2 /* HapticFeedbackManager.swift */; };
-		B13916FC2537714000A2CFA2 /* DebugService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916FB2537714000A2CFA2 /* DebugService.swift */; };
 		B13917012537814100A2CFA2 /* GLProgressV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13917002537814100A2CFA2 /* GLProgressV.swift */; };
 		B1391703253783C300A2CFA2 /* GLProgressV.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1391702253783C300A2CFA2 /* GLProgressV.xib */; };
 		B1462D1C255DA206006C5D7D /* CreatureLevelLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1462D1B255DA206006C5D7D /* CreatureLevelLibrary.swift */; };
@@ -127,7 +126,6 @@
 		B13916E325376B7400A2CFA2 /* StatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsVC.swift; sourceTree = "<group>"; };
 		B13916E425376B7400A2CFA2 /* StatsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsVC.xib; sourceTree = "<group>"; };
 		B13916F52537707B00A2CFA2 /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
-		B13916FB2537714000A2CFA2 /* DebugService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugService.swift; sourceTree = "<group>"; };
 		B13917002537814100A2CFA2 /* GLProgressV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLProgressV.swift; sourceTree = "<group>"; };
 		B1391702253783C300A2CFA2 /* GLProgressV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLProgressV.xib; sourceTree = "<group>"; };
 		B1462D1B255DA206006C5D7D /* CreatureLevelLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureLevelLibrary.swift; sourceTree = "<group>"; };
@@ -349,7 +347,6 @@
 				A5459B07261B8BE0007E1072 /* AlertService.swift */,
 				B1A41DFC252E2CE100E57C7E /* UIService.swift */,
 				B1A41DEE252D3A5300E57C7E /* FuncService.swift */,
-				B13916FB2537714000A2CFA2 /* DebugService.swift */,
 				B1130B31255C9020008C05FC /* StepCountService.swift */,
 			);
 			name = Services;

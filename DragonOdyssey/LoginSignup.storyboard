@@ -14,7 +14,7 @@
         <!--Login-->
         <scene sceneID="a3v-lb-h8a">
             <objects>
-                <viewController id="fu7-d7-SJP" customClass="LoginVC" customModule="LoginTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fu7-d7-SJP" customClass="LoginVC" customModule="Dragon_Odyssey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B9C-md-VfK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -200,7 +200,7 @@
         <!--Create Account-->
         <scene sceneID="J0N-hy-qOq">
             <objects>
-                <viewController id="Fhm-cR-8ej" customClass="SignUpVC" customModule="LoginTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fhm-cR-8ej" customClass="SignUpVC" customModule="Dragon_Odyssey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DOE-H3-lCG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -423,7 +423,7 @@
         <!--Terms & Conditions-->
         <scene sceneID="dVN-S9-otJ">
             <objects>
-                <viewController id="7Tm-C0-IJW" customClass="TermsAgreementVC" customModule="LoginTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7Tm-C0-IJW" customClass="TermsAgreementVC" customModule="Dragon_Odyssey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1eb-HG-pfQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -492,7 +492,7 @@
         <!--Forgot Password-->
         <scene sceneID="lAe-N8-fAw">
             <objects>
-                <viewController id="Af7-Dk-BdR" customClass="ForgotVC" customModule="LoginTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Af7-Dk-BdR" customClass="ForgotVC" customModule="Dragon_Odyssey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NgX-QT-Hld">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -577,7 +577,7 @@
         <!--MainVC-->
         <scene sceneID="7qe-mC-kFB">
             <objects>
-                <viewController id="YRb-1G-CoJ" customClass="MainVC" customModule="LoginTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YRb-1G-CoJ" customClass="MainVC" customModule="Dragon_Odyssey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dfv-AM-ffV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -612,11 +612,19 @@
                                             <constraint firstAttribute="width" constant="250" id="zXK-OV-fHJ"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dragon Odyssey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30Z-5g-3Ta">
+                                        <rect key="frame" x="78.5" y="46" width="257.5" height="43.5"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="30Z-5g-3Ta" firstAttribute="centerX" secondItem="7FK-SQ-2AO" secondAttribute="centerX" id="D2l-ae-tE2"/>
                                     <constraint firstItem="kWx-wW-kLx" firstAttribute="centerX" secondItem="7FK-SQ-2AO" secondAttribute="centerX" id="flf-ap-Cux"/>
                                     <constraint firstItem="kWx-wW-kLx" firstAttribute="centerY" secondItem="7FK-SQ-2AO" secondAttribute="centerY" id="os1-C5-Iqo"/>
+                                    <constraint firstItem="kWx-wW-kLx" firstAttribute="top" secondItem="30Z-5g-3Ta" secondAttribute="bottom" constant="20" id="xzv-bG-UP2"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Mbx-9f-nDy">
@@ -737,8 +745,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IlK-39-0Mu"/>
-        <segue reference="xUe-RO-CaY"/>
+        <segue reference="6Ir-Th-c3j"/>
+        <segue reference="4tT-NR-Am6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.forward.circle" catalog="system" width="128" height="121"/>

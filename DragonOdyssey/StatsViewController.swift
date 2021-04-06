@@ -71,16 +71,16 @@ class StatsViewController: UIViewController {
     // MARK: - Activity Summary
     
     private func fetchActivitySummaryAndUpdateUI() {
-        HealthKitServiceManager.shared.fetchActivitySummariesBetween(startDate: Date(), endDate: Date()) { (summariesOrNil) in
-            guard let summary = summariesOrNil?.first else { return }
-            self.dailyAgility = summary.caloriesBurned
-            self.dailyStrength = summary.workoutMinutes
-            self.dailyTokens = summary.standingHours
-            
-            DispatchQueue.main.async {
-                self.updateActivityRings()
-            }
-        }
+//        HealthKitServiceManager.shared.fetchActivitySummariesBetween(startDate: Date(), endDate: Date()) { (summariesOrNil) in
+//            guard let summary = summariesOrNil?.first else { return }
+//            self.dailyAgility = summary.caloriesBurned
+//            self.dailyStrength = summary.workoutMinutes
+//            self.dailyTokens = summary.standingHours
+//
+//            DispatchQueue.main.async {
+//                self.updateActivityRings()
+//            }
+//        }
     }
 
 }

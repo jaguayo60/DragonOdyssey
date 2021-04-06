@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--LoginSignup-->
+        <!--Main-->
         <scene sceneID="TC6-85-suj">
             <objects>
-                <viewControllerPlaceholder storyboardName="LoginSignup" id="nKA-k6-25o" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" id="nKA-k6-25o" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhe-Jj-li2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1718" y="-221"/>

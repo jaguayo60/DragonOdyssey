@@ -98,7 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 //        MigrationService.runMigrationTasks() // must be executed after firstLaunchActions & Generation
         
         // Debug
-        DebugService.didFinishLaunchingTasks()
+//        DebugService.didFinishLaunchingTasks()
         //TODO: delete core data
 //        CoreDataService.debugModelUpdates()
         
@@ -112,9 +112,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 //        StoreKitService.shared.didFinishLaunchingTasks()
         
         // ⚠️ Should move to a better place later!
-        HealthKitServiceManager.shared.requestReadAccess {
-            StepCountService.addStepsSinceLastStepsAddedDate()
-        }
+//        HealthKitServiceManager.shared.requestReadAccess {
+//            StepCountService.addStepsSinceLastStepsAddedDate()
+//        }
         
         //Core Location
         CoreLocationManager.shared.requestAuthorization()
@@ -143,7 +143,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     func applicationWillResignActive(_ application: UIApplication) // Executed when alert is shown & when application is minimized or closed
     {
-        if DebugService.logDelegateEvents == true { print("•AppDelegate: applicationWillResignActive") }
+//        if DebugService.logDelegateEvents == true { print("•AppDelegate: applicationWillResignActive") }
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) // Only executed when app is minimized or closed
@@ -151,13 +151,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         appEnteredBackground = true
 //        TimingManager.shared.appDelegate_applicationDidEnterBackground_fromBackground_wasCalled = true
         NotificationCenter.default.post(name: NSNotification.Name("AppDelegate_applicationDidEnterBackground"), object: nil)
-        if DebugService.logDelegateEvents == true { print("•AppDelegate: applicationDidEnterBackground") }
+//        if DebugService.logDelegateEvents == true { print("•AppDelegate: applicationDidEnterBackground") }
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) // Not executed on launch, only when app is resumed
     {
         NotificationCenter.default.post(name: NSNotification.Name("AppDelegate_applicationWillEnterForeground"), object: nil)
-        if DebugService.logDelegateEvents == true { print("•AppDelegate: applicationWillEnterForeground") }
+//        if DebugService.logDelegateEvents == true { print("•AppDelegate: applicationWillEnterForeground") }
     }
 
     var applicationDidBecomeActiveLastCalledDate: Date?
@@ -167,12 +167,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         if appEnteredBackground == true { applicationDidBecomeActive_fromBackground() }
         
         NotificationCenter.default.post(name: NSNotification.Name("AppDelegate_applicationDidBecomeActive"), object: nil)
-        if DebugService.logDelegateEvents == true { print("•AppDelegate: applicationDidBecomeActive") }
+//        if DebugService.logDelegateEvents == true { print("•AppDelegate: applicationDidBecomeActive") }
     }
     
     func applicationDidBecomeActive_fromBackground() // Executed on launch and when app resumes from background, NOT when app resumes from alert
     {
-        DebugService.didBecomeActiveTasks()
+//        DebugService.didBecomeActiveTasks()
         
         // Sync widget data
 //        WAWidgetService.syncData()
@@ -195,7 +195,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
 //        TimingManager.shared.appDelegate_applicationDidBecomeActive_fromBackground_wasCalled = true
         NotificationCenter.default.post(name: NSNotification.Name("AppDelegate_applicationDidBecomeActive_fromBackground"), object: nil)
-        if DebugService.logDelegateEvents == true { print("•AppDelegate: applicationDidBecomeActive_fromBackground") }
+//        if DebugService.logDelegateEvents == true { print("•AppDelegate: applicationDidBecomeActive_fromBackground") }
     }
 
     

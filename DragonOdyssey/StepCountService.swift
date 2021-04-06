@@ -25,11 +25,11 @@ class StepCountService: NSObject {
             startDate = Date().plusNumberOfDays(numberOfDays: -3).midnight
         }
         
-        HealthKitServiceManager.shared.fetchStepCountBetween(startDate: startDate, endDate: Date()) { (stepCount) in
-            if stepCount == 0 {
-                if DebugService.logCreatureStats == true { print("🐲 No new steps to add") }
-                return
-            }
+//        HealthKitServiceManager.shared.fetchStepCountBetween(startDate: startDate, endDate: Date()) { (stepCount) in
+//            if stepCount == 0 {
+//                if DebugService.logCreatureStats == true { print("🐲 No new steps to add") }
+//                return
+//            }
             
             // guard against steps being added twice
 //            if let lastStepsAddedDate = FuncService.userDefaultsGet(objectForKey: "lastStepsAddedDate") as? Date {
@@ -47,6 +47,6 @@ class StepCountService: NSObject {
 //            if DebugService.logCreatureStats == true { print("🐲 Added \(stepCount) steps to total. Total steps: \(CreatureService.creature.totalSteps)") }
 
 //            creature.updateLevel()
-        }
+//        }
     }
 }
