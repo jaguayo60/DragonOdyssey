@@ -43,6 +43,17 @@
 		B103F0E5254C9E3900A8BB04 /* InventoryItemTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103F0E3254C9E3900A8BB04 /* InventoryItemTVCell.swift */; };
 		B112E1E1253F9F710039E59B /* MKRingProgressGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112E1E0253F9DD20039E59B /* MKRingProgressGroupView.swift */; };
 		B1130B32255C9020008C05FC /* StepCountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1130B31255C9020008C05FC /* StepCountService.swift */; };
+		B1130B35255C92C6008C05FC /* CreatureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1130B34255C92C6008C05FC /* CreatureService.swift */; };
+		B11827BF2550A2A3008E5FF9 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11827BE2550A2A3008E5FF9 /* UserService.swift */; };
+		B13916D3253768EB00A2CFA2 /* EntryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916D2253768EB00A2CFA2 /* EntryService.swift */; };
+		B13916D62537692000A2CFA2 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916D42537692000A2CFA2 /* MenuVC.swift */; };
+		B13916D72537692000A2CFA2 /* MenuVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13916D52537692000A2CFA2 /* MenuVC.xib */; };
+		B13916DC25376A1900A2CFA2 /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916DA25376A1900A2CFA2 /* FeedbackVC.swift */; };
+		B13916DD25376A1900A2CFA2 /* FeedbackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13916DB25376A1900A2CFA2 /* FeedbackVC.xib */; };
+		B13916E025376B4E00A2CFA2 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916DE25376B4E00A2CFA2 /* HomeVC.swift */; };
+		B13916E125376B4E00A2CFA2 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13916DF25376B4E00A2CFA2 /* HomeVC.xib */; };
+		B13916E525376B7400A2CFA2 /* StatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916E325376B7400A2CFA2 /* StatsVC.swift */; };
+		B13916E625376B7400A2CFA2 /* StatsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13916E425376B7400A2CFA2 /* StatsVC.xib */; };
 		B13916F62537707B00A2CFA2 /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916F52537707B00A2CFA2 /* HapticFeedbackManager.swift */; };
 		B13916FC2537714000A2CFA2 /* DebugService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916FB2537714000A2CFA2 /* DebugService.swift */; };
 		B13917012537814100A2CFA2 /* GLProgressV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13917002537814100A2CFA2 /* GLProgressV.swift */; };
@@ -60,6 +71,8 @@
 		B1A41DF8252D42C700E57C7E /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DF7252D42C700E57C7E /* UIExtensions.swift */; };
 		B1A41DFD252E2CE100E57C7E /* UIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DFC252E2CE100E57C7E /* UIService.swift */; };
 		B1B0DE6E2540CCB300713E0C /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B0DE6D2540CCB300713E0C /* HealthKit.framework */; };
+		B1CB2F032555DDE300D36E0C /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CB2F012555DDE300D36E0C /* SettingsVC.swift */; };
+		B1CB2F042555DDE300D36E0C /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1CB2F022555DDE300D36E0C /* SettingsVC.xib */; };
 		F924C87B4A07D6355805A583 /* Pods_DragonOdyssey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407EF0A77D0AF74A51F8F79B /* Pods_DragonOdyssey.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +116,16 @@
 		B103F0E3254C9E3900A8BB04 /* InventoryItemTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItemTVCell.swift; sourceTree = "<group>"; };
 		B112E1E0253F9DD20039E59B /* MKRingProgressGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKRingProgressGroupView.swift; sourceTree = "<group>"; };
 		B1130B31255C9020008C05FC /* StepCountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountService.swift; sourceTree = "<group>"; };
+		B1130B34255C92C6008C05FC /* CreatureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureService.swift; sourceTree = "<group>"; };
+		B13916D2253768EB00A2CFA2 /* EntryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryService.swift; sourceTree = "<group>"; };
+		B13916D42537692000A2CFA2 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		B13916D52537692000A2CFA2 /* MenuVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuVC.xib; sourceTree = "<group>"; };
+		B13916DA25376A1900A2CFA2 /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
+		B13916DB25376A1900A2CFA2 /* FeedbackVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackVC.xib; sourceTree = "<group>"; };
+		B13916DE25376B4E00A2CFA2 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		B13916DF25376B4E00A2CFA2 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		B13916E325376B7400A2CFA2 /* StatsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsVC.swift; sourceTree = "<group>"; };
+		B13916E425376B7400A2CFA2 /* StatsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatsVC.xib; sourceTree = "<group>"; };
 		B13916F52537707B00A2CFA2 /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
 		B13916FB2537714000A2CFA2 /* DebugService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugService.swift; sourceTree = "<group>"; };
 		B13917002537814100A2CFA2 /* GLProgressV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLProgressV.swift; sourceTree = "<group>"; };
@@ -123,6 +146,10 @@
 		B1A41DFC252E2CE100E57C7E /* UIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIService.swift; sourceTree = "<group>"; };
 		B1B0DE6C2540CCB200713E0C /* DragonOdyssey.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DragonOdyssey.entitlements; sourceTree = "<group>"; };
 		B1B0DE6D2540CCB300713E0C /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		B1C1AFD8256F338200B9D53B /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		B1C1AFD9256F338200B9D53B /* MapVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapVC.xib; sourceTree = "<group>"; };
+		B1CB2F012555DDE300D36E0C /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		B1CB2F022555DDE300D36E0C /* SettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +247,20 @@
 				B112E1E0253F9DD20039E59B /* MKRingProgressGroupView.swift */,
 			);
 			name = MKRingProgressView;
+			name = StatsVC;
+			sourceTree = "<group>";
+		};
+		B13916EB25376F6400A2CFA2 /* Managed Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D02C407F25A91853004D6AEB /* InventoryItem+CoreDataClass.swift */,
+				D02C407C25A9184B004D6AEB /* InventoryItem+CoreDataProperties.swift */,
+				B13916EF25376F7A00A2CFA2 /* Creature+CoreDataClass.swift */,
+				D008D2C325AE2F9000AE864E /* Creature+CoreDataProperties.swift */,
+				B13916EC25376F7A00A2CFA2 /* User+CoreDataClass.swift */,
+				B13916EE25376F7A00A2CFA2 /* User+CoreDataProperties.swift */,
+			);
+			name = "Managed Classes";
 			sourceTree = "<group>";
 		};
 		B13916F42537706400A2CFA2 /* Managers */ = {
@@ -494,6 +535,8 @@
 				A545DDE52607CFAC00B2F1E0 /* StatsViewController.swift in Sources */,
 				A5459B0E261B8C00007E1072 /* KeychainPasswordItem.swift in Sources */,
 				A5459AC1261B87F4007E1072 /* ChangePasswordVC.swift in Sources */,
+				B13916FA2537710300A2CFA2 /* FunctionService.swift in Sources */,
+				B13916EA25376EE600A2CFA2 /* CoreDataManager.swift in Sources */,
 				B13916F62537707B00A2CFA2 /* HapticFeedbackManager.swift in Sources */,
 				A545DDF92607F40300B2F1E0 /* SettingsTVC.swift in Sources */,
 				A5459B08261B8BE1007E1072 /* AlertService.swift in Sources */,
@@ -508,6 +551,7 @@
 				A545DDDB2607B1DA00B2F1E0 /* HomeViewController.swift in Sources */,
 				B112E1E1253F9F710039E59B /* MKRingProgressGroupView.swift in Sources */,
 				A5459AC2261B87F4007E1072 /* TermsVC.swift in Sources */,
+				B167262C25647547000A7829 /* MapsLibrary.swift in Sources */,
 				A5A4A2E12591385700DAAE73 /* CoreLocationManager.swift in Sources */,
 				A5459C0A261BC9A2007E1072 /* LoginVC.swift in Sources */,
 				B1A41DEF252D3A5300E57C7E /* FuncService.swift in Sources */,
@@ -682,7 +726,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinaguayo.DragonOdyssey;
 				PRODUCT_NAME = "Dragon Odyssey";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -707,7 +751,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinaguayo.DragonOdyssey;
 				PRODUCT_NAME = "Dragon Odyssey";
 				PROVISIONING_PROFILE_SPECIFIER = "";
