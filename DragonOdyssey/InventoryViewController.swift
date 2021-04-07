@@ -12,7 +12,7 @@ class InventoryViewController: UIViewController {
     
     // MARK: - Variables
     
-    lazy private var inventoryItems = InventoryItemsLibrary.inventoryItemsArray
+    lazy private var inventoryItems = User.shared.inventory
     let itemCellIdentifier = "ItemCell"
     
     // MARK: - IBOutlets
@@ -57,21 +57,21 @@ extension InventoryViewController: UITableViewDataSource {
 
         let item = inventoryItems[indexPath.row]
         
-        cell.inventoryItemDict = item
+//        cell.inventoryItemDict = item
         cell.parentVC = self
         
 //        if let id = item["id"] as? String { cell.amountOfItemsInInventoryL.text = String(InventoryItemService.numberOfItemsInInventoryWith(id: id)) }
-        cell.amountOfItemsInInventoryL.text = "0"
-        cell.titleL.text = "\(item["name"] as? String ?? "") gives \(Int(item["energyAmount"] as? Double ?? 0)) energy"
-        cell.tokenAmountL.text = "\(Int(item["tokenCost"] as? Double ?? 0))"
-        if let isAdOnly = item["isAdOnly"] as? Bool, isAdOnly == true {
-            cell.tokenL.text = "ONLY FROM ADS" ; cell.drawOnlyFromAdsView()
-            cell.tokenL.alpha = 0.5
-        }
-        
-        if let imageName = item["imageName"] as? String, let image = UIImage(named: imageName) {
-            cell.imageV.image = image
-        }
+//        cell.amountOfItemsInInventoryL.text = "0"
+//        cell.titleL.text = "\(item["name"] as? String ?? "") gives \(Int(item["energyAmount"] as? Double ?? 0)) energy"
+//        cell.tokenAmountL.text = "\(Int(item["tokenCost"] as? Double ?? 0))"
+//        if let isAdOnly = item["isAdOnly"] as? Bool, isAdOnly == true {
+//            cell.tokenL.text = "ONLY FROM ADS" ; cell.drawOnlyFromAdsView()
+//            cell.tokenL.alpha = 0.5
+//        }
+//        
+//        if let imageName = item["imageName"] as? String, let image = UIImage(named: imageName) {
+//            cell.imageV.image = image
+//        }
         
         
         

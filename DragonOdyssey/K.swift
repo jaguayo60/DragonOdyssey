@@ -41,6 +41,10 @@ struct K {
         static let logoGoogle = UIImage(named: "GoogleLogo")
         static let faceid = UIImage(systemName: "faceid")
         static let touchid = UIImage(systemName: "touchid")
+        
+        var buttons: [(name: String, image: UIImage)]? = nil
+        var icons: [(name: String, image: UIImage)]? = nil
+        var items: [(name: String, image: UIImage)]? = nil
     }
     
     struct Colors {

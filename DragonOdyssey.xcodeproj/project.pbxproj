@@ -35,19 +35,20 @@
 		A545DDF92607F40300B2F1E0 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A545DDF82607F40300B2F1E0 /* SettingsTVC.swift */; };
 		A54BB0C825AD273A0036B5B6 /* WorldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54BB0C725AD273A0036B5B6 /* WorldManager.swift */; };
 		A5550CE2261CFAA200A26758 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5550CE1261CFAA200A26758 /* ServerManager.swift */; };
+		A5550CE5261D400700A26758 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5550CE4261D400700A26758 /* User.swift */; };
+		A5550CE9261D42C300A26758 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5550CE8261D42C300A26758 /* Item.swift */; };
+		A5550CEC261D450400A26758 /* Creature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5550CEB261D450400A26758 /* Creature.swift */; };
 		A5A4A2B6258EA5D800DAAE73 /* GoogleMobileAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A4A2B5258EA5D800DAAE73 /* GoogleMobileAds.xcframework */; };
 		A5A4A2BB258EA5EB00DAAE73 /* FBLPromises.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A4A2BA258EA5EB00DAAE73 /* FBLPromises.framework */; };
 		A5A4A2E12591385700DAAE73 /* CoreLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A4A2E02591385700DAAE73 /* CoreLocationManager.swift */; };
 		A5D98941259A897400069B79 /* WorldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D9893F259A897400069B79 /* WorldVC.swift */; };
 		A5D98945259AA6EA00069B79 /* WorldSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D98944259AA6EA00069B79 /* WorldSB.storyboard */; };
-		B103F0E1254C9CEF00A8BB04 /* InventoryItemsLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103F0E0254C9CEF00A8BB04 /* InventoryItemsLibrary.swift */; };
 		B103F0E5254C9E3900A8BB04 /* InventoryItemTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103F0E3254C9E3900A8BB04 /* InventoryItemTVCell.swift */; };
 		B112E1E1253F9F710039E59B /* MKRingProgressGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112E1E0253F9DD20039E59B /* MKRingProgressGroupView.swift */; };
 		B1130B32255C9020008C05FC /* StepCountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1130B31255C9020008C05FC /* StepCountService.swift */; };
 		B13916F62537707B00A2CFA2 /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13916F52537707B00A2CFA2 /* HapticFeedbackManager.swift */; };
 		B13917012537814100A2CFA2 /* GLProgressV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13917002537814100A2CFA2 /* GLProgressV.swift */; };
 		B1391703253783C300A2CFA2 /* GLProgressV.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1391702253783C300A2CFA2 /* GLProgressV.xib */; };
-		B1462D1C255DA206006C5D7D /* CreatureLevelLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1462D1B255DA206006C5D7D /* CreatureLevelLibrary.swift */; };
 		B14AA4B02540BBDD00D630A7 /* HealthKitServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14AA4AF2540BBDD00D630A7 /* HealthKitServiceManager.swift */; };
 		B1A41DD4252D2A6900E57C7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A41DD3252D2A6900E57C7E /* AppDelegate.swift */; };
 		B1A41DDB252D2A6900E57C7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A41DD9252D2A6900E57C7E /* Main.storyboard */; };
@@ -94,20 +95,21 @@
 		A545DDF82607F40300B2F1E0 /* SettingsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTVC.swift; sourceTree = "<group>"; };
 		A54BB0C725AD273A0036B5B6 /* WorldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldManager.swift; sourceTree = "<group>"; };
 		A5550CE1261CFAA200A26758 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		A5550CE4261D400700A26758 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A5550CE8261D42C300A26758 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A5550CEB261D450400A26758 /* Creature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creature.swift; sourceTree = "<group>"; };
 		A5A4A2B5258EA5D800DAAE73 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
 		A5A4A2B8258EA5E000DAAE73 /* Pods_DragonOdyssey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_DragonOdyssey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A4A2BA258EA5EB00DAAE73 /* FBLPromises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBLPromises.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A4A2E02591385700DAAE73 /* CoreLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationManager.swift; sourceTree = "<group>"; };
 		A5D9893F259A897400069B79 /* WorldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldVC.swift; sourceTree = "<group>"; };
 		A5D98944259AA6EA00069B79 /* WorldSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorldSB.storyboard; sourceTree = "<group>"; };
-		B103F0E0254C9CEF00A8BB04 /* InventoryItemsLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItemsLibrary.swift; sourceTree = "<group>"; };
 		B103F0E3254C9E3900A8BB04 /* InventoryItemTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItemTVCell.swift; sourceTree = "<group>"; };
 		B112E1E0253F9DD20039E59B /* MKRingProgressGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKRingProgressGroupView.swift; sourceTree = "<group>"; };
 		B1130B31255C9020008C05FC /* StepCountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountService.swift; sourceTree = "<group>"; };
 		B13916F52537707B00A2CFA2 /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
 		B13917002537814100A2CFA2 /* GLProgressV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLProgressV.swift; sourceTree = "<group>"; };
 		B1391702253783C300A2CFA2 /* GLProgressV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLProgressV.xib; sourceTree = "<group>"; };
-		B1462D1B255DA206006C5D7D /* CreatureLevelLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureLevelLibrary.swift; sourceTree = "<group>"; };
 		B14AA4AF2540BBDD00D630A7 /* HealthKitServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitServiceManager.swift; sourceTree = "<group>"; };
 		B1A41DD0252D2A6900E57C7E /* Dragon Odyssey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dragon Odyssey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A41DD3252D2A6900E57C7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -179,8 +181,6 @@
 		A545DDD52607AFE300B2F1E0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B103F0E0254C9CEF00A8BB04 /* InventoryItemsLibrary.swift */,
-				B1462D1B255DA206006C5D7D /* CreatureLevelLibrary.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -299,6 +299,9 @@
 				B1A41DED252D3A3200E57C7E /* Services */,
 				B1A41DF2252D426400E57C7E /* CustomUI */,
 				B1A41DF0252D3ACF00E57C7E /* SharedDataExtensions.swift */,
+				A5550CE4261D400700A26758 /* User.swift */,
+				A5550CE8261D42C300A26758 /* Item.swift */,
+				A5550CEB261D450400A26758 /* Creature.swift */,
 			);
 			name = Global;
 			sourceTree = "<group>";
@@ -486,7 +489,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5550CE2261CFAA200A26758 /* ServerManager.swift in Sources */,
-				B1462D1C255DA206006C5D7D /* CreatureLevelLibrary.swift in Sources */,
 				B1A41DF1252D3ACF00E57C7E /* SharedDataExtensions.swift in Sources */,
 				B1130B32255C9020008C05FC /* StepCountService.swift in Sources */,
 				A5D98941259A897400069B79 /* WorldVC.swift in Sources */,
@@ -502,16 +504,18 @@
 				A5459C09261BC9A2007E1072 /* MainVC.swift in Sources */,
 				A5459ABF261B87F4007E1072 /* ContactVC.swift in Sources */,
 				B14AA4B02540BBDD00D630A7 /* HealthKitServiceManager.swift in Sources */,
+				A5550CEC261D450400A26758 /* Creature.swift in Sources */,
 				A54BB0C825AD273A0036B5B6 /* WorldManager.swift in Sources */,
+				A5550CE5261D400700A26758 /* User.swift in Sources */,
 				A545DDF32607F3B300B2F1E0 /* K.swift in Sources */,
 				B1A41DF8252D42C700E57C7E /* UIExtensions.swift in Sources */,
+				A5550CE9261D42C300A26758 /* Item.swift in Sources */,
 				A545DDDB2607B1DA00B2F1E0 /* HomeViewController.swift in Sources */,
 				B112E1E1253F9F710039E59B /* MKRingProgressGroupView.swift in Sources */,
 				A5459AC2261B87F4007E1072 /* TermsVC.swift in Sources */,
 				A5A4A2E12591385700DAAE73 /* CoreLocationManager.swift in Sources */,
 				A5459C0A261BC9A2007E1072 /* LoginVC.swift in Sources */,
 				B1A41DEF252D3A5300E57C7E /* FuncService.swift in Sources */,
-				B103F0E1254C9CEF00A8BB04 /* InventoryItemsLibrary.swift in Sources */,
 				A5459C0B261BC9A2007E1072 /* SignUpVC.swift in Sources */,
 				A545DDE22607B5FE00B2F1E0 /* InventoryViewController.swift in Sources */,
 				A545DDF62607F3EF00B2F1E0 /* Styling.swift in Sources */,

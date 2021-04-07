@@ -10,7 +10,7 @@ import UIKit
 struct ServerManager {
     
     // MARK: - Server Constants
-    static let serverURL = "https://dragon-odyssey-server.conveyor.cloud/"
+    static let serverURL = "https://dragon-odyssey-server.conveyor.cloud"
     
     // MARK: - USERS Constants
     static let getAllUsers = "/api/Users/GetAll"
@@ -34,7 +34,51 @@ struct ServerManager {
     static let getItemByName = "/api/Items/GetByName"
     static let postAddItem = "/api/Items/Add"
     
+    // MARK: - IMAGE Constants
+    static let getImageList = "/api/Images/GetList"
+    static let getButtonImageList = "/api/Images/GetButtons"
+    static let getIconImageList = "/api/Images/GetIcons"
+    static let getItemImageList = "/api/Images/GetItems"
+    //https://dragon-odyssey-server.conveyor.cloud//api/Images/GetItems
     
+    static func getItemImages() {
+        let urlString = serverURL + getItemImageList
+        let url = URL(string: urlString)
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+
+            parseItemImageJSON(data: data)
+
+        }
+        
+        task.resume()
+    }
+
+//    static func getImage(completion: @escaping (_ image: UIImage) -> Void) {
+//        let url = URL(string: chest)
+//        var request = URLRequest(url: url!)
+//        request.httpMethod = "GET"
+//
+//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+//
+//            guard let data = data, error == nil else {
+//                print(error?.localizedDescription ?? "No data")
+//                return
+//            }
+//            if let image = UIImage(data: data) {
+//                completion(image)
+//            }
+//        }
+//
+//        task.resume()
+//    }
     
     static func createUser(email: String, firebaseUID: String, username: String) {
         //Example:
@@ -67,8 +111,29 @@ struct ServerManager {
     static func parseUserJSON(data: Data) {
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode(user.self, from: data)
+            let decodedData = try decoder.decode(getUser.self, from: data)
             print("decodedData: \(decodedData)")
+        } catch {
+            //self.delegate?.didFailWithError(error: error)
+            print("Parse JSON Error: \(error)")
+            return //nil
+        }
+    }
+    
+    static func parseItemImageJSON(data: Data) {
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode([getItems].self, from: data)
+            print("decodedData: \(decodedData)")
+            for item in decodedData {
+                let urlString = serverURL + item.url
+                let imageUrl = URL(string: urlString)!
+                let imageData = try! Data(contentsOf: imageUrl)
+                if let image = UIImage(data: imageData) {
+                    //TODO: add to image list
+                    print("Loaded image: \(image)")
+                }
+            }
         } catch {
             //self.delegate?.didFailWithError(error: error)
             print("Parse JSON Error: \(error)")
@@ -77,7 +142,12 @@ struct ServerManager {
     }
 }
 
-struct user: Decodable {
+struct getItems: Decodable {
+    var name: String
+    var url: String
+}
+
+struct getUser: Decodable {
     var id: String
     var firebaseUID: String
     var username: String

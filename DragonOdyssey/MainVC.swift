@@ -30,6 +30,7 @@ class MainVC: UIViewController {
     @IBOutlet var googleButton: UIView!
     @IBOutlet weak var facebookButton: FBLoginButton!
     @IBOutlet var googleLogo: UIImageView!
+    @IBOutlet weak var logo: UIImageView!
     
     // MARK: - IBActions
     
@@ -63,6 +64,7 @@ class MainVC: UIViewController {
         setupGoogleButton()
         setupNotificationObserver()
         setupNavBar()
+        ServerManager.getItemImages()
     }
     
     func setupNotificationObserver() {

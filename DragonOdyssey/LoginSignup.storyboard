@@ -717,6 +717,7 @@
                         <outlet property="googleButton" destination="z0e-Rp-r2I" id="iF7-FJ-luN"/>
                         <outlet property="googleLogo" destination="niv-EH-QcD" id="s2e-0m-ayC"/>
                         <outlet property="loginButton" destination="ro3-er-N6S" id="Ptb-fl-fQv"/>
+                        <outlet property="logo" destination="kWx-wW-kLx" id="tpi-Oe-xAq"/>
                         <outlet property="signupButton" destination="sPD-Eb-j8S" id="PyD-E5-8AV"/>
                         <segue destination="30s-6W-b99" kind="presentation" identifier="LoginSegue" modalPresentationStyle="fullScreen" id="6Ir-Th-c3j"/>
                     </connections>
