@@ -9,9 +9,7 @@
 import UIKit
 
 struct Item {
-    var id: String
     var name: String
-    var image: UIImage
     var isAdOnly: Bool
     var energyAmount: Int
     var tokenCost: Int

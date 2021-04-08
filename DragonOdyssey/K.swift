@@ -42,9 +42,18 @@ struct K {
         static let faceid = UIImage(systemName: "faceid")
         static let touchid = UIImage(systemName: "touchid")
         
-        var buttons: [(name: String, image: UIImage)]? = nil
-        var icons: [(name: String, image: UIImage)]? = nil
-        var items: [(name: String, image: UIImage)]? = nil
+        static var buttons: [(name: String, image: UIImage)] = []
+        static var icons: [(name: String, image: UIImage)] = []
+        static var items: [(name: String, image: UIImage)] = []
+        
+        static func getItemImage(for name: String) -> UIImage {
+            for item in K.Images.items {
+                if item.name == name {
+                    return item.image
+                }
+            }
+            return UIImage() //TODO: placeholder image goes here
+        }
     }
     
     struct Colors {
@@ -60,5 +69,9 @@ struct K {
     
     struct Enums {
         static var loggedInUsing: loginType = .Email
+    }
+    
+    struct Items {
+        static var list: [Item] = []
     }
 }

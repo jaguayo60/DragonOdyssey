@@ -66,9 +66,8 @@ class SignUpVC: UIViewController {
             if err != nil {
                 AlertService.showPopup(title: "Error Creating User!", message: "There was an error connecting to our server.\nPlease try again.", viewController: self)
             } else {
-                //TODO: successful user creation & login
-//                let firebaseUID = Auth.auth().currentUser!.uid
-//                ServerManager.createUser(email: email, firebaseUID: firebaseUID, username: username)
+                let firebaseUID = Auth.auth().currentUser!.uid
+                ServerManager.createUser(email: email, firebaseUID: firebaseUID, username: username)
                 self.performSegue(withIdentifier: K.Strings.loginIdentifier, sender: nil)
             }
         }

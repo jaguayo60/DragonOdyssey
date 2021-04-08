@@ -10,20 +10,29 @@ import UIKit
 import CoreLocation
 
 struct User {
-    static var shared = User(id: "",
-                             firebaseUID: "",
+    static var shared = User(firebaseUID: "",
                              username: "",
                              email: "",
                              steps: 0,
+                             tokens: 0,
                              inventory: [],
                              creatures: [])
-    var id: String
     var firebaseUID: String
     var username: String
     var email: String
     var steps: Int
-    var inventory: [Item]
+    var tokens: Int
+    var inventory: [(name: String, amount: Int)]
     var creatures: [Creature]
+    
+    func getItemAmount(for name: String) -> Int {
+        for item in inventory {
+            if item.name == name {
+                return item.amount
+            }
+        }
+        return 0
+    }
     
     func incrementSteps(stepsToIncrement: Int) {
         if stepsToIncrement == 0 { return }
@@ -31,11 +40,11 @@ struct User {
         // call this function once a minute
     }
     
-    func useItem(item: Item) {
+    func useItem(name: String) {
         //TODO: Server call to use item
     }
     
-    func buyItem(item: Item) {
+    func buyItem(name: String) {
         //TODO: Server call to buy item
     }
     

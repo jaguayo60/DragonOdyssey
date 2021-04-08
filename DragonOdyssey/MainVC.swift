@@ -64,7 +64,8 @@ class MainVC: UIViewController {
         setupGoogleButton()
         setupNotificationObserver()
         setupNavBar()
-        ServerManager.getItemImages()
+        ServerManager.loadAllImages()
+        ServerManager.loadItemInfo()
     }
     
     func setupNotificationObserver() {

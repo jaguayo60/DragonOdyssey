@@ -12,9 +12,6 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import GoogleSignIn
 
-//import Firebase
-//import FirebaseMessaging
-//import OneSignal
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {

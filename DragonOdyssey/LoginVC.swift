@@ -27,6 +27,8 @@ class LoginVC: UIViewController {
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
         signin(successful: {
+            let firebaseUID = Auth.auth().currentUser!.uid
+            ServerManager.loginUser(firebaseUID: firebaseUID)
             self.performSegue(withIdentifier: K.Strings.loginIdentifier, sender: nil)
         })
     }
@@ -36,6 +38,8 @@ class LoginVC: UIViewController {
             guard let password = Biometrics.getKeyChainPassword() else { return }
             self.passwordTF.text = password
             self.signin(successful: {
+                let firebaseUID = Auth.auth().currentUser!.uid
+                ServerManager.loginUser(firebaseUID: firebaseUID)
                 self.performSegue(withIdentifier: K.Strings.loginIdentifier, sender: nil)
             })
         })
@@ -49,6 +53,8 @@ class LoginVC: UIViewController {
                 Biometrics.saveKeyChainPassword(email: email, password: password)
                 UserDefaultsManager.shared.saveEmail(email)
                 UserDefaultsManager.shared.setupBiometrics()
+                let firebaseUID = Auth.auth().currentUser!.uid
+                ServerManager.loginUser(firebaseUID: firebaseUID)
                 self.performSegue(withIdentifier: K.Strings.loginIdentifier, sender: nil)
             })
         })

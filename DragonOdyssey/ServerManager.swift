@@ -7,42 +7,57 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
+enum ImageType: String {
+    case icons = "/api/Images/GetIcons"
+    case buttons = "/api/Images/GetButtons"
+    case items = "/api/Images/GetItems"
+}
+
+@available(iOS 13.0, *)
 struct ServerManager {
     
     // MARK: - Server Constants
-    static let serverURL = "https://dragon-odyssey-server.conveyor.cloud"
+    private static let serverURL = "https://dragon-odyssey-server.conveyor.cloud"
     
     // MARK: - USERS Constants
-    static let getAllUsers = "/api/Users/GetAll"
-    static let getUserByID = "/api/Users/GetById"
-    static let getUserByFBuid = "/api/Users/GetByFirebaseUID"
-    static let getUserByUsername = "/api/Users/GetByUsername"
-    static let getUserByEmail = "/api/Users/GetByEmail"
-    static let postAddUser = "/api/Users/Add"
+    private static let getAllUsers = "/api/Users/GetAll"
+    private static let getUserByID = "/api/Users/GetById"
+    private static let getUserByFBuid = "/api/Users/GetByFirebaseUID"
+    private static let getUserByUsername = "/api/Users/GetByUsername"
+    private static let getUserByEmail = "/api/Users/GetByEmail"
+    private static let postAddUser = "/api/Users/Add"
     
     // MARK: - CREATURES Constants
-    static let getAllCreatures = "/api/Creatures/GetAll"
-    static let getCreatureByID = "/api/Creatures/GetById"
-    static let getCreatureByUserID = "/api/Creatures/GetByUserId"
-    static let getCreatureByName = "/api/Creatures/GetByName"
-    static let postAddCreature = "/api/Creatures/Add"
+    private static let getAllCreatures = "/api/Creatures/GetAll"
+    private static let getCreatureByID = "/api/Creatures/GetById"
+    private static let getCreatureByUserID = "/api/Creatures/GetByUserId"
+    private static let getCreatureByName = "/api/Creatures/GetByName"
+    private static let postAddCreature = "/api/Creatures/Add"
     
     // MARK: - ITEM Constants
-    static let getAllItems = "/api/Items/GetAll"
-    static let getItemByID = "/api/Items/GetById"
-    static let getItemByUserID = "/api/Items/GetByUserId"
-    static let getItemByName = "/api/Items/GetByName"
-    static let postAddItem = "/api/Items/Add"
+    private static let getAllItems = "/api/Items/GetAll"
+    private static let getItemByID = "/api/Items/GetById"
+    private static let getItemByUserID = "/api/Items/GetByUserId"
+    private static let getItemByName = "/api/Items/GetByName"
+    private static let postAddItem = "/api/Items/Add"
     
     // MARK: - IMAGE Constants
-    static let getImageList = "/api/Images/GetList"
-    static let getButtonImageList = "/api/Images/GetButtons"
-    static let getIconImageList = "/api/Images/GetIcons"
-    static let getItemImageList = "/api/Images/GetItems"
+    private static let getImageList = "/api/Images/GetList"
+    private static let getButtonImageList = "/api/Images/GetButtons"
+    private static let getIconImageList = "/api/Images/GetIcons"
+    private static let getItemImageList = "/api/Images/GetItems"
     //https://dragon-odyssey-server.conveyor.cloud//api/Images/GetItems
     
-    static func getItemImages() {
-        let urlString = serverURL + getItemImageList
+    @available(iOS 13.0, *)
+    static func loadAllImages() {
+        getImagesFor(type: .buttons)
+        getImagesFor(type: .icons)
+        getImagesFor(type: .items)
+    }
+    
+    static func loadItemInfo() {
+        let urlString = serverURL + getAllItems
         let url = URL(string: urlString)
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
@@ -54,31 +69,50 @@ struct ServerManager {
                 return
             }
 
-            parseItemImageJSON(data: data)
+            parseItemJSON(data: data)
 
         }
         
         task.resume()
     }
+    
+    static func getImagesFor(type: ImageType) {
+        let urlString = serverURL + type.rawValue
+        let url = URL(string: urlString)
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
 
-//    static func getImage(completion: @escaping (_ image: UIImage) -> Void) {
-//        let url = URL(string: chest)
-//        var request = URLRequest(url: url!)
-//        request.httpMethod = "GET"
-//
-//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//
-//            guard let data = data, error == nil else {
-//                print(error?.localizedDescription ?? "No data")
-//                return
-//            }
-//            if let image = UIImage(data: data) {
-//                completion(image)
-//            }
-//        }
-//
-//        task.resume()
-//    }
+            parseImageJSON(data: data, type: type)
+
+        }
+        
+        task.resume()
+    }
+    
+    static func loginUser(firebaseUID: String) {
+        let urlString = serverURL + getUserByFBuid + "?firebaseUID=" + firebaseUID
+        let url = URL(string: urlString)
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            parseUserJSON(data: data)
+        }
+        
+        task.resume()
+    }
     
     static func createUser(email: String, firebaseUID: String, username: String) {
         //Example:
@@ -102,9 +136,7 @@ struct ServerManager {
             }
 
             parseUserJSON(data: data)
-
         }
-        
         task.resume()
     }
     
@@ -112,7 +144,12 @@ struct ServerManager {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(getUser.self, from: data)
-            print("decodedData: \(decodedData)")
+            User.shared.firebaseUID = decodedData.firebaseUID
+            User.shared.email = decodedData.email
+            User.shared.username = decodedData.username
+            User.shared.steps = decodedData.steps
+            User.shared.tokens = decodedData.tokens
+            //TODO: inventory items and creatures
         } catch {
             //self.delegate?.didFailWithError(error: error)
             print("Parse JSON Error: \(error)")
@@ -120,18 +157,43 @@ struct ServerManager {
         }
     }
     
-    static func parseItemImageJSON(data: Data) {
+    static func parseItemJSON(data: Data) {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode([getItems].self, from: data)
-            print("decodedData: \(decodedData)")
+            
             for item in decodedData {
-                let urlString = serverURL + item.url
+                let newItem = Item(name: item.name,
+                                   isAdOnly: item.isAdOnly,
+                                   energyAmount: item.energyAmount,
+                                   tokenCost: item.tokenCost)
+                K.Items.list.append(newItem)
+            }
+        } catch {
+            //self.delegate?.didFailWithError(error: error)
+            print("Parse JSON Error: \(error)")
+            return //nil
+        }
+    }
+    
+    @available(iOS 13.0, *)
+    static func parseImageJSON(data: Data, type: ImageType) {
+        let decoder = JSONDecoder()
+        do {
+            let decodedImageDataList = try decoder.decode([getImages].self, from: data)
+            for anImage in decodedImageDataList {
+                let urlString = serverURL + anImage.url
                 let imageUrl = URL(string: urlString)!
                 let imageData = try! Data(contentsOf: imageUrl)
                 if let image = UIImage(data: imageData) {
-                    //TODO: add to image list
-                    print("Loaded image: \(image)")
+                    switch type {
+                    case .buttons:
+                        K.Images.buttons.append((name: anImage.name, image: image))
+                    case .icons:
+                        K.Images.icons.append((name: anImage.name, image: image))
+                    case .items:
+                        K.Images.items.append((name: anImage.name, image: image))
+                    }
                 }
             }
         } catch {
@@ -142,16 +204,24 @@ struct ServerManager {
     }
 }
 
-struct getItems: Decodable {
+struct getImages: Decodable {
     var name: String
     var url: String
 }
 
 struct getUser: Decodable {
-    var id: String
     var firebaseUID: String
     var username: String
     var email: String
+    var steps: Int
+    var tokens: Int
+}
+
+struct getItems: Decodable {
+    var name: String
+    var isAdOnly: Bool
+    var energyAmount: Int
+    var tokenCost: Int
 }
 
 /*

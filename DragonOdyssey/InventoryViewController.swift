@@ -12,7 +12,6 @@ class InventoryViewController: UIViewController {
     
     // MARK: - Variables
     
-    lazy private var inventoryItems = User.shared.inventory
     let itemCellIdentifier = "ItemCell"
     
     // MARK: - IBOutlets
@@ -35,7 +34,7 @@ class InventoryViewController: UIViewController {
     }
     
     func setup() {
-        //TODO: set the user tokens
+        userTokensLabel.text = String(User.shared.tokens)
     }
     
     func setupTableView() {
@@ -55,31 +54,31 @@ extension InventoryViewController: UITableViewDataSource {
                 return tableView.dequeueReusableCell(withIdentifier: itemCellIdentifier, for: indexPath)
         }
 
-        let item = inventoryItems[indexPath.row]
-        
-//        cell.inventoryItemDict = item
+        let item = K.Items.list[indexPath.row]
         cell.parentVC = self
         
-//        if let id = item["id"] as? String { cell.amountOfItemsInInventoryL.text = String(InventoryItemService.numberOfItemsInInventoryWith(id: id)) }
-//        cell.amountOfItemsInInventoryL.text = "0"
-//        cell.titleL.text = "\(item["name"] as? String ?? "") gives \(Int(item["energyAmount"] as? Double ?? 0)) energy"
-//        cell.tokenAmountL.text = "\(Int(item["tokenCost"] as? Double ?? 0))"
-//        if let isAdOnly = item["isAdOnly"] as? Bool, isAdOnly == true {
-//            cell.tokenL.text = "ONLY FROM ADS" ; cell.drawOnlyFromAdsView()
-//            cell.tokenL.alpha = 0.5
-//        }
-//        
-//        if let imageName = item["imageName"] as? String, let image = UIImage(named: imageName) {
-//            cell.imageV.image = image
-//        }
+        cell.amountOfItemsInInventoryL.text = String(User.shared.getItemAmount(for: item.name))
+        cell.titleL.text = item.name + " gives " + String(item.energyAmount) + " energy"
+        cell.tokenAmountL.text = String(item.tokenCost)
+        
+        if item.isAdOnly {
+            cell.tokenL.text = "REWARD FROM AD"
+            cell.drawOnlyFromAdsView()
+            cell.tokenL.alpha = 0.5
+        }
         
         
+        if #available(iOS 13.0, *) {
+            cell.imageV.image = K.Images.getItemImage(for: item.name)
+        } else {
+            // Fallback on earlier versions
+        }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return inventoryItems.count
+        return K.Items.list.count
     }
     
     
@@ -93,9 +92,7 @@ extension InventoryViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let inventoryItemDict = inventoryItems[indexPath.row]
-        
-        //TODO: Server calls for when the user buys an item
+        let item = K.Items.list[indexPath.row]
+        User.shared.buyItem(name: item.name)
     }
 }
